@@ -12,7 +12,10 @@ Flickr-clone (real name coming soon) is a clone of Flickr built on Rails and Bac
 - [ ] Create accounts
 - [ ] Create sessions (log in)
 - [ ] Upload photos
-- [ ]
+- [ ] Create albums of photos
+- [ ] Leave comments
+- [ ] Search for photos or other users
+- [ ] Tag photos and albums
 
 ## Design Docs
 * [View Wireframes][views]
@@ -23,59 +26,50 @@ Flickr-clone (real name coming soon) is a clone of Flickr built on Rails and Bac
 
 ## Implementation Timeline
 
-### Phase 1: User Authentication, Blog Creation (~1 day)
+### Phase 1: User Authentication, Create Albums, New Photos (~1 day)
 I will implement user authentication in Rails based on the practices learned at
-App Academy. By the end of this phase, users will be able to create blogs using
-a simple text form in a Rails view. The most important part of this phase will
-be pushing the app to Heroku and ensuring that everything works before moving on
-to phase 2.
+App Academy. By the end of this phase, users will be able to Sign Up/In and land
+on a homepage. Through Rails views, they will also be able to create albums.
+Rails controllers will be in place to create new photos. I'll make
+sure pushing to Heroku works as well.
 
 [Details][phase-one]
 
-### Phase 2: Viewing Blogs and Posts (~2 days)
-I will add API routes to serve blog and post data as JSON, then add Backbone
-models and collections that fetch data from those routes. By the end of this
-phase, users will be able to create blogs and view both blogs and posts, all
-inside a single Backbone app.
+### Phase 2: Backbone integration and Photo Upload (~2 days)
+Add backbone implementation for front-end displaying of content. Create models, collections, and views, with Rails serving up JSON. At the end of this phase,
+users should be able to navigate through the site using a 1-page design as well
+as add photos through filepicker. I'd like to have two options for uploading. If
+users click an upload link in the header bar, a popup window will appear allowing them to either drag-and-drop files or directly select files from a file window. Alternatively, if they are currently viewing their photo index page, they will be able to simply drop a photo file anywhere on that page.
 
 [Details][phase-two]
 
-### Phase 3: Editing and Displaying Posts (~2 days)
-I plan to use third-party libraries to add functionality to the `PostForm` and
-`PostShow` views in this phase. First I'll need to add a Markdown editor to the
-`PostForm`, and make sure that the Markdown is properly escaped and formatted in
-the `PostShow` view. I also plan to integrate Filepicker for file upload so
-users can add images to blog posts.
+### Phase 3: Editing Photo/Album info and Leaving Comments (~1 day)
+Add functionality to edit information about photos and albums. This includes
+titles, descriptions, tags, and the moving of photos to different albums. I would like to make most of these things edit-in-place where applicable as well as have a popup window for a quicker edit of details; i.e edit in place when views a single photo fullscreen, popup window when viewing a bunch of photos in album view. Users will also be able to leave comments for every photo. Comments should include a users name as well as some content.
 
 [Details][phase-three]
 
-### Phase 4: User Feeds (~1-2 days)
-I'll start by adding a `feed` route that uses the `current_user`'s
-`subscribed_blogs` association to serve a list of blog posts ordered
-chronologically. On the Backbone side, I'll make a `FeedShow` view whose `posts`
-collection fetches from the new route.  Ultimately, this will be the page users
-see after logging in.
+### Phase 4: Searching for Users or Photos (~1 day)
+I'll add a text field to the header bar. After submitting their input, users
+should be be shown a page with any matches. These matches can be either photos
+or people. Display format should be similar to indexing photos (tiles), with a distinct section for both photos (half the page) and users(the other half). Each tile should be directly clickable and take the user to the desired page.
+
 
 [Details][phase-four]
 
-### Phase 5: Searching for Blogs and Posts (~2 days)
-I'll need to add `search` routes to both the Blogs and Posts controllers. On the
-Backbone side, there will be a `SearchResults` composite view has `BlogsIndex`
-and `PostsIndex` subviews. These views will use plain old `blogs` and `posts`
-collections, but they will fetch from the new `search` routes.
+### Phase 5: Styling and flashy extras (2-3 days)
+The prettify stage. Photo websites are all about presentation. The nicer the frame, the better your photos will look. To that end, I'll implement CSS and JQuery UI methods to add a bunch of extra polish and features. Reordering photos in your albums through drag-and-drop, extra info when hovering over either photos or user avatars, filmstrip and left/right navigation when viewing album photos, etc. I'd like it to look like flickr, but feel less bloated and more elegant.
 
 [Details][phase-five]
 
 ### Bonus Features (TBD)
-- [ ] "Like" button and counter for posts
-- [ ] Custom blog urls
+- [ ] "Favorite" button and counter for photos
+- [ ] "Inspiration" album for users. Photos that they've favorited
 - [ ] Pagination/infinite scroll
-- [ ] Activity history (e.g. likes, reblogs, taggings)
-- [ ] Post types (image posts, quote posts, etc)
-- [ ] Reblogging
-- [ ] Multiple sessions/session management
-- [ ] User avatars
+- [ ] User avatars by way of resizing any photo in their collection
+- [ ] Drag to position banner photos for albums and users
 - [ ] Typeahead search bar
+- [ ] Messages between users
 
 [phase-one]: ./docs/phases/phase1.md
 [phase-two]: ./docs/phases/phase2.md

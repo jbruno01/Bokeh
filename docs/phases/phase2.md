@@ -1,29 +1,35 @@
-# Phase 2: Viewing Blogs and Posts
+# Phase 2: Backbone integration and Photo Upload
 
 ## Rails
 ### Models
 
 ### Controllers
-Api::BlogsController (create, destroy, index, show)
-Api::PostsController (create, destroy, show, update)
+Api::AlbumsController (create, destroy, index, show, update)
+Api::PhotosController (create, destroy, show, update)
+Api::TagsController (create)
 
 ### Views
-* blogs/show.json.jbuilder
+* albums/show.json.jbuilder
+* photos/show.json.jbuilder
+* photos/index.json.jbuilder
 
 ## Backbone
 ### Models
-* Blog (parses nested `posts` association)
-* Post
+* Album
+* Photo
+* Tag
 
 ### Collections
-* Blogs
-* Posts
+* Albums
+* Photos
+* Tags
 
 ### Views
-* BlogForm
-* BlogShow (composite view, contains PostsIndex subview)
-* PostsIndex (composite view, contains PostsIndexItem subviews)
-* PostsIndexItem
-* PostShow
+* AlbumForm
+* AlbumIndex
+* AlbumShow (composite view, contains PhotoIndex subview)
+* PhotoIndex (composite view, contains PhotoIndexItem subviews)
+* PhotoIndexItem
+* PhotoShow
 
 ## Gems/Libraries

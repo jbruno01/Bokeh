@@ -1,11 +1,9 @@
-# Phase 5: Searching for Blogs and Posts
+# Phase 5: Styling and flashy extras
 
 ## Rails
 ### Models
 
 ### Controllers
-Api::BlogsController (search)
-Api::PostsController (search)
 
 ### Views
 
@@ -15,8 +13,7 @@ Api::PostsController (search)
 ### Collections
 
 ### Views
-* BlogSearchItem
-* SearchShow (composite view, contains BlogsIndex and PostsIndex subviews)
 
 ## Gems/Libraries
-
+JQuery UI
+Filepicker

@@ -1,26 +1,38 @@
 # View Wireframes
 
-## New Session
+## Home Page
+![home-page]
+
+## Logging In
 ![new-session]
 
-## Feed Show (landing page)
-![feed-show]
+## Signing Up
+![sign-up]
 
-## Blog Show
-![blog-show]
+## Album Index
+![album-index]
 
-## Post Show
-![post-show]
+# Album Show
+![album-show]
 
-## Post Form
-![post-form]
+## Photo Index
+![photo-index]
 
-## Search Results
-![search-results]
+## Photo Show
+![photo-show]
 
-[new-session]: ./wireframes/new_session.png
-[feed-show]: ./wireframes/feed_show.png
-[blog-show]: ./wireframes/blog_show.png
-[post-show]: ./wireframes/post_show.png
-[post-form]: ./wireframes/post_form.png
-[search-results]: ./wireframes/search_results.png
+## Photo Show with Comments
+![photo-show-comments]
+
+## Upload Options
+![upload-options]
+
+[home-page]: ./wireframes/home_page.jpg
+[new-session]: ./wireframes/log_in.jpg
+[sign-up]: .wireframes/sign_up.jpg
+[album-index]: .wireframes/album_index.jpg
+[album-show]: .wireframes/album_show.jpg
+[photo-index]: .wireframes/photos_index.jpg
+[photo-show]: .wireframes/photos_show.jpg
+[photo-show-comments]: .wireframes/photo_show_comments.jpg
+[upload-options]: .wireframes/upload_uptions.jpg

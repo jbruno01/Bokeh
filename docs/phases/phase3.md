@@ -1,21 +1,30 @@
-# Phase 3: Editing and Displaying Posts
+# Phase 3: Editing Photo/Album info and Leaving Comments
 
 ## Rails
 ### Models
+* Comments
 
 ### Controllers
+* Api::CommentsController(create, delete, show)
+* Api::PhotosController(update)
+* Api::AlbumsController(update)
 
 ### Views
 
 ## Backbone
 ### Models
+* Comment
+* Photo
+* Album
 
 ### Collections
+* Comments
+* Photos
+* Albums
 
 ### Views
-* PostForm
+* PhotoShow
+* PhotoForm
+* AlbumForm
 
 ## Gems/Libraries
-* Filepicker
-* Markdown-js
-* Bootstrap Markdown

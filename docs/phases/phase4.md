@@ -1,13 +1,14 @@
-# Phase 4: User Feeds
+# Phase 4: Searching for Users or Photos
 
 ## Rails
 ### Models
 
 ### Controllers
-Api::PostsController (feed)
+PhotosController (search)
+UsersController (search)
+
 
 ### Views
-posts/feed.json.jbuilder
 
 ## Backbone
 ### Models
@@ -15,6 +16,6 @@ posts/feed.json.jbuilder
 ### Collections
 
 ### Views
-* FeedShow (composite view, contains PostsIndex subview)
+SearchShow
 
 ## Gems/Libraries
