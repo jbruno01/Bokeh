@@ -35,4 +35,4 @@
 [photo-index]: ./wireframes/photos_index.jpg
 [photo-show]: ./wireframes/photos_show.jpg
 [photo-show-comments]: ./wireframes/photo_show_comments.jpg
-[upload-options]: ./wireframes/upload_uptions.jpg
+[upload-options]: ./wireframes/upload_options.jpg
