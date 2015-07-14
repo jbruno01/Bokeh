@@ -9,8 +9,8 @@
 ### Controllers
 * UsersController (create, new)
 * SessionsController (create, new, destroy)
-* AlbumsController (create, new, show, delete)
-* PhotosController (create, new, show, delete)
+* AlbumsController (create, new, show, index, delete)
+* PhotosController (create, new, show, index, delete)
 
 ### Views
 * users/new.html.erb
