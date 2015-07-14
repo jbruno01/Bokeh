@@ -8,10 +8,30 @@ class AlbumsController < ApplicationController
     @album = current_user.albums.new(album_params)
 
     if @album.save
-      redirect_to user_url(current_user)
+      redirect_to user_albums_url(current_user)
     else
       flash.now[:errors] = @album.errors.full_messages
       render :new
+    end
+  end
+
+  def index
+    if params.has_key?(:user_id)
+      @albums = Album.where(user_id: params[:user_id])
+    else
+      @albums = Album.all
+    end
+
+    render :index
+  end
+
+  def show
+    @album = Album.find(params[:id])
+
+    if @album
+      render :show
+    else
+      redirect_to root_url
     end
   end
 
