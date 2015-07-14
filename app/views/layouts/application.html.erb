@@ -8,8 +8,10 @@
 </head>
 <body>
 
+  <h2>Bokeh</h2>
+
   <% if signed_in? %>
-    <%= current_user.email %>
+    <a href="<%= user_url(current_user) %>"><%= current_user.email %></a>
     <%= button_to "Sign Out", session_url, :method => :delete %>
   <% else %>
     <%= link_to "Sign In", new_session_url %>
