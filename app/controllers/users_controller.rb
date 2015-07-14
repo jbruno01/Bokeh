@@ -2,6 +2,7 @@ class UsersController < ApplicationController
 
   def new
     @user = User.new
+    render :new
   end
 
   def create
@@ -9,11 +10,14 @@ class UsersController < ApplicationController
 
     if @user.save
       sign_in(@user)
-      redirect_to root_url
     else
       flash.now[:errors] = @user.errors.full_messages
       render :new
     end
+  end
+
+  def show
+    @user = User.
   end
 
   private

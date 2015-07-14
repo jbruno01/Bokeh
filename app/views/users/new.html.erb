@@ -1,0 +1,19 @@
+<h2>Sign Up!</h2>
+
+<%= flash[:errors] if flash[:errors] %>
+
+<form action=" <%= users_url %> " method="post">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+
+  <label>Email
+    <input type="text" name="user[email]">
+  </label>
+
+  <label>Password
+    <input type="text" name="user[password]">
+  </label>
+
+  <button>Sign Up</button>
+
+
+</form>
