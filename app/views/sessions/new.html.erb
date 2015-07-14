@@ -6,13 +6,14 @@
   <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
 
   <label>Email
-    <input type="text" name="user[email]">
+    <input type="text" name="user[email]" value="<%= @user.email %>">
   </label>
 
   <label>Password
     <input type="password" name="user[password]">
   </label>
 
+  <br>
 
   <button>Sign In</button>
 
