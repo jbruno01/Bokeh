@@ -16,7 +16,12 @@ class User < ActiveRecord::Base
   validates :email, uniqueness: true
   validates :password, length: { minimum: 6, allow_nil: true }
 
-  has_many :albums
+  has_many(
+    :albums,
+    class_name: "Album",
+    foreign_key: :user_id,
+    primary_key: :id
+  )
 
   attr_reader :password
 
