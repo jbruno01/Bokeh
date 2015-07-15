@@ -1,9 +1,14 @@
-window.bokeh = {
+window.Bokeh = {
   Models: {},
   Collections: {},
   Views: {},
   Routers: {},
   initialize: function() {
-    alert('Hello from Backbone!');
+    new Bokeh.Routers.Router ({
+      $rootEl: $("#main"),
+      albums: Bokeh.Collections.albums
+    });
+
+    Backbone.history.start();
   }
 };
