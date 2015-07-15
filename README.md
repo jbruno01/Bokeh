@@ -2,7 +2,7 @@
 
 [Heroku link][heroku]
 
-[heroku]: http://flickr-capstone.herokuapp.com
+[heroku]: http://bokeh-app.herokuapp.com
 
 ## Minimum Viable Product
 Flickr-clone (real name coming soon) is a clone of Flickr built on Rails and Backbone. Users can:

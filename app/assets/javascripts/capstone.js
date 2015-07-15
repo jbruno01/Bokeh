@@ -1,4 +1,4 @@
-window.Capstone = {
+window.bokeh = {
   Models: {},
   Collections: {},
   Views: {},
@@ -9,5 +9,5 @@ window.Capstone = {
 };
 
 $(document).ready(function(){
-  Capstone.initialize();
+  bokeh.initialize();
 });
