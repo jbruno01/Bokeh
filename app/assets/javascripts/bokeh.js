@@ -7,7 +7,3 @@ window.bokeh = {
     alert('Hello from Backbone!');
   }
 };
-
-$(document).ready(function(){
-  bokeh.initialize();
-});

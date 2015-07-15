@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>bokeh</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <title>Bokeh</title>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
 </head>
 <body>
@@ -14,12 +14,10 @@
     <a href="<%= user_url(current_user) %>"><%= current_user.email %></a>
     <%= button_to "Sign Out", session_url, :method => :delete %>
   <% else %>
-    <%= link_to "Sign In", new_session_url %>
     <%= link_to "Sign Up", new_user_url %>
   <% end %>
 
 <%= yield %>
 
-<%= link_to "View All Albums", albums_url %>
 </body>
 </html>
