@@ -5,12 +5,26 @@ Bokeh.Routers.Router = Backbone.Router.extend({
   },
 
   routes: {
-    "" : "index"
+    "" : "index",
+    "albums/new" : "new",
+    "albums/:id" : "show"
   },
 
   index: function () {
     this.collection.fetch();
-    var IndexView = new Bokeh.Views.AlbumsIndex({ collection: this.collection })
-    this.$rootEl.html(IndexView.render().$el)
+    var indexView = new Bokeh.Views.AlbumsIndex({ collection: this.collection })
+    this._swapView(indexView);
+  },
+
+  show: function (id) {
+    var album = this.collection.getOrFetch(id);
+    var showView = new Bokeh.Views.AlbumShow({ model: album })
+    this._swapView(showView);
+  },
+
+  _swapView: function(view) {
+    this._currentView && this._currentView.remove();
+    this._currentView = view;
+    this.$rootEl.html(view.render().$el);
   }
 })

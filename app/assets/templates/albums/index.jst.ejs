@@ -1,5 +1,5 @@
 <h3>Your Albums</h3>
 
 <% albums.each(function (album) { %>
-  <li><%= album.escape("title") %></li>
+  <li><a href="#/albums/<%= album.id %>"><%= album.escape("title") %></a></li>
 <% }) %>

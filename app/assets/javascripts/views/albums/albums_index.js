@@ -7,7 +7,6 @@ Bokeh.Views.AlbumsIndex = Backbone.View.extend({
 
   render: function () {
     var renderedContent = this.template({ albums: this.collection });
-    debugger
     this.$el.html(renderedContent)
     return this;
   }
