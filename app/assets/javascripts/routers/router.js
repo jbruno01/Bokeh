@@ -18,6 +18,7 @@ Bokeh.Routers.Router = Backbone.Router.extend({
 
   show: function (id) {
     var album = this.collection.getOrFetch(id);
+    debugger
     var showView = new Bokeh.Views.AlbumShow({ model: album })
     this._swapView(showView);
   },

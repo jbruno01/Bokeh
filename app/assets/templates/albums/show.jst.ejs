@@ -1,1 +1,8 @@
 <h3><%= album.escape("title") %></h3>
+
+<% album.photos().each(function (photo) { %>
+  <ul>
+    <li><%= photo.escape("title") %></li>
+    <li><%= photo.escape("description") %></li>
+  </ul>
+<% }) %>
