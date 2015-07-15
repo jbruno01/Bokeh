@@ -8,16 +8,8 @@
 </head>
 <body>
 
-  <h2>Bokeh</h2>
-
-  <% if signed_in? %>
-    <a href="<%= user_url(current_user) %>"><%= current_user.email %></a>
-    <%= button_to "Sign Out", session_url, :method => :delete %>
-  <% else %>
-    <%= link_to "Sign Up", new_user_url %>
-  <% end %>
-
-<%= yield %>
+  <%= render partial: "layouts/header" %>
+  <%= yield %>
 
 </body>
 </html>
