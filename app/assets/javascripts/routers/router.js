@@ -6,8 +6,9 @@ Bokeh.Routers.Router = Backbone.Router.extend({
 
   routes: {
     "" : "index",
-    "albums/new" : "new",
-    "albums/:id" : "show"
+    "albums/new" : "newAlbum",
+    "albums/:id" : "show",
+
   },
 
   index: function () {
@@ -18,8 +19,7 @@ Bokeh.Routers.Router = Backbone.Router.extend({
 
   show: function (id) {
     var album = this.collection.getOrFetch(id);
-    debugger
-    var showView = new Bokeh.Views.AlbumShow({ model: album })
+    var showView = new Bokeh.Views.AlbumShow({ model: album, collection: this.collection })
     this._swapView(showView);
   },
 
