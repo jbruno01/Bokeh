@@ -2,5 +2,5 @@
 <button class="new-photo">Add a Photo</button>
 <br>
 <% photos.each(function (photo) { %>
-  <a href="#"><img src="<%= photo.escape("image_url") %>"/></a>
+  <a href="#"><img class="index-tile" src="<%= photo.escape("image_url") %>"/></a>
 <% }) %>

@@ -18,15 +18,13 @@ Bokeh.Views.AddPhotoView = Backbone.View.extend({
   submit: function(event) {
     event.preventDefault();
     $form = this.$("form");
-    var attrs = $form.serializeJSON();
+    var attrs = $form.serializeJSON().photo;
     var that = this;
     var photos = Bokeh.Collections.photos;
     this.model.set(attrs);
-    debugger
     this.model.save({}, {
       success: function (){
         photos.add(that.model, {merge: true})
-        Backbone.history.navigate("", {trigger: true})
       }
     })
   }
