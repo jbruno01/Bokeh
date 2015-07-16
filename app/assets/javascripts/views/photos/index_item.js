@@ -10,4 +10,4 @@ Bokeh.Views.PhotoIndexItem = Backbone.CompositeView.extend({
     this.$el.html(renderedContent);
     return this;
   }
-})
+});

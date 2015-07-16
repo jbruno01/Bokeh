@@ -4,6 +4,12 @@ module Api
       @photo = Photo.new
     end
 
+    def destroy
+      @photo = current_user.photos.find(params[:id])
+      @photo.try(:destroy)
+      redner json: {}
+    end
+
     def index
       @photos = Photo.where(user_id: current_user.id)
     end
@@ -18,7 +24,8 @@ module Api
     end
 
     def show
-
+      @photo = Photo.all.find(params[:id])
+      render :show
     end
 
     private

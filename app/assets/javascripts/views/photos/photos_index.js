@@ -12,9 +12,8 @@ Bokeh.Views.IndexPhotoView = Backbone.CompositeView.extend({
   },
 
   addPhotoView: function (photo) {
-    debugger
     if($("#add-photo-form")){
-      $("#add-photo-form").empty()
+      this.$("#add-photo-form").empty()
     };
     var subview = new Bokeh.Views.PhotoIndexItem({ model: photo });
     this.addSubview('.photo-index', subview);
