@@ -15,6 +15,7 @@
     <br>
     <label>Album
       <select name="photo[album_id]">
+          <option value=0></option>
         <% albums.each(function (album) { %>
           <option value="<%= album.id %>"><%= album.escape("title") %></option>
         <% }) %>

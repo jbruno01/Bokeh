@@ -6,7 +6,7 @@ window.Bokeh = {
   initialize: function() {
     new Bokeh.Routers.Router ({
       $rootEl: $("#main"),
-      albums: Bokeh.Collections.albums
+      photos: Bokeh.Collections.photos
     });
 
     Backbone.history.start();

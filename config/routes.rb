@@ -6,8 +6,8 @@ Rails.application.routes.draw do
   resource :session, only: [:create, :destroy, :new]
 
   namespace :api, defaults: { format: :json } do
-    resources :albums, except: [:create, :new, :delete]
-    resources :photos, except: [:create, :new, :delete]
+    resources :albums
+    resources :photos
   end
 
 
