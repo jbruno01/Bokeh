@@ -1,26 +1,39 @@
 Bokeh.Routers.Router = Backbone.Router.extend({
   initialize: function(options){
     this.$rootEl = options.$rootEl;
-    this.collection = options.photos;
+    this.photos = options.photos;
+    this.albums = options.albums;
   },
 
   routes: {
-    "" : "photoIndex",
+    "" : "photosIndex",
     "photos/:id" : "photoShow",
-    "albums/new" : "newAlbum",
+    "albums" : "albumsIndex",
     "albums/:id" : "albumShow",
 
   },
 
-  photoIndex: function () {
+  siteHomePage: function () {
     this.collection.fetch();
-    var indexPhotoView = new Bokeh.Views.IndexPhotoView({ collection: this.collection })
+    var homeView = new Bokeh.Views.SiteHomeView({ collection: this.photos });
+    this._swapView(homeView);
+  },
+
+  photosIndex: function () {
+    this.photos.fetch();
+    var indexPhotoView = new Bokeh.Views.IndexPhotoView({ collection: this.photos })
     this._swapView(indexPhotoView);
   },
 
+  albumsIndex: function () {
+    this.albums.fetch();
+    var indexAlbumView = new Bokeh.Views.AlbumsIndex({ collection: this.albums })
+    this._swapView(indexAlbumView);
+  },
+
   albumShow: function (id) {
-    var album = this.collection.getOrFetch(id);
-    var showView = new Bokeh.Views.AlbumShow({ model: album, collection: this.collection })
+    var album = this.albums.getOrFetch(id);
+    var showView = new Bokeh.Views.AlbumShow({ model: album })
     this._swapView(showView);
   },
 

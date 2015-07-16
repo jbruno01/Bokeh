@@ -1,4 +1,6 @@
-Bokeh.Views.AddPhotoView = Backbone.View.extend({
+Bokeh.Views.AddPhotoView = Backbone.CompositeView.extend({
+  id: "add-photo-form",
+  
   template: JST["photos/add_photo"],
 
   initialize: function () {
@@ -16,6 +18,7 @@ Bokeh.Views.AddPhotoView = Backbone.View.extend({
   },
 
   submit: function(event) {
+    this.remove()
     event.preventDefault();
     $form = this.$("form");
     var attrs = $form.serializeJSON().photo;

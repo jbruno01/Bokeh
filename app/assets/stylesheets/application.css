@@ -14,9 +14,28 @@
  *= require_self
  */
 
+ /*clear-fix*/
+
+
+
  .index-tile {
    float: left;
    height: 100px;
    border: 1px solid green;
    margin: 10px;
+ }
+
+ nav {
+   display: block;
+   padding: 10px 20px;
+ }
+
+ .nav-links {
+   display: block;
+   float: left;
+ }
+
+ .nav-tools {
+   display: block;
+   float: right;
  }

@@ -16,6 +16,7 @@
 //= require turbolinks
 //= require underscore
 //= require backbone
+//= require_tree ./utils
 //= require bokeh
 //= require_tree ../templates
 //= require_tree ./models
