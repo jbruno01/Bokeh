@@ -9,6 +9,11 @@ Bokeh.Views.CommentIndexItem = Backbone.CompositeView.extend({
     "dblclick" : "editView"
   },
 
+  editView: function(event) {
+    event.preventDefault();
+    debugger
+  },
+
   render: function () {
     var renderedContent = this.template({ comment: this.model });
     this.$el.html(renderedContent);

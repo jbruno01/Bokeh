@@ -1,4 +1,4 @@
-Bokeh.Views.NewCommentForm = Backbone.CompositeView.extend({
+Bokeh.Views.CommentForm = Backbone.CompositeView.extend({
   template: JST["comments/new_form"],
 
   events: {
