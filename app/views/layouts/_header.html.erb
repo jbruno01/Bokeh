@@ -1,22 +1,24 @@
+
 <header>
 
-<nav>
+  <nav class="header group">
 
-  <div class="nav nav-links">
-    <a href="#">Bokeh</a>
-    <a>Explore</a>
-    <a href="#">You</a>
-    <a href="#/albums">Albums</a>
-  </div>
+    <div class="nav-links">
+      <a href="#">Bokeh</a>
+      <a>Explore</a>
+      <a href="#">You</a>
+      <a href="#/albums">Albums</a>
+    </div>
 
-  <div class="nav nav-tools">
-    <% if signed_in? %>
-      <%= link_to "Sign Out", session_url, :method => :delete %>
-      <a href="#"><%= current_user.name %></a>
-    <% else %>
-      <%= link_to "Sign Up", new_user_url %>
-    <% end %>
-  </div>
+    <div class="nav-tools">
+      <% if signed_in? %>
+        <%= link_to "Sign Out", session_url, :method => :delete %>
+        <a href="#"><%= current_user.name %></a>
+      <% else %>
+        <%= link_to "Sign Up", new_user_url %>
+      <% end %>
+    </div>
 
-</nav>
+  </nav>
+
 </header>

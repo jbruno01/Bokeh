@@ -24,7 +24,6 @@ Bokeh.Views.IndexPhotoView = Backbone.CompositeView.extend({
     this.removeSubview(".add-photo-form", this.newPhotoView);
     var $button = $("<button></button>");
     $button.addClass("new-photo");
-    debugger
     $(".add-photo-form").html($button);
   },
 
