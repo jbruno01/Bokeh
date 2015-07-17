@@ -1,8 +1,8 @@
 Bokeh.Models.Photo = Backbone.Model.extend({
-  urlRoot: '/api/photos'
+  urlRoot: '/api/photos',
 
   comments: function() {
-    if(!this.comments){
+    if(!this._comments){
       this._comments = new Bokeh.Collections.Comments([], { photo: this })
     }
     return this._comments;
