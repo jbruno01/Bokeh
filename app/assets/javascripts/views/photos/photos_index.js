@@ -3,20 +3,29 @@ Bokeh.Views.IndexPhotoView = Backbone.CompositeView.extend({
 
   initialize: function(){
     this.addPhotos()
-    this.listenTo(this.collection, "sync", this.render)
+    this.listenTo(this.collection, "sync", this.render);
     this.listenTo(this.collection, "add", this.addPhotoView);
+    this.listenTo(this.collection, "remove", this.removePhotoView)
   },
 
   events: {
-    "click .new-photo" : "newPhoto"
+    "click .new-photo" : "newPhoto",
   },
 
   addPhotoView: function (photo) {
-    if($("#add-photo-form")){
-      this.$("#add-photo-form").empty()
-    };
     var subview = new Bokeh.Views.PhotoIndexItem({ model: photo });
     this.addSubview('.photo-index', subview);
+    if(this.newPhotoView){
+      this.removePhotoForm();
+    };
+  },
+
+  removePhotoForm: function () {
+    this.removeSubview(".add-photo-form", this.newPhotoView);
+    var $button = $("<button></button>");
+    $button.addClass("new-photo");
+    debugger
+    $(".add-photo-form").html($button);
   },
 
   addPhotos: function() {
@@ -26,15 +35,18 @@ Bokeh.Views.IndexPhotoView = Backbone.CompositeView.extend({
     }.bind(this))
   },
 
+  removePhotoView: function (model) {
+    this.removeModelSubview(".photo-index", model)
+  },
+
   newPhoto: function(event) {
-    debugger
     event.preventDefault();
     $(".new-photo").remove();
     var albums = Bokeh.Collections.albums;
     albums.fetch()
     var newPhoto = new Bokeh.Models.Photo();
-    var newPhotoView = new Bokeh.Views.AddPhotoView({ model: newPhoto, collection: albums })
-    this.addSubview(".photo-index", newPhotoView, true)
+    this.newPhotoView = new Bokeh.Views.AddPhotoView({ model: newPhoto, collection: albums })
+    this.addSubview(".add-photo-form", this.newPhotoView)
   },
 
   render: function () {

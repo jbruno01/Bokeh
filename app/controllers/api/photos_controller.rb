@@ -7,7 +7,7 @@ module Api
     def destroy
       @photo = current_user.photos.find(params[:id])
       @photo.try(:destroy)
-      redner json: {}
+      render json: {}
     end
 
     def index

@@ -26,6 +26,7 @@ Bokeh.Routers.Router = Backbone.Router.extend({
   },
 
   photosIndex: function () {
+    debugger
     this.photos.fetch();
     var indexPhotoView = new Bokeh.Views.IndexPhotoView({ collection: this.photos })
     this._swapView(indexPhotoView);

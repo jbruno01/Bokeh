@@ -5,6 +5,15 @@ Bokeh.Views.PhotoIndexItem = Backbone.CompositeView.extend({
     this.listenTo(this.model, "sync", this.render)
   },
 
+  events : {
+    "click .photo-delete" : "deletePhoto"
+  },
+
+  deletePhoto: function (event) {
+    event.preventDefault();
+    this.model.destroy()
+  },
+
   render: function () {
     var renderedContent = this.template({ photo: this.model });
     this.$el.html(renderedContent);

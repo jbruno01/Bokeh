@@ -1,6 +1,6 @@
 Bokeh.Views.AddPhotoView = Backbone.CompositeView.extend({
   id: "add-photo-form",
-  
+
   template: JST["photos/add_photo"],
 
   initialize: function () {

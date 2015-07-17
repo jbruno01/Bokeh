@@ -1,3 +1,8 @@
-<a href="#/photos/<%= photo.id %>">
-  <img class="index-tile" src="<%= photo.escape("image_url") %>"/>
-</a>
+<div class="photo-tile group">
+
+  <a href="#/photos/<%= photo.id %>">
+    <img class="index-tile" src="<%= photo.escape("image_url") %>"/>
+  </a>
+  <a class="photo-delete" data-id="<%= photo.id %>">Delete</a>
+
+</div>

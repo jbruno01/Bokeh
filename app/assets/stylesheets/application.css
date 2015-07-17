@@ -15,10 +15,15 @@
  */
 
  /*clear-fix*/
-
+ .group:after {
+   content: "";
+   clear: both;
+   display: block;
+ }
 
 
  .index-tile {
+   display: block;
    float: left;
    height: 100px;
    border: 1px solid green;
@@ -38,4 +43,7 @@
  .nav-tools {
    display: block;
    float: right;
+ }
+
+ .photo-tile {
  }
