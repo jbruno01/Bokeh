@@ -14,19 +14,14 @@ module Api
       end
     end
 
-    def show
+    def destroy
       @comment = Comment.find(params[:id])
-      if @comment
-        render :show
-      else
-        render :json @comment.errors.full_messages, status: :unprocessable_entity
+      if @comment.destroy
+        render {}
       end
     end
 
-    def index
-      @comments = Comment.where(photo_id: params[:id])
-      render :show
-    end
+
 
     private
 
