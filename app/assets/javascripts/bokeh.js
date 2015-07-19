@@ -11,6 +11,9 @@ window.Bokeh = {
       comments: Bokeh.Collections.comments
     });
 
+    this.currentUser = new Bokeh.Models.CurrentUser();
+    this.currentUser.fetch();
+
     this.header = new Bokeh.Views.Header({ el: "#header" });
 
     Backbone.history.start();

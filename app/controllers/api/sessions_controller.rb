@@ -1,8 +1,11 @@
-class SessionsController < ApplicationController
-
-  def new
-    @user = User.new
-  end
+class Api::SessionsController < ApplicationController
+  def show
+   if current_user
+     render :show
+   else
+     render json: {}
+   end
+ end
 
   def create
     @user = User.find_by_credentials(
@@ -12,16 +15,15 @@ class SessionsController < ApplicationController
 
     if @user
       sign_in(@user)
-      redirect_to root_url
+      render :show
     else
-      flash.now[:errors] = ["Invalid email or password"]
-      render :new
+      head :unprocessable_entity
     end
   end
 
   def destroy
     sign_out!
-    redirect_to new_session_url
+    render json: {}
   end
 
 end

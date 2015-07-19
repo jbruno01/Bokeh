@@ -3,20 +3,27 @@
       <a class="header-logo" href="#">bokeh</a>
 
   <div class="nav-links">
-    <a href="#">You</a>
+
+    <% if(currentUser.isSignedIn()) { %>
+      <a href="#/users/<%= currentUser.id %>">You</a>
+    <% } else { %>
+        <a href="#users/new">Sign Up</a>
+    <% } %>
+
     <a>Explore</a>
     <a href="#/albums">Albums</a>
   </div>
 
   <div class="nav-tools">
-    <a href="#">Upload</a>
 
-    <% if signed_in? %>
-      <%= link_to "Sign Out", session_url, :method => :delete %>
-      <a href="#"><%= current_user.name %></a>
-    <% else %>
-      <%= link_to "Sign Up", new_user_url %>
-    <% end %>
+    <% if(currentUser.isSignedIn()) { %>
+      <a href="#">Upload</a>
+      <a href="#" id="sign-out-link">Sign Out</a>
+      <a href="#/users/<%= currentUser.id %>"><%= currentUser.name %></a>}
+    <% } else { %>
+        <a href="#session/new">Sign In</a>
+        <a href="#session/new">Upload</a>
+    <% } %>
   </div>
 
 </nav>

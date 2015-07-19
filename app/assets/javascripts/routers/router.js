@@ -7,16 +7,16 @@ Bokeh.Routers.Router = Backbone.Router.extend({
   },
 
   routes: {
-    "" : "photosIndex",
+    "" : "siteHomePage",
+    "users/:id" : "userShow",
     "photos/:id" : "photoShow",
     "albums" : "albumsIndex",
     "albums/:id" : "albumShow",
-
+    "session/new": "signIn"
   },
 
   siteHomePage: function () {
-    this.collection.fetch();
-    var homeView = new Bokeh.Views.SiteHomeView({ collection: this.photos });
+    var homeView = new Bokeh.Views.SiteHomeView();
     this._swapView(homeView);
   },
 
@@ -26,7 +26,10 @@ Bokeh.Routers.Router = Backbone.Router.extend({
     this._swapView(photoView);
   },
 
-  photosIndex: function () {
+  userShow: function () {
+    var callback = this.userShow.bind(this);
+      if (!this._requireSignedIn(callback)) { return; }
+
     this.photos.fetch();
     var indexPhotoView = new Bokeh.Views.IndexPhotoView({ collection: this.photos })
     this._swapView(indexPhotoView);
@@ -43,6 +46,39 @@ Bokeh.Routers.Router = Backbone.Router.extend({
     var showView = new Bokeh.Views.AlbumShow({ model: album })
     this._swapView(showView);
   },
+
+  signIn: function(callback){
+    if (!this._requireSignedOut(callback)) { return; }
+
+    var signInView = new Bokeh.Views.SignIn({
+      callback: callback
+    });
+    this._swapView(signInView);
+  },
+
+  _requireSignedIn: function(callback){
+    if (!Bokeh.currentUser.isSignedIn()) {
+      callback = callback || this._goHome.bind(this);
+      this.signIn(callback);
+      return false;
+    }
+
+    return true;
+  },
+
+  _requireSignedOut: function(callback){
+   if (Bokeh.currentUser.isSignedIn()) {
+     callback = callback || this._goHome.bind(this);
+     callback();
+     return false;
+   }
+
+   return true;
+ },
+
+ _goHome: function(){
+  Backbone.history.navigate("s", { trigger: true });
+},
 
   _swapView: function(view) {
     this._currentView && this._currentView.remove();

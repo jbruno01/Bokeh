@@ -16,7 +16,7 @@
 
  /* --- RESET --- */
 
- body, nav, a, h1, h2, div
+ body, nav, a, h1, h2, div, header, section
   {
   margin: 0;
   padding: 0;
@@ -60,7 +60,7 @@ img {
   margin: auto;
 }
 
-.header {
+#header {
   background: #1F1F20;
   display: block;
 }
@@ -111,5 +111,15 @@ nav a {
 
 
 
-.photo-tile {
+.photo-show {
+  width: 80%;
+  margin: auto;
+  background: #ccc;
+  border: 2px solid green;
+  margin: 40px auto;
+}
+
+.comment-index {
+  border:  2px solid red;
+  padding: 20px 0;
 }

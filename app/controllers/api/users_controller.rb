@@ -1,4 +1,4 @@
-class UsersController < ApplicationController
+class Api::UsersController < ApplicationController
 
   def new
     @user = User.new
@@ -10,7 +10,7 @@ class UsersController < ApplicationController
 
     if @user.save
       sign_in(@user)
-      redirect_to user_url(@user)
+      render :show
     else
       flash.now[:errors] = @user.errors.full_messages
       render :new
@@ -19,7 +19,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    redirect_to user_albums_url(@user)
+    render :show
   end
 
   private
