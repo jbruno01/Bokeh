@@ -11,6 +11,8 @@ window.Bokeh = {
       comments: Bokeh.Collections.comments
     });
 
+    this.header = new Bokeh.Views.Header({ el: "#header" });
+
     Backbone.history.start();
   }
 };

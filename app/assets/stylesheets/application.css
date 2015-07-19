@@ -14,40 +14,102 @@
  *= require_self
  */
 
- header {
-   background: green;
-   border: 2px solid red;
- }
+ /* --- RESET --- */
 
- /*clear-fix*/
- .group:after {
-   content: "";
-   clear: both;
-   display: block;
- }
+ body, nav, a, h1, h2, div
+  {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  font: inherit;
+  color: inherit;
+  box-sizing: inherit;
+  text-align: inherit;
+  text-decoration: inherit;
+  vertical-align: inherit;
+
+}
+
+body {
+  box-sizing: content-box;
+  font-family: sans-serif;
+  line-height: 1.1666666666;
+  font-size: 16px;
+  color: #000;
+  background: #F3F5F6;
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/*clear-fix*/
+.group:after {
+  content: "";
+  clear: both;
+  display: block;
+}
+
+ #main {
+  min-width: 900px;
+  width: 95%;
+  margin: auto;
+}
+
+.header {
+  background: #1F1F20;
+  display: block;
+}
+
+.nav {
+  display: block;
+  min-width: 700px;
+  width: 85%;
+  margin: auto;
+}
+
+nav a {
+  color: #fff;
+}
+
+.header-logo {
+  display: block;
+  float: left;
+  font-size: 25px;
+  font-weight: bold;
+  padding: 10px 15px;
+}
+
+.nav-links a {
+  margin: auto;
+  display: block;
+  float: left;
+  padding: 16px 17px;
+}
+
+.nav-tools {
+  float: right;
+}
+
+.nav-tools a {
+  display: block;
+  float: left;
+  padding: 16px 17px;
+}
+
+.index-tile {
+  display: block;
+  float: left;
+  width: 100px;
+  border: 1px solid green;
+  margin: 10px;
+}
 
 
- .index-tile {
-   display: block;
-   float: left;
-   height: 100px;
-   border: 1px solid green;
-   margin: 10px;
- }
 
- nav {
-   padding: 10px;
- }
-
- .nav-links {
-   display: block;
-   float: left;
- }
-
- .nav-tools {
-   display: block;
-   float: right;
- }
-
- .photo-tile {
- }
+.photo-tile {
+}

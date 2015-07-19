@@ -1,16 +1,19 @@
 
-<header>
+<header class="header">
 
-  <nav class="header group">
+  <nav class="nav group">
+
+        <a class="header-logo" href="#">bokeh</a>
 
     <div class="nav-links">
-      <a href="#">Bokeh</a>
-      <a>Explore</a>
       <a href="#">You</a>
+      <a>Explore</a>
       <a href="#/albums">Albums</a>
     </div>
 
     <div class="nav-tools">
+      <a href="#">Upload</a>
+  
       <% if signed_in? %>
         <%= link_to "Sign Out", session_url, :method => :delete %>
         <a href="#"><%= current_user.name %></a>

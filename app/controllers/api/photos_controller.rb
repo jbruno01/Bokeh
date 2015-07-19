@@ -24,7 +24,7 @@ module Api
     end
 
     def show
-      @photo = Photo.all.find(params[:id])
+      @photo = Photo.find(params[:id])
       render :show
     end
 
