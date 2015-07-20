@@ -19,12 +19,14 @@ Bokeh.Views.CommentForm = Backbone.CompositeView.extend({
       success: function () {
         console.log("saved!");
         that.collection.add(comment);
+
       }
     });
   },
 
   render: function () {
     var renderedContent = this.template({ user: Bokeh.currentUser });
+
     this.$el.html(renderedContent);
     return this;
   }

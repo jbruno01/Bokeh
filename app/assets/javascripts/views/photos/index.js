@@ -6,6 +6,7 @@ Bokeh.Views.IndexPhotoView = Backbone.CompositeView.extend({
     this.listenTo(this.model.photos(), "add", this.addPhotoView);
     // this.listenTo(this.model.photos(), "sync", this.addPhotos);
     this.listenTo(this.model.photos(), "remove", this.removePhotoView)
+
   },
 
   events: {
@@ -25,6 +26,7 @@ Bokeh.Views.IndexPhotoView = Backbone.CompositeView.extend({
     var $button = $("<button></button>");
     $button.html("Delete");
     $button.addClass("new-photo");
+
     $(".add-photo-form").append($button);
   },
 

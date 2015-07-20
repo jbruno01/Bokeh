@@ -1,10 +1,12 @@
 Bokeh.Models.Photo = Backbone.Model.extend({
   urlRoot: '/api/photos',
 
+
   toJSON: function(){
    var json = { photo: _.clone(this.attributes) };
    return json;
  },
+
 
   comments: function() {
     if(!this._comments){
@@ -13,6 +15,7 @@ Bokeh.Models.Photo = Backbone.Model.extend({
     return this._comments;
   },
 
+<<<<<<< HEAD
   saveFormData: function(formData, options){
     var method = this.isNew() ? "POST" : "PUT";
     var model = this;
@@ -33,6 +36,7 @@ Bokeh.Models.Photo = Backbone.Model.extend({
       }
     });
   },
+
 
   parse: function(response) {
     if(response.comments){
