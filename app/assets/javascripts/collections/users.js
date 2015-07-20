@@ -1,5 +1,5 @@
 Bokeh.Collections.Users = Backbone.Collection.extend({
-  model: Backbone.Models.User,
+  model: Bokeh.Models.User,
   url: "api/users/",
 
 
@@ -7,7 +7,7 @@ Bokeh.Collections.Users = Backbone.Collection.extend({
     var user = this.get(id);
     if(!user) {
       var user = new Bokeh.Models.User({ id: id });
-      var user = this;
+      var users = this;
       user.fetch({
         success: function () {
           users.add(user)

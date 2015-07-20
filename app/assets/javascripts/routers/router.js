@@ -28,8 +28,7 @@ Bokeh.Routers.Router = Backbone.Router.extend({
   },
 
   userShow: function (id) {
-    var user = new Bokeh.Models.User({ id: id })
-    user.fetch();
+    var user = this.users.getOrFetch(id);
     var callback = this.userShow.bind(this);
       // if (!this._requireSignedIn(callback)) { return; }
 
@@ -38,8 +37,8 @@ Bokeh.Routers.Router = Backbone.Router.extend({
   },
 
   albumsIndex: function (id) {
-    var user =
-    var indexAlbumView = new Bokeh.Views.AlbumsIndex()
+    var user = this.users.getOrFetch(id)
+    var indexAlbumView = new Bokeh.Views.AlbumsIndex({ model: user })
     this._swapView(indexAlbumView);
   },
 

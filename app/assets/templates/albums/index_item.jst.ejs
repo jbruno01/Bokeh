@@ -1,0 +1,8 @@
+<div class="album-tile group">
+
+  <a href="#/users/<%= album.escape("user_id") %>/albums/<%= album.id %>">
+    <%= album.escape("title") %>
+  </a>
+  <button class="album-delete" data-id="<%= album.id %>">Delete</button>
+
+</div>
