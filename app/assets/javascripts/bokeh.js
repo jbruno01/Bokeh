@@ -9,6 +9,7 @@ window.Bokeh = {
       photos: Bokeh.Collections.photos,
       albums: Bokeh.Collections.albums,
       comments: Bokeh.Collections.comments
+      users: Bokeh.Collections.users
     });
 
     this.currentUser = new Bokeh.Models.CurrentUser();
