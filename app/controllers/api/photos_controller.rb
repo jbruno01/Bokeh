@@ -1,5 +1,8 @@
 module Api
   class PhotosController < ApiController
+
+    wrap_parameters false
+
     def new
       @photo = Photo.new
     end
@@ -11,7 +14,7 @@ module Api
     end
 
     def index
-      @photos = Photo.where(user_id: current_user.id)
+      @photos = Photo.where(user_id: params[:id])
     end
 
     def create
@@ -23,6 +26,12 @@ module Api
       end
     end
 
+    def update
+      @photo = Photo.find(params[:id])
+      @photo.update!(photo_params)
+    render :show
+  end
+
     def show
       @photo = Photo.find(params[:id])
       render :show
@@ -31,7 +40,7 @@ module Api
     private
 
     def photo_params
-      params.require(:photo).permit(:user_id, :album_id, :description, :title, :image_url)
+      params.require(:photo).permit(:user_id, :album_id, :description, :title, :image)
     end
   end
 end

@@ -19,7 +19,7 @@
     <% if(currentUser.isSignedIn()) { %>
       <a href="#">Upload</a>
       <a href="#" id="sign-out-link">Sign Out</a>
-      <a href="#/users/<%= currentUser.id %>"><%= currentUser.name %></a>}
+      <a href="#/users/<%= currentUser.id %>"><%= currentUser.escape("name") %></a>
     <% } else { %>
         <a href="#session/new">Sign In</a>
         <a href="#session/new">Upload</a>

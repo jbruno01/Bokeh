@@ -1,24 +1,12 @@
   <form>
-    <label>Image URL
-      <input type="text" name="photo[image_url]">
-    </label>
-    <br>
     <label>Title
-      <input type="text" name="photo[title]">
+      <input id="input-photo-image" type="file" name="photo[image]">
     </label>
     <br>
     <label>Description (optional)
       <input type="text" name="photo[description]">
     </label>
-    <br>
-    <label>Album
-      <select name="photo[album_id]">
-          <option value=0></option>
-        <% albums.each(function (album) { %>
-          <option value="<%= album.id %>"><%= album.escape("title") %></option>
-        <% }) %>
-      </select>
-    </label>
 
+    <br>
     <button class="photo-submit">Add!</button>
   </form>

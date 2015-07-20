@@ -3,16 +3,12 @@ Bokeh.Views.AddPhotoView = Backbone.CompositeView.extend({
 
   template: JST["photos/add_photo"],
 
-  initialize: function () {
-    this.listenTo(this.collection, "sync", this.render)
-  },
-
   events: {
     "click .photo-submit" : "submit"
   },
 
   render: function(){
-    var renderedContent = this.template({ albums: this.collection });
+    var renderedContent = this.template();
     this.$el.html(renderedContent);
     return this;
   },
@@ -20,15 +16,17 @@ Bokeh.Views.AddPhotoView = Backbone.CompositeView.extend({
   submit: function(event) {
     this.remove()
     event.preventDefault();
-    $form = this.$("form");
-    var attrs = $form.serializeJSON().photo;
+    var file = this.$("#input-photo-image")[0].files[0];
+    debugger
+    var formData = new FormData();
+    formData.append("photo[image]", file);
+
     var that = this;
-    var photos = Bokeh.Collections.photos;
-    this.model.set(attrs);
-    this.model.save({}, {
-      success: function (){
-        photos.add(that.model, {merge: true})
+    this.model.saveFormData(formData, {
+      success: function(){
+        that.collection.add(that.model);
+        Backbone.history.navigate("/users/" + Bokeh.currentUser.id, { trigger: true });
       }
-    })
+    });
   }
 })

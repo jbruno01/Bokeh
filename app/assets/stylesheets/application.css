@@ -16,7 +16,8 @@
 
  /* --- RESET --- */
 
- body, nav, a, h1, h2, div, header, section
+body, nav, a, h1, h2, div, header,
+section, input
   {
   margin: 0;
   padding: 0;
@@ -108,8 +109,6 @@ nav a {
   border: 1px solid green;
   margin: 10px;
 }
-
-
 
 .photo-show {
   width: 80%;
