@@ -15,7 +15,6 @@ Bokeh.Models.Photo = Backbone.Model.extend({
     return this._comments;
   },
 
-<<<<<<< HEAD
   saveFormData: function(formData, options){
     var method = this.isNew() ? "POST" : "PUT";
     var model = this;

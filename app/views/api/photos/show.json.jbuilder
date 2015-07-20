@@ -4,4 +4,5 @@ json.image_url asset_path(@photo.image.url(:original))
 
 json.comments @photo.comments do |comment|
   json.extract! comment, :user_id, :content, :updated_at, :created_at
+  json.user comment.user, :name
 end

@@ -2,7 +2,7 @@ Bokeh.Views.CommentIndexItem = Backbone.CompositeView.extend({
   template: JST["comments/index_item"],
 
   initialize: function () {
-    this.listenTo(this.model, "change", this.render)
+    this.listenTo(this.model, "sync", this.render)
   },
 
   events: {

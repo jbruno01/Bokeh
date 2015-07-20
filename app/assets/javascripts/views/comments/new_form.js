@@ -10,16 +10,16 @@ Bokeh.Views.CommentForm = Backbone.CompositeView.extend({
   },
 
   submit: function(event) {
-    var comment = new Bokeh.Models.Comment();
     event.preventDefault();
-    var content = $(".new-comment-area").val();
-    comment.set(content);
+    var newComment = new Bokeh.Models.Comment();
+    var content = $(".new-comment-area").serializeJSON()
+    newComment.set(content);
+    newComment.attributes.comment.photo_id = this.model.id;
     var that = this;
-    comment.save({}, {
+    newComment.save({}, {
       success: function () {
         console.log("saved!");
-        that.collection.add(comment);
-
+        that.collection.add(newComment);
       }
     });
   },
