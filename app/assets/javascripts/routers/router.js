@@ -10,7 +10,7 @@ Bokeh.Routers.Router = Backbone.Router.extend({
     "" : "siteHomePage",
     "users/:id" : "userShow",
     "photos/:id" : "photoShow",
-    "albums" : "albumsIndex",
+    "users/:id/albums" : "albumsIndex",
     "albums/:id" : "albumShow",
     "session/new": "signIn"
   },
@@ -26,18 +26,20 @@ Bokeh.Routers.Router = Backbone.Router.extend({
     this._swapView(photoView);
   },
 
-  userShow: function () {
+  userShow: function (id) {
+    var user = new Bokeh.Models.User({ id: id })
+    user.fetch();
     var callback = this.userShow.bind(this);
-      if (!this._requireSignedIn(callback)) { return; }
+      // if (!this._requireSignedIn(callback)) { return; }
 
-    this.photos.fetch();
-    var indexPhotoView = new Bokeh.Views.IndexPhotoView({ collection: this.photos })
+    var indexPhotoView = new Bokeh.Views.IndexPhotoView({ model: user });
     this._swapView(indexPhotoView);
   },
 
-  albumsIndex: function () {
-    this.albums.fetch();
-    var indexAlbumView = new Bokeh.Views.AlbumsIndex({ collection: this.albums })
+  albumsIndex: function (id) {
+    var albums = new Bokeh.Collections.Albums({ user_id: id })
+    albums.fetch();
+    var indexAlbumView = new Bokeh.Views.AlbumsIndex({ collection: albums })
     this._swapView(indexAlbumView);
   },
 
@@ -77,7 +79,7 @@ Bokeh.Routers.Router = Backbone.Router.extend({
  },
 
  _goHome: function(){
-  Backbone.history.navigate("s", { trigger: true });
+  Backbone.history.navigate("", { trigger: true });
 },
 
   _swapView: function(view) {

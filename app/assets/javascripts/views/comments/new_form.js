@@ -2,23 +2,29 @@ Bokeh.Views.CommentForm = Backbone.CompositeView.extend({
   template: JST["comments/new_form"],
 
   events: {
-    "click .submit" : "submit"
+    "click .comment-submit" : "submit"
+  },
+
+  initialize: function () {
+    this.listenTo(Bokeh.currentUser, "sync", this.render)
   },
 
   submit: function(event) {
+    var comment = new Bokeh.Models.Comment();
     event.preventDefault();
-    var content = $(".form").val();
-    this.model.set(content);
+    var content = $(".new-comment-area").val();
+    comment.set(content);
     var that = this;
-    this.model.save({}, {
+    comment.save({}, {
       success: function () {
-        that.collection.add(that.model);
+        console.log("saved!");
+        that.collection.add(comment);
       }
     });
   },
 
   render: function () {
-    var renderedContent = this.template();
+    var renderedContent = this.template({ user: Bokeh.currentUser });
     this.$el.html(renderedContent);
     return this;
   }

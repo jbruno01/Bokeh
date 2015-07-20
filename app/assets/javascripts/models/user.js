@@ -1,5 +1,21 @@
 Bokeh.Models.User = Backbone.Model.extend({
-  urlRoot: "/api/users"
+  urlRoot: "/api/users",
+
+  photos: function() {
+    if(!this._photos){
+      this._photos = new Bokeh.Collections.Photos([], { user: this })
+    }
+    return this._photos;
+  },
+
+  parse: function(response) {
+    if(response.photos){
+      this.photos().set(response.photos, { parse: true });
+      delete response.photos;
+    }
+
+    return response;
+  }
 })
 
 Bokeh.Models.CurrentUser = Bokeh.Models.User.extend({

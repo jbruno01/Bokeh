@@ -6,12 +6,12 @@
 
     <% if(currentUser.isSignedIn()) { %>
       <a href="#/users/<%= currentUser.id %>">You</a>
+    <a href="#/users/<%= currentUser.id %>/albums">Albums</a>
     <% } else { %>
         <a href="#users/new">Sign Up</a>
     <% } %>
 
     <a>Explore</a>
-    <a href="#/albums">Albums</a>
   </div>
 
   <div class="nav-tools">

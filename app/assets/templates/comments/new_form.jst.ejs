@@ -1,4 +1,9 @@
-<textarea name="comment[content]"
-          rows="8" cols="40"
+<h4><%= user.escape("name") %></h4>
+
+<textarea class="new-comment-area"
+          name="comment[content]"
+          rows="5" cols="40"
           placeholder="Add a comment">
 </textarea>
+
+<button class="comment-submit">Add Comment</button>

@@ -17,15 +17,14 @@ Bokeh.Views.AddPhotoView = Backbone.CompositeView.extend({
     this.remove()
     event.preventDefault();
     var file = this.$("#input-photo-image")[0].files[0];
-    debugger
     var formData = new FormData();
     formData.append("photo[image]", file);
 
     var that = this;
     this.model.saveFormData(formData, {
       success: function(){
+        console.log(that);
         that.collection.add(that.model);
-        Backbone.history.navigate("/users/" + Bokeh.currentUser.id, { trigger: true });
       }
     });
   }

@@ -17,7 +17,7 @@ module Api
 
     def index
       # if params.has_key?(:user_id)
-        @albums = Album.where(user_id: params[:id])
+        @albums = Album.where(user_id: params[:user_id])
         # @user = User.find_by_id(params[:user_id])
       # else
         # @albums = Album.all

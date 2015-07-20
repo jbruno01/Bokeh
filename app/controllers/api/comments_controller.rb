@@ -6,7 +6,7 @@ module Api
     end
 
     def create
-      @comment = Comment.create(comment_params)
+      @comment = current_user.comments.create(comment_params)
       if @comment.save
         render :show
       else
@@ -26,7 +26,7 @@ module Api
     private
 
     def comment_params
-      params.require(:comment).permit(:user_id, :photo_id, :content)
+      params.require(:comment).permit(:photo_id, :content)
     end
 
   end

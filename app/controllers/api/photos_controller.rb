@@ -14,7 +14,8 @@ module Api
     end
 
     def index
-      @photos = Photo.where(user_id: params[:id])
+      @photos = Photo.where(user_id: params[:user_id])
+      render :index
     end
 
     def create
@@ -29,8 +30,8 @@ module Api
     def update
       @photo = Photo.find(params[:id])
       @photo.update!(photo_params)
-    render :show
-  end
+      render :show
+    end
 
     def show
       @photo = Photo.find(params[:id])
