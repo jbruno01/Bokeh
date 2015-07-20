@@ -12,7 +12,7 @@ Bokeh.Routers.Router = Backbone.Router.extend({
     "users/:id" : "userShow",
     "photos/:id" : "photoShow",
     "users/:id/albums" : "albumsIndex",
-    "albums/:id" : "albumShow",
+    "users/:id/albums/:id" : "albumShow",
     "session/new": "signIn"
   },
 

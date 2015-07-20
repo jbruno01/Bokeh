@@ -1,15 +1,8 @@
 <img class="photo-show" src="<%= photo.escape("image_url") %>"/>
 
 <section class="photo-info">
-  <label class="photo-title">Title:
-    <%= photo.escape("title") %>
-  </label><br>
-
   <label class="photo-user">
-  </label>
-
-  <label class="photo-description">Description:
-    <%= photo.escape("description") %>
+    <a href="#/users/<%= photo.escape("user_id") %>"><%= photo.user().escape("name") %></a>
   </label>
 </section>
 

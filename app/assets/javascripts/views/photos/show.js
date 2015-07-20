@@ -4,8 +4,22 @@ Bokeh.Views.PhotoShow = Backbone.CompositeView.extend({
   initialize: function () {
     // this.addComments();
     this.listenTo(this.model, "sync", this.render);
+    this.listenTo(this.model, "change", this.renderDetails)
     // this.listenTo(this.model, "sync", this.addComments);
     this.listenTo(this.model.comments(), "add", this.addComment)
+  },
+
+  events: {
+      "click .photo-info" : "editDetails"
+  },
+
+  renderDetails: function () {
+    if(this.editDetailsView){
+      this.removeSubview(".photo-info", this.editDetailsView);
+      this.editDetailsView = null;
+    };
+    this.detailsView = new Bokeh.Views.PhotoDetails({ model: this.model })
+    this.addSubview(".photo-info", this.detailsView)
   },
 
   addComment: function (comment) {
@@ -15,7 +29,6 @@ Bokeh.Views.PhotoShow = Backbone.CompositeView.extend({
     }
     this.addSubview('.comment-index', subview);
     this.renderNewForm();
-
   },
 
   addComments: function() {
@@ -32,6 +45,22 @@ Bokeh.Views.PhotoShow = Backbone.CompositeView.extend({
     });
     this.addSubview(".comment-index", this.newCommentview)
 
+  },
+
+  editDetails: function(event) {
+    debugger
+    event.preventDefault();
+    if(this.model.attributes.user_id === Bokeh.currentUser.id){
+      if(!this.editDetailsView){
+        this.removeSubview(".photo-info", this.detailsView);
+        this.renderEditDetails()
+      }
+    };
+  },
+
+  renderEditDetails: function() {
+    this.editDetailsView = new Bokeh.Views.EditPhotoDetails({ model: this.model })
+    this.addSubview(".photo-info", this.editDetailsView)
   },
 
   render: function () {

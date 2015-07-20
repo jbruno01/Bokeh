@@ -33,6 +33,13 @@ module Api
       render :show
     end
 
+    def edit
+      @photo = Photo.find(params[:id])
+      if @photo.update_attributes(photo_params)
+        render :show
+      end
+    end
+
     def show
       @photo = Photo.find(params[:id])
       render :show

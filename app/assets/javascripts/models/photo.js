@@ -7,6 +7,13 @@ Bokeh.Models.Photo = Backbone.Model.extend({
    return json;
  },
 
+   user: function () {
+     if(!this._user){
+       this._user = new Bokeh.Models.User( [], { comment: this })
+     }
+
+     return this._user
+   },
 
   comments: function() {
     if(!this._comments){
@@ -41,7 +48,12 @@ Bokeh.Models.Photo = Backbone.Model.extend({
     if(response.comments){
       this.comments().set(response.comments, { parse: true });
       delete response.comments;
-    }
+    };
+
+    if(response.user){
+      this.user().set(response.user, { parse: true });
+      delete response.user;
+    };
 
     return response;
   }
