@@ -14,7 +14,7 @@ Bokeh.Views.PhotoShow = Backbone.CompositeView.extend({
       this.removeSubview(".comment-index", this.newCommentview);
     }
     this.addSubview('.comment-index', subview);
-    this.renderNewFrom();
+    this.renderNewForm();
 
   },
 
@@ -22,10 +22,10 @@ Bokeh.Views.PhotoShow = Backbone.CompositeView.extend({
     this.model.comments().forEach(function (comment) {
       this.addComment(comment);
     }.bind(this))
-    this.renderNewFrom();
+    // this.renderNewFrom();
   },
 
-  renderNewFrom: function () {
+  renderNewForm: function () {
     this.newCommentview = new Bokeh.Views.CommentForm({
       collection: this.model.comments(),
       model: this.model
@@ -33,7 +33,6 @@ Bokeh.Views.PhotoShow = Backbone.CompositeView.extend({
     this.addSubview(".comment-index", this.newCommentview)
 
   },
-
 
   render: function () {
     var renderedContent = this.template({ photo: this.model });

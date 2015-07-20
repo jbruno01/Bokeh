@@ -16,7 +16,7 @@ Bokeh.Routers.Router = Backbone.Router.extend({
   },
 
   siteHomePage: function () {
-    var homeView = new Bokeh.Views.SiteHomeView();
+    var homeView = new Bokeh.Views.SiteHomeView({ collection: this.photos });
     this._swapView(homeView);
   },
 
@@ -36,10 +36,8 @@ Bokeh.Routers.Router = Backbone.Router.extend({
     this._swapView(indexPhotoView);
   },
 
-  albumsIndex: function (id) {
-    var albums = new Bokeh.Collections.Albums({ user_id: id })
-    albums.fetch();
-    var indexAlbumView = new Bokeh.Views.AlbumsIndex({ collection: albums })
+  albumsIndex: function () {
+    var indexAlbumView = new Bokeh.Views.AlbumsIndex()
     this._swapView(indexAlbumView);
   },
 

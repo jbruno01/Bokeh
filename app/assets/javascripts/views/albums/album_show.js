@@ -2,6 +2,7 @@ Bokeh.Views.AlbumShow = Backbone.CompositeView.extend({
   template: JST["albums/show"],
 
   initialize: function () {
+    this.renderBanner();
     this.model.photos().each(this.addPhotoView.bind(this));
     this.listenTo(this.model.photos(), "add", this.addPhotoView);
     this.listenTo(this.model, "sync", this.render);
@@ -10,6 +11,11 @@ Bokeh.Views.AlbumShow = Backbone.CompositeView.extend({
   addPhotoView: function (photo) {
     var subview = new Bokeh.Views.PhotoIndexItem({ model: photo });
     this.addSubview('.photo-tiles', subview);
+  },
+
+  renderBanner: function () {
+    var bannerView = new Bokeh.Views.Banner({ model: this.model })
+    this.addSubview(".banner-view", bannerView);
   },
 
   render: function () {
