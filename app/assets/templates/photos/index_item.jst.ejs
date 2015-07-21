@@ -1,7 +1,7 @@
 <div class="photo-tile group">
 
   <a href="#/photos/<%= photo.id %>">
-    <img class="index-tile" src="<%= photo.escape("image_url") %>"/>
+    <img class="index-tile" src="<%= photo.image.url %>"/>
   </a>
   <button class="photo-delete" data-id="<%= photo.id %>">Delete</button>
 
