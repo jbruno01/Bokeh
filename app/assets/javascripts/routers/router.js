@@ -9,6 +9,7 @@ Bokeh.Routers.Router = Backbone.Router.extend({
 
   routes: {
     "" : "siteHomePage",
+    "users/new": "",
     "users/:id" : "userShow",
     "photos/:id" : "photoShow",
     "users/:id/albums" : "albumsIndex",
