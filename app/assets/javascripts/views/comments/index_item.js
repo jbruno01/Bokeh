@@ -11,7 +11,6 @@ Bokeh.Views.CommentIndexItem = Backbone.CompositeView.extend({
 
   editView: function(event) {
     event.preventDefault();
-    debugger
   },
 
   render: function () {

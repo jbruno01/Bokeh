@@ -2,7 +2,7 @@ Bokeh.Views.PhotoShow = Backbone.CompositeView.extend({
   template: JST["photos/show"],
 
   initialize: function () {
-    // this.addComments();
+    this.renderNewForm();
     this.listenTo(this.model, "sync", this.render);
     this.listenTo(this.model, "change", this.renderDetails)
     // this.listenTo(this.model, "sync", this.addComments);
@@ -26,6 +26,7 @@ Bokeh.Views.PhotoShow = Backbone.CompositeView.extend({
     var subview = new Bokeh.Views.CommentIndexItem({ model: comment });
     if(this.newCommentview){
       this.removeSubview(".comment-index", this.newCommentview);
+      this.newCommentview = null;
     }
     this.addSubview('.comment-index', subview);
     this.renderNewForm();
@@ -35,7 +36,7 @@ Bokeh.Views.PhotoShow = Backbone.CompositeView.extend({
     this.model.comments().forEach(function (comment) {
       this.addComment(comment);
     }.bind(this))
-    // this.renderNewFrom();
+    this.renderNewForm();
   },
 
   renderNewForm: function () {
@@ -48,11 +49,11 @@ Bokeh.Views.PhotoShow = Backbone.CompositeView.extend({
   },
 
   editDetails: function(event) {
-    debugger
     event.preventDefault();
     if(this.model.attributes.user_id === Bokeh.currentUser.id){
       if(!this.editDetailsView){
         this.removeSubview(".photo-info", this.detailsView);
+        this.detailsView = null;
         this.renderEditDetails()
       }
     };

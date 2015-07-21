@@ -4,9 +4,17 @@
     </label>
     <br>
     <label>Description (optional)
-      <input type="text" name="photo[description]">
+      <input id="input-photo-description" type="text" name="photo[description]">
     </label>
-
+    <br>
+    <label>Album
+       <select name="photo[album_id]">
+         <option value=0></option>
+       <% albums.each(function (album) { %>
+         <option value="<%= album.id %>"><%= album.escape("title") %></option>
+       <% }) %>
+       </select>
+    </label>
     <br>
     <button class="photo-submit">Add!</button>
   </form>

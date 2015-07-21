@@ -17,6 +17,7 @@ Bokeh.Routers.Router = Backbone.Router.extend({
   },
 
   siteHomePage: function () {
+    this.photos.fetch()
     var homeView = new Bokeh.Views.SiteHomeView({ collection: this.photos });
     this._swapView(homeView);
   },

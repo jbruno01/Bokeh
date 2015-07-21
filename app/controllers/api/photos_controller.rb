@@ -14,7 +14,7 @@ module Api
     end
 
     def index
-      @photos = Photo.where(user_id: params[:user_id])
+      @photos = Photo.all
       render :index
     end
 
