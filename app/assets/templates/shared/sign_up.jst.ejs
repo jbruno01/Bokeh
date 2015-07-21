@@ -1,25 +1,22 @@
-<h2>Sign Up</h2>
+<img src="/20070331-Camp+Bob-120-Edit.jpg" class="splash-page-background"/>
 
-<form>
+<h1 class="splash-page-main-text">Bokeh. The second home for all your photos.</h1>
 
-  <label>
-    Name
-    <input type="text" name="user[name]">
-  </label>
+<h2 class="splash-page-secondary-text">
+  Upload, access, organize, and share your photos from anywhere in the universe.
+</h2>
 
-  <label>
-    Email
-    <input type="email" name="user[email]">
-  </label>
 
-  <br>
+<section class="modal-container" id="signup_modal">
+  <form id="signup_form" class="modal signup content-form">
+    <small id="close_form" class="close_modal">X</small>
+    <header> <h3>Sign Up</h3> </header>
 
-  <label>
-    Password
-    <input type="password" name="user[password]">
-  </label>
+    <input type="text" name="user[name]" placeholder="Name">
+    <input type="text" name="user[email]" placeholder="Email">
+    <input type="password" name="user[password]" placeholder="Password">
 
-  <br>
+    <button class="sign-up">Sign Up</button>
 
-  <button>Sign Up</button>
-</form>
+  </form>
+</section>

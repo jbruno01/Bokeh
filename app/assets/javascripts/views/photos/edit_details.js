@@ -12,7 +12,6 @@ Bokeh.Views.EditPhotoDetails = Backbone.CompositeView.extend({
   submit: function(event) {
     event.preventDefault();
     var attrs = $(".edit-details").serializeJSON().photo;
-    debugger
     this.model.set(attrs);
     this.model.save();
   },

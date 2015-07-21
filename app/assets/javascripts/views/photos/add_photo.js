@@ -8,7 +8,6 @@ Bokeh.Views.AddPhotoView = Backbone.CompositeView.extend({
   },
 
   initialize: function () {
-    debugger
     this.listenTo(this.collection, "sync", this.render)
   },
 
@@ -23,10 +22,12 @@ Bokeh.Views.AddPhotoView = Backbone.CompositeView.extend({
     var newPhoto = new Bokeh.Models.Photo();
     event.preventDefault();
     var file = this.$("#input-photo-image")[0].files[0];
-    var description = this.$("#input-photo-description").val()
+    var description = this.$("#input-photo-description").val();
+    var album = this.$("#input-photo-album").val();
     var formData = new FormData();
     formData.append("photo[image]", file);
-    formData.append("photo[description]", description)
+    formData.append("photo[description]", description);
+    formData.append("photo[album_id]", album);
 
     var that = this;
     newPhoto.saveFormData(formData, {

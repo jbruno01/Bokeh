@@ -9,17 +9,29 @@ Bokeh.Routers.Router = Backbone.Router.extend({
 
   routes: {
     "" : "siteHomePage",
-    "users/new": "",
+    "users/new": "new",
     "users/:id" : "userShow",
     "photos/:id" : "photoShow",
     "users/:id/albums" : "albumsIndex",
-    "users/:id/albums/:id" : "albumShow",
+    "albums/:id" : "albumShow",
     "session/new": "signIn"
   },
 
+  new: function () {
+    if (!this._requireSignedOut()) { return; }
+
+    var user = new Bokeh.Models.User({});
+    var newView = new Bokeh.Views.NewUserForm({ model: user });
+    this._swapView(newView);
+  },
+
   siteHomePage: function () {
-    this.photos.fetch()
-    var homeView = new Bokeh.Views.SiteHomeView({ collection: this.photos });
+    if(Bokeh.currentUser.id === undefined){
+      var homeView = new Bokeh.Views.SplashPage()
+    } else {
+      this.photos.fetch()
+      var homeView = new Bokeh.Views.SiteHomeView({ collection: this.photos });
+    }
     this._swapView(homeView);
   },
 

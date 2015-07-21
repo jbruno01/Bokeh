@@ -3,7 +3,6 @@ Bokeh.Views.AlbumShow = Backbone.CompositeView.extend({
 
   initialize: function () {
     this.renderBanner();
-    this.model.photos().each(this.addPhotoView.bind(this));
     this.listenTo(this.model.photos(), "add", this.addPhotoView);
     this.listenTo(this.model, "sync", this.render);
   },
