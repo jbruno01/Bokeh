@@ -3,6 +3,7 @@ Bokeh.Views.PhotoShow = Backbone.CompositeView.extend({
 
   initialize: function () {
     this.renderNewForm();
+    this.renderDetails()
     this.listenTo(this.model, "sync", this.render);
     this.listenTo(this.model, "change", this.renderDetails)
     // this.listenTo(this.model, "sync", this.addComments);
@@ -14,10 +15,19 @@ Bokeh.Views.PhotoShow = Backbone.CompositeView.extend({
   },
 
   renderDetails: function () {
+    if(this.model.attributes.title === null){
+      debugger
+      this.model.attributes.title = this.model.attributes.image_file_name;
+    };
     if(this.editDetailsView){
       this.removeSubview(".photo-info", this.editDetailsView);
       this.editDetailsView = null;
     };
+    if(this.detailsView){
+      this.removeSubview(".photo-info", this.detailsView);
+      this.detailsView = null;
+    };
+
     this.detailsView = new Bokeh.Views.PhotoDetails({ model: this.model })
     this.addSubview(".photo-info", this.detailsView)
   },

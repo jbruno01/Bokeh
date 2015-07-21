@@ -1,4 +1,4 @@
-json.extract! @photo, :id, :user_id, :album_id, :description, :image_file_name
+json.extract! @photo, :id, :user_id, :album_id, :description, :image_file_name, :title
 json.image_url asset_path(@photo.image.url(:original))
 json.user @photo.user, :name
 
