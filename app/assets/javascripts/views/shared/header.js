@@ -7,7 +7,12 @@ Bokeh.Views.Header = Backbone.CompositeView.extend({
   },
 
   events: {
-    "click #sign-out-link": "signOut"
+    "click #sign-out-link": "signOut",
+  },
+
+  explore: function(event) {
+    event.preventDefault();
+    Backbone.history.navigate("", { trigger: true })
   },
 
   render: function(){

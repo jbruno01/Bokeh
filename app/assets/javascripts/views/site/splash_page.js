@@ -4,7 +4,7 @@ Bokeh.Views.SplashPage = Backbone.CompositeView.extend({
   // every time someone loads the site.
 
   render: function () {
-    var renderedContent = this.template({});
+    var renderedContent = this.template();
     this.$el.html(renderedContent);
     return this;
   }

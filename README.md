@@ -11,9 +11,9 @@ Flickr-clone (real name coming soon) is a clone of Flickr built on Rails and Bac
 
 - [x] Create accounts
 - [x] Create sessions (log in)
-- [ ] Upload photos
-- [ ] Create albums of photos
-- [ ] Leave comments
+- [x] Upload photos
+- [x] Create albums of photos
+- [x] Leave comments
 - [ ] Search for photos or other users
 - [ ] Tag photos and albums
 
