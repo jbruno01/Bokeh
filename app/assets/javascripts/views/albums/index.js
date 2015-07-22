@@ -6,8 +6,7 @@ Bokeh.Views.AlbumsIndex = Backbone.CompositeView.extend({
     this.addAlbums();
     this.listenTo(this.model.albums(), "add", this.addAlbumView);
     // this.listenTo(this.model.photos(), "sync", this.addPhotos);
-    this.listenTo(this.model.albums(), "remove", this.removeAlbumView)
-
+    this.listenTo(this.model.albums(), "remove", this.removeAlbumView);
   },
 
   events: {
@@ -17,9 +16,6 @@ Bokeh.Views.AlbumsIndex = Backbone.CompositeView.extend({
   addAlbumView: function (album) {
     var subview = new Bokeh.Views.AlbumIndexItem({ model: album });
     this.addSubview('.album-index', subview);
-    if(this.newAlbumView){
-      this.removePhotoForm();
-    };
   },
 
   removeAlbumForm: function () {
@@ -44,8 +40,9 @@ Bokeh.Views.AlbumsIndex = Backbone.CompositeView.extend({
 
   newAlbum: function(event) {
     event.preventDefault();
-    $(".new-album").remove();
+    // $(".new-album").remove();
     var newAlbum = new Bokeh.Models.Album();
+    debugger
     this.newAlbumView = new Bokeh.Views.AddAlbumView({ model: newAlbum, collection: this.model.albums() })
     this.addSubview(".add-album-form", this.newAlbumView)
   },

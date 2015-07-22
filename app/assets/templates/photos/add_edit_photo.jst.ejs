@@ -1,0 +1,31 @@
+  <form>
+    <small class="close-form">X</small>
+
+    <% if(photo.isNew()){ %>
+      <label>File
+        <input id="input-photo-image" type="file" name="photo[image]">
+      </label>
+    <% } %>
+
+    <br>
+    <input type="text"
+           name="photo[title]"
+           value="<%= photo.escape("title") %>"
+           placeholder="Title">
+    <br>
+      <input id="input-photo-description"
+             type="text"
+             name="photo[description]"
+             placeholder="Description">
+    <br>
+    <label>Album
+       <select id="input-photo-album" name="photo[album_id]">
+         <option value=0></option>
+       <% albums.each(function (album) { %>
+         <option value="<%= album.id %>"><%= album.escape("title") %></option>
+       <% }) %>
+       </select>
+    </label>
+    <br>
+    <button class="photo-submit">Submit</button>
+  </form>
