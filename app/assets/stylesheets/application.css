@@ -17,7 +17,7 @@
  /* --- RESET --- */
 
 body, nav, a, h1, h2, div, header,
-section
+section, img
   {
   margin: 0;
   padding: 0;
@@ -41,6 +41,7 @@ body {
   color: #000;
   background: #F3F5F6;
   position: relative;
+  min-width: 1075px;
 }
 
 img {
@@ -58,24 +59,29 @@ img {
 
  #main {
   min-width: 900px;
-  width: 95%;
+  max-width: 2000px;
   margin: auto;
 }
 
 #header {
   background: #1F1F20;
+  left: 0;
+  top: 0;
   display: block;
 }
 
+/*Header Start*/
+
 .nav {
-  display: block;
   min-width: 700px;
   width: 85%;
   margin: auto;
+  color: #fff;
+  display: block;
 }
 
-nav a {
-  color: #fff;
+.nav a:hover {
+  color: #BBBBBB;
 }
 
 .header-logo {
@@ -103,6 +109,117 @@ nav a {
   padding: 16px 17px;
 }
 
+/*Splash Page*/
+
+.splash-content {
+  display: block;
+  position: relative;
+}
+
+.splash-content-image {
+  display: block;
+  position: relative;
+}
+
+.splash-content-text {
+  min-width: 1075px;
+  text-align: center;
+  position: fixed;
+  top: 40%;
+  transform: translateY(-60%);
+  left: 50%;
+  transform: translateX(-50%);
+  right: 0;
+  bottom: 0;
+  color: #fff;
+  text-shadow: 1px 1px 2px black;
+}
+
+.splash-content-text h1 {
+  display: block;
+  font-size: 36px;
+}
+
+.splash-content-text h2 {
+  font-size: 18px;
+  padding-top: 20px;
+}
+
+.splash-sign-in-up {
+  display: block;
+  margin: auto;
+  width: 155px;
+  background: #1C9BE9;
+  padding: 15px 25px;
+  margin-top: 30px;
+  color: #fff;
+  border-radius: 3px;
+  font-size: 18px;
+
+}
+
+/*Sign Up Modal*/
+
+.sign-up-container {
+  position: fixed;
+  width: 350px;
+  padding: 30px;
+  border: 1px solid #595959;
+  z-index: 1;
+  top: 35%;
+  transform: translateY(-65%);
+  left: 50%;
+  transform: translateX(-50%);
+  background: #1F1F20;
+}
+
+.sign-in-container {
+  position: fixed;
+  width: 350px;
+  padding: 30px;
+  border: 1px solid #595959;
+  z-index: 1;
+  top: 55px;
+  right: -175px;
+  transform: translateX(-50%);
+  background: #1F1F20;
+}
+
+#sign_in_up_form {
+  position: relative;
+  margin: auto;
+  color: #fff;
+}
+
+#sign_in_up_form h3 {
+  text-align: center;
+  font-size: 22px;
+}
+
+#sign_in_up_form input {
+
+  display: block;
+  margin: 20px auto;
+  width: 230px;
+  padding: 10px;
+  font-size: 20px;
+}
+
+
+
+.close-modal {
+  position: absolute;
+  top: -25px;
+  font-size: 20px;
+  right: 0px;
+}
+
+.close-modal:hover {
+  cursor: pointer;
+}
+
+
+/**/
 .index-tile {
   display: block;
   float: left;

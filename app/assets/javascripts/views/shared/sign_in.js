@@ -6,7 +6,8 @@ Bokeh.Views.SignIn = Backbone.CompositeView.extend({
   },
 
   events: {
-    "submit form": "submit"
+    "submit form": "submit",
+    "click .close-modal": "closeSignInForm",
   },
 
   template: JST["shared/sign_in"],
@@ -16,6 +17,12 @@ Bokeh.Views.SignIn = Backbone.CompositeView.extend({
     this.$el.html(renderedContent);
 
     return this;
+  },
+
+  closeSignInForm: function(event) {
+    event.preventDefault();
+    this.remove();
+    Backbone.history.navigate("", {trigger: true})
   },
 
   submit: function(event){

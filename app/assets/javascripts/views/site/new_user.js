@@ -2,8 +2,8 @@ Bokeh.Views.NewUserForm = Backbone.CompositeView.extend({
   template: JST ["shared/sign_up"],
 
   events: {
-    "click .sign-up" : "submit",
-     "click .close_modal": "closeNewUserForm",
+    "click .splash-sign-up" : "submit",
+     "click .close-modal": "closeNewUserForm",
   },
 
   closeNewUserForm: function(event) {
@@ -20,7 +20,7 @@ Bokeh.Views.NewUserForm = Backbone.CompositeView.extend({
     this.model.save({}, {
       success: function () {
         Bokeh.currentUser.fetch()
-        Backbone.history.navigate("", { trigger: true })
+        Backbone.history.navigate("explore", { trigger: true })
       },
       error: function(){
         alert("Error: make these better");

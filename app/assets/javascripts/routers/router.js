@@ -34,7 +34,6 @@ Bokeh.Routers.Router = Backbone.Router.extend({
 
   splash: function () {
     var homeView = new Bokeh.Views.SplashPage();
-    debugger
     this._swapView(homeView);
   },
 

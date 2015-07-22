@@ -1,23 +1,26 @@
-<img src="/20070331-Camp+Bob-120-Edit.jpg" class="splash-page-background"/>
+<section class="splash-content">
 
-<h1 class="splash-page-main-text">Bokeh. The second home for all your photos.</h1>
+  <img src="/20070331-Camp+Bob-120-Edit.jpg" class="splash-content-image"/>
+  <div class="splash-content-text">
+    <h1 class="splash-page-main-text">Bokeh. A second home for your photos.</h1>
 
-<h2 class="splash-page-secondary-text">
-  Upload, access, organize, and share your photos from anywhere in the universe.
-</h2>
+    <h2 class="splash-page-secondary-text">
+      Upload, access, organize, and share your photos from anywhere in the universe.
+    </h2>
 
-<button class="spash-sign-up">Create an Account</button>
+    <button class="splash-sign-in-up">Create an Account</button>
+  </div>
 
+  <div class="sign-in-container" id="sign_in_up_modal">
+    <form id="sign_in_up_form" class="modal sign-in-up content-form">
+      <small id="close_form" class="close-modal">X</small>
 
-<section class="modal-container" id="login_modal">
-  <form id="login_form" class="modal signin content-form">
-    <small id="close_login_modal" class="close_modal">X</small>
-    <header> <h3>Sign In</h3> </header>
+      <input type="text" name="user[email]" placeholder="Email">
+      <input type="password" name="user[password]" placeholder="Password">
 
-    <input type="text" name="user[email]" placeholder="Email">
-    <input type="password" name="user[password]" placeholder="Password">
+      <button class="splash-sign-in-up">Sign In</button>
 
-    <button>Sign In</button>
+    </form>
+  </div>
 
-  </form>
 </section>

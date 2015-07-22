@@ -1,29 +1,31 @@
-<nav class="nav group">
+<section class="header-group">    
+  <nav class="nav group">
 
-      <a class="header-logo" href="#">bokeh</a>
+        <a class="header-logo" href="#">bokeh</a>
 
-  <div class="nav-links">
+    <div class="nav-links">
 
-    <% if(currentUser.isSignedIn()) { %>
-      <a href="#/users/<%= currentUser.id %>">You</a>
-    <a href="#/users/<%= currentUser.id %>/albums">Albums</a>
-    <% } else { %>
-        <a href="#users/new">Sign Up</a>
-    <% } %>
+      <% if(currentUser.isSignedIn()) { %>
+        <a href="#/users/<%= currentUser.id %>">You</a>
+      <a href="#/users/<%= currentUser.id %>/albums">Albums</a>
+      <% } else { %>
+          <a href="#users/new">Sign Up</a>
+      <% } %>
 
-    <a href="#/explore" class="explore">Explore</a>
-  </div>
+      <a href="#/explore" class="explore">Explore</a>
+    </div>
 
-  <div class="nav-tools">
+    <div class="nav-tools">
 
-    <% if(currentUser.isSignedIn()) { %>
-      <a href="#">Upload</a>
-      <a href="#" id="sign-out-link">Sign Out</a>
-      <a href="#/users/<%= currentUser.id %>"><%= currentUser.escape("name") %></a>
-    <% } else { %>
-        <a href="#session/new">Upload</a>
-        <a href="#session/new">Sign In</a>
-    <% } %>
-  </div>
+      <% if(currentUser.isSignedIn()) { %>
+        <a href="#">Upload</a>
+        <a href="#/explore" id="sign-out-link">Sign Out</a>
+        <a href="#/users/<%= currentUser.id %>"><%= currentUser.escape("name") %></a>
+      <% } else { %>
+          <a href="#session/new">Upload</a>
+          <a href="#session/new">Sign In</a>
+      <% } %>
+    </div>
 
-</nav>
+  </nav>
+</section>

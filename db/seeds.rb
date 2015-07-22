@@ -8,3 +8,5 @@
   a2 = Album.create(title: "Suits", description: "Top Secret", user_id: tony.id)
   a3 = Album.create(title: "Soothing", description: "Quell the Anger", user_id: hulk.id)
   a4 = Album.create(title: "Villians", description: "Shields next targets", user_id: nick.id)
+
+  
