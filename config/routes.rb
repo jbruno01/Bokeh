@@ -10,7 +10,7 @@ Rails.application.routes.draw do
     resources :comments
   end
 
-  get "/auth/google_oauth2/callback", to: "api/sessions#omniauth"
+  get "/auth/:provider/callback", to: "api/sessions#omniauth"
 
 
 
