@@ -8,8 +8,8 @@ Bokeh.Routers.Router = Backbone.Router.extend({
   },
 
   routes: {
-    "" : "siteHomePage",
-    "splash" : "splash",
+    "" : "splash",
+    "explore" : "siteHomePage",
     "users/new": "new",
     "users/:id" : "userShow",
     "photos/:id" : "photoShow",
@@ -27,17 +27,12 @@ Bokeh.Routers.Router = Backbone.Router.extend({
   },
 
   siteHomePage: function () {
-    if(Bokeh.currentUser.id === undefined){
-      Backbone.history.navigate("#/splash", {trigger: true})
-    } else {
-      this.photos.fetch()
-      var homeView = new Bokeh.Views.SiteHomeView({ collection: this.photos });
-    }
+    this.photos.fetch()
+    var homeView = new Bokeh.Views.SiteHomeView({ collection: this.photos });
     this._swapView(homeView);
   },
 
   splash: function () {
-    Bokeh.currentUser = "temp";
     var homeView = new Bokeh.Views.SplashPage();
     debugger
     this._swapView(homeView);
