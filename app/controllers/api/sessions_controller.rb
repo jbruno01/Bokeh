@@ -33,7 +33,7 @@ class Api::SessionsController < ApplicationController
     render json: {}
   end
 
-  private
+  protected
 
   def auth_hash
     request.env['omniauth.auth']
