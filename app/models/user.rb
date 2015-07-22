@@ -50,8 +50,8 @@ class User < ActiveRecord::Base
       user = User.create!(
             provider: auth_hash[:provider],
             uid: auth_hash[:uid],
-            name: auth_hash[:info][:name]
-            email: auth_hash[:info][:email]
+            name: auth_hash[:info][:name],
+            email: auth_hash[:info][:email],
             password: SecureRandom::urlsafe_base64)
     end
 
