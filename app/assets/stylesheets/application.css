@@ -33,6 +33,10 @@ section, img
 
 }
 
+ul {
+  list-style: none;
+}
+
 body {
   box-sizing: content-box;
   font-family: sans-serif;
@@ -80,23 +84,48 @@ img {
   display: block;
 }
 
+.nav a {
+  display: block;
+}
+
 .nav a:hover {
   color: #BBBBBB;
 }
 
 .header-logo {
-  display: block;
   float: left;
   font-size: 25px;
   font-weight: bold;
   padding: 10px 15px;
 }
 
+.nav-links {
+  float: left;
+}
+
+
 .nav-links a {
-  margin: auto;
   display: block;
   float: left;
   padding: 16px 17px;
+}
+
+.nav-links > li {
+  display: block;
+  position: relative;
+}
+
+.user-options {
+  display: none;
+  position: absolute;
+  left: -1px;
+  font-size: 14px;
+  white-space: nowrap;
+  background: #fff;
+}
+
+.nav-links li:hover .user-options {
+  display: block;
 }
 
 .nav-tools {
