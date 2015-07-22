@@ -72,7 +72,6 @@ Bokeh.Models.CurrentUser = Bokeh.Models.User.extend({
       type: "DELETE",
       dataType: "json",
       success: function(data){
-        console.log("user signed out");
         model.clear();
         options.success && options.success();
       }
@@ -82,7 +81,6 @@ Bokeh.Models.CurrentUser = Bokeh.Models.User.extend({
   fireSessionEvent: function(){
     if(this.isSignedIn()){
       this.trigger("signIn");
-      console.log("currentUser is signed in!", this);
     } else {
       this.trigger("signOut");
       Backbone.history.navigate("", { trigger: true });
