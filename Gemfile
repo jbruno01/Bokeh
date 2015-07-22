@@ -15,6 +15,7 @@ gem 'backbone-on-rails'
 gem 'figaro'
 gem 'paperclip'
 gem 'aws-sdk', '~> 1.6'
+gem "omniauth-google-oauth2"
 
 # Use Unicorn as the app server
 # gem 'unicorn'
