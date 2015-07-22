@@ -22,13 +22,16 @@ module Api
       end
     end
 
-
+    def update
+      @comment = Comment.find(params[:id])
+      @comment.update!(comment_params)
+      render :show
+    end
 
     private
 
     def comment_params
-      params.require(:comment).permit(:photo_id, :content)
-
+      params.require(:comment).permit(:photo_id, :content, :user_id)
     end
 
   end

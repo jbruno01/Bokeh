@@ -4,6 +4,6 @@ json.user @photo.user, :name
 
 
 json.comments @photo.comments do |comment|
-  json.extract! comment, :user_id, :content, :updated_at, :created_at
+  json.extract! comment, :id, :user_id, :content, :updated_at, :created_at, :photo_id
   json.user comment.user, :name
 end

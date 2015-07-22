@@ -6,11 +6,24 @@ Bokeh.Views.CommentIndexItem = Backbone.CompositeView.extend({
   },
 
   events: {
-    "dblclick" : "editView"
+    "dblclick" : "editView",
+    "blur .new-comment-area" : "submit"
+  },
+
+  submit: function(event) {
+    event.preventDefault();
+    var content = $("textarea").val();
+    this.model.set("content", content);
+    this.model.save();
   },
 
   editView: function(event) {
     event.preventDefault();
+    var $textarea = $("<textarea></textarea>")
+    $textarea.addClass("new-comment-area");
+    $textarea.val(this.model.get("content"));
+    $textarea.attr("cols", 40)
+    this.$(".comment-content").html($textarea);
   },
 
   render: function () {

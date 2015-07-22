@@ -1,13 +1,9 @@
 <h4><%= Bokeh.currentUser.escape("name") %></h4>
 
 <% if(Bokeh.currentUser.isSignedIn()) { %>
-
   <textarea class="new-comment-area" name="comment[content]" rows="5" cols="40" placeholder="Add a comment"></textarea>
-
 <% } else { %>
-
   <textarea class="new-comment-area" rows="5" cols="40" placeholder="Sign In to comment"></textarea>
-
 <% } %>
 
 <% if(Bokeh.currentUser.isSignedIn()) { %>
