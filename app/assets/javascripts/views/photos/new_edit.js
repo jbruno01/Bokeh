@@ -24,7 +24,6 @@ Bokeh.Views.AddEditPhotoView = Backbone.CompositeView.extend({
   },
 
   submit: function(event) {
-    debugger
     this.remove()
     event.preventDefault();
     var description = this.$("#input-photo-description").val();
