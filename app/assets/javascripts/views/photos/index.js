@@ -24,11 +24,7 @@ Bokeh.Views.IndexPhotoView = Backbone.CompositeView.extend({
 
   removePhotoForm: function () {
     this.removeSubview(".add-photo-form", this.newPhotoView);
-    var $button = $("<button></button>");
-    $button.html("Delete");
-    $button.addClass("new-photo");
-
-    $(".add-photo-form").append($button);
+    this.newPhotoView = null;
   },
 
   addPhotos: function() {
@@ -43,9 +39,12 @@ Bokeh.Views.IndexPhotoView = Backbone.CompositeView.extend({
 
   newPhoto: function(event) {
     event.preventDefault();
-    var newPhoto = new Bokeh.Models.Photo();
-    this.newPhotoView = new Bokeh.Views.AddEditPhotoView({ model: newPhoto, collection: this.model.photos() })
-    this.addSubview(".add-photo-form", this.newPhotoView)
+    if(this.newPhotoView){
+      this.removePhotoForm();
+    }
+      var newPhoto = new Bokeh.Models.Photo();
+      this.newPhotoView = new Bokeh.Views.AddEditPhotoView({ model: newPhoto, collection: this.model.photos() })
+      this.addSubview(".add-photo-form", this.newPhotoView)
   },
 
   renderBanner: function () {
