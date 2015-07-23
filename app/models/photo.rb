@@ -15,7 +15,12 @@
 class Photo < ActiveRecord::Base
   validates :user_id, presence: true
 
-  has_attached_file :image, default_url: "missing.png", styles: {thumb: "100x100#", medium: "400x400>"}
+  has_attached_file :image, default_url: "missing.png", styles: {
+                            avatar: "50x50#",
+                            thumb: "100x100#",
+                            small: "200x200>",
+                            medium: "400x400>"
+                          }
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
 
   belongs_to :user
