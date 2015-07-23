@@ -9,11 +9,12 @@ Bokeh.Views.AddEditPhotoView = Backbone.CompositeView.extend({
   },
 
   initialize: function () {
-    this.listenTo(this.collection, "sync", this.render)
+    this.photos = Bokeh.currentUser.photos();
+    this.listenTo(Bokeh.currentUser.albums(), "sync", this.render)
   },
 
   render: function(){
-    var renderedContent = this.template({ photo: this.model, albums: this.collection });
+    var renderedContent = this.template({ photo: this.model, albums: Bokeh.currentUser.albums() });
     this.$el.html(renderedContent);
     return this;
   },
@@ -35,10 +36,11 @@ Bokeh.Views.AddEditPhotoView = Backbone.CompositeView.extend({
     };
     formData.append("photo[description]", description);
     formData.append("photo[album_id]", album);
-
     var that = this;
     this.model.saveFormData(formData, {
       success: function(){
+        console.log("saved");
+        that.collection.add(that.model, { merge: true })
       }
     });
   }
