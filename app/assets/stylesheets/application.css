@@ -16,8 +16,8 @@
 
  /* --- RESET --- */
 
-body, nav, a, h1, h2, div, header,
-section, img
+body, nav, a, h1, h2, ul, li,
+header, section, img
   {
   margin: 0;
   padding: 0;
@@ -68,27 +68,21 @@ img {
 }
 
 #header {
-  background: #1F1F20;
-  left: 0;
-  top: 0;
-  display: block;
+  background: #161617;
+  position: relative;
+  color: #fff;
+  z-index: 1;
 }
 
 /*Header Start*/
 
-.nav {
+.header-nav {
   min-width: 700px;
   width: 85%;
   margin: auto;
-  color: #fff;
-  display: block;
 }
 
-.nav a {
-  display: block;
-}
-
-.nav a:hover {
+.header-nav a:hover {
   color: #BBBBBB;
 }
 
@@ -103,36 +97,59 @@ img {
   float: left;
 }
 
+#header a {
+  display: block;
+}
 
 .nav-links a {
-  display: block;
-  float: left;
   padding: 16px 17px;
 }
 
-.nav-links > li {
+.nav-links li {
   display: block;
+  float: left;
+}
+
+.nav-links > li {
   position: relative;
 }
 
 .user-options {
   display: none;
   position: absolute;
-  left: -1px;
+  left: 15px;
+  top: 45px;
   font-size: 14px;
+  border: 1px solid #A2A2A2;
+  border-radius: 2px;
   white-space: nowrap;
   background: #fff;
+  color: #000;
+  overflow: hidden;
 }
 
-.nav-links li:hover .user-options {
+li:hover .user-options {
   display: block;
+}
+
+.user-options a {
+  padding: 0;
+  padding: 5px 20px;
+}
+
+.user-options > li:hover {
+  background: #E6EAEC;
+}
+
+.user-options a:hover {
+  color: #000;
 }
 
 .nav-tools {
   float: right;
 }
 
-.nav-tools a {
+.nav-tools li {
   display: block;
   float: left;
   padding: 16px 17px;
@@ -191,7 +208,7 @@ img {
 
 .sign-up-container {
   position: fixed;
-  width: 350px;
+  width: 300px;
   padding: 30px;
   border: 1px solid #595959;
   z-index: 1;
@@ -204,8 +221,8 @@ img {
 
 .sign-in-container {
   position: fixed;
-  width: 350px;
-  padding: 30px;
+  width: 275px;
+  padding: 40px;
   border: 1px solid #595959;
   z-index: 1;
   top: 55px;
@@ -221,34 +238,48 @@ img {
 }
 
 #sign_in_up_form h3 {
-  text-align: center;
-  font-size: 22px;
+
 }
 
 #sign_in_up_form input {
 
   display: block;
   margin: 20px auto;
-  width: 230px;
-  padding: 10px;
-  font-size: 20px;
+  width: 250px;
+  padding: 5px;
+  font-size: 16px;
 }
 
+#sign_in_up_form .guest-user {
+  margin: 10px auto;
 
+  display: block;
+  padding: 5px;
+}
+
+.sign-in-container a {
+  display: block;
+  margin: auto;
+  text-align: center;
+}
 
 .close-modal {
   position: absolute;
-  top: -25px;
+  top: -45px;
   font-size: 20px;
   right: 0px;
+  padding: 3px 5px;
 }
 
 .close-modal:hover {
   cursor: pointer;
+  background: #1C9BE9;
 }
 
-
 /**/
+
+
+
 .index-tile {
   display: block;
   float: left;
@@ -257,12 +288,39 @@ img {
   margin: 10px;
 }
 
+/*Photo Show Page*/
+
 .photo-show {
+  height: 100%;
+}
+
+.image-window {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  background: #212124;
+}
+
+.main-photo {
+  margin: auto;
+  width: 80%;
+  border: 2px solid green;
+}
+
+.photo-info {
+  padding: 20px;
   width: 80%;
   margin: auto;
-  background: #ccc;
-  border: 2px solid green;
-  margin: 40px auto;
+}
+
+.photo-info h1 {
+  font-size: 22px;
+  padding: 10px;
+}
+
+.photo-info h2 {
+  font-size: 18px;
+  padding: 10px;
 }
 
 .comment-index {

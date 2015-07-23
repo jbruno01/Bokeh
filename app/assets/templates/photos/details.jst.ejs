@@ -1,7 +1,11 @@
-<label class="photo-title">Title:
-  <%= photo.escape("title") %>
-</label><br>
+<h1 class="photo-user">
+  <%= photo.user().escape("name") %>
+</h1>
 
-<label class="photo-description">Description:
+<h2 class="photo-title">
+  <%= photo.escape("title") %>
+</h2>
+
+<p class="photo-description">
   <%= photo.escape("description") %>
-</label>
+</p>

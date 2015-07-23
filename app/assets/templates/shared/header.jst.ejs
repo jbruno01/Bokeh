@@ -1,9 +1,11 @@
-<section class="header-group">
-  <nav class="nav group">
 
-        <a class="header-logo" href="#">bokeh</a>
+  <nav class="header-nav group">
 
-    <div class="nav-links">
+    <h1 class="header-logo">
+      <a href="#">bokeh</a>
+    </h1>
+
+    <ul class="nav-links group">
 
       <% if(currentUser.isSignedIn()) { %>
         <li>
@@ -17,20 +19,19 @@
         <li><a href="#users/new">Sign Up</a></li>
       <% } %>
 
-      <a href="#/explore" class="explore">Explore</a>
-    </div>
+      <li><a href="#/explore" class="explore">Explore</a></li>
+    </ul>
 
-    <div class="nav-tools">
+    <ul class="nav-tools group">
 
       <% if(currentUser.isSignedIn()) { %>
-        <a href="#">Upload</a>
-        <a href="#/explore" id="sign-out-link">Sign Out</a>
-        <a href="#/users/<%= currentUser.id %>"><%= currentUser.escape("name") %></a>
+        <li><a href="#">Upload</a></li>
+        <li><a href="#/explore" id="sign-out-link">Sign Out</a></li>
+        <li><a href="#/users/<%= currentUser.id %>"><%= currentUser.escape("name") %></a></li>
       <% } else { %>
-          <a href="#session/new">Upload</a>
-          <a href="#session/new">Sign In</a>
+        <li><a href="#session/new">Upload</a></li>
+        <li><a href="#session/new">Sign In</a></li>
       <% } %>
-    </div>
+    </ul>
 
   </nav>
-</section>
