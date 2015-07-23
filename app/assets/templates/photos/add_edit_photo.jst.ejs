@@ -16,6 +16,7 @@
       <input id="input-photo-description"
              type="text"
              name="photo[description]"
+             value="<%= photo.escape("description") %>"
              placeholder="Description">
     <br>
     <label>Album
@@ -26,6 +27,13 @@
        <% }) %>
        </select>
     </label>
-    <br>
+    <% if(!photo.isNew()) { %>
+      <label>Use as Avatar
+        <input class="avatar-checkbox" type="checkbox">
+      </label>
+      <label>Use as Banner
+        <input class="banner-checkbox" type="checkbox">
+      </label>
+    <% } %>
     <button class="photo-submit">Submit</button>
   </form>

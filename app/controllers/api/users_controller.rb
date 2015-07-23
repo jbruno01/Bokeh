@@ -22,10 +22,16 @@ class Api::UsersController < ApplicationController
     render :show
   end
 
+  def update
+    @user = User.find(params[:id])
+    @user.update!(user_params)
+    render :show
+  end
+
   private
 
   def user_params
-    params.require(:user).permit(:email, :password, :name)
+    params.require(:user).permit(:email, :password, :name, :avatar_url, :banner_url)
   end
 
 end

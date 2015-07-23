@@ -16,6 +16,8 @@ gem 'figaro'
 gem 'paperclip'
 gem 'aws-sdk', '~> 1.6'
 gem "omniauth-google-oauth2"
+gem "pg_search"
+gem "kaminari"
 
 # Use Unicorn as the app server
 # gem 'unicorn'

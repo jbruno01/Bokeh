@@ -340,3 +340,43 @@ li:hover .user-options {
   border:  2px solid red;
   padding: 20px 0;
 }
+
+/*Banners*/
+
+.banner-container {
+  height: 250px;
+  overflow: hidden;
+  position: relative;
+}
+
+.banner-image {
+  position: absolute;
+  display: block;
+  width: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+
+.banner-info {
+  z-index: 1;
+  position: absolute;
+  bottom: 25px;
+  left: 10%;
+  width: 80%;
+}
+
+.avatar-image {
+  float: left;
+  /*position: absolute;*/
+  width: 100px;
+  /*height: 100px;
+  bottom: 25px;
+  left: 10%;*/
+}
+
+/*.banner-user-details {
+  position: absolute;
+  bottom: 25px;
+  left: 18%;
+}*/

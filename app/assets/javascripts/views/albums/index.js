@@ -42,13 +42,12 @@ Bokeh.Views.AlbumsIndex = Backbone.CompositeView.extend({
     event.preventDefault();
     // $(".new-album").remove();
     var newAlbum = new Bokeh.Models.Album();
-    debugger
     this.newAlbumView = new Bokeh.Views.AddAlbumView({ model: newAlbum, collection: this.model.albums() })
     this.addSubview(".add-album-form", this.newAlbumView)
   },
 
   renderBanner: function () {
-    var bannerView = new Bokeh.Views.Banner({ model: this.model })
+    var bannerView = new Bokeh.Views.UserBanner({ model: this.model })
     this.addSubview(".banner-view", bannerView);
   },
 

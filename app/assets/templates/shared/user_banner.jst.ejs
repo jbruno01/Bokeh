@@ -1,0 +1,21 @@
+<section class="banner-container">
+
+  <img class="banner-image" src="<%= user.escape("banner_url") %>"/>
+
+  <nav class="banner-info group">
+
+    <img class="avatar-image" src="<%= user.escape("avatar_url") %>"/>
+
+    <ul class="banner-user-details">
+      <li><h1><%= user.escape("name") %></h1></li>
+      <ul>
+        <li class="user-email"><%= user.escape("email") %></li>
+        <nav class="num-photos-and-joindate">
+          <h1><%= user.photos().length %> Photos</h1>
+          <h2><%= user.escape("created_at").slice(0,4) %></h2>
+        </nav>
+      </ul>
+    </ul>
+
+  </nav>
+</section>

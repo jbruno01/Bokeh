@@ -1,0 +1,14 @@
+<section class="banner-container">
+
+  <img class="banner-image" src="<%= album.escape("banner_url") %>"/>
+
+  <nav class="banner-info group">
+
+    <ul class="banner-album-details">
+      <li><h1><%= album.escape("title") %></h1></li>
+      <li><h2><%= album.escape("description") %></h2></li>
+      <li><h3><%= album.photos().length %> Photos</h3></li>
+    </ul>
+
+  </nav>
+</section>

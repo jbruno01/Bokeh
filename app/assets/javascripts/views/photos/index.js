@@ -2,7 +2,7 @@ Bokeh.Views.IndexPhotoView = Backbone.CompositeView.extend({
   template: JST["photos/index"],
 
   initialize: function(){
-    this.renderBanner();
+    this.renderBanner({ model: this.model });
     this.addPhotos();
     this.listenTo(this.model.photos(), "add", this.addPhotoView);
     // this.listenTo(this.model.photos(), "sync", this.addPhotos);
@@ -48,7 +48,7 @@ Bokeh.Views.IndexPhotoView = Backbone.CompositeView.extend({
   },
 
   renderBanner: function () {
-    var bannerView = new Bokeh.Views.Banner({ model: this.model, collection: this.model.photos() })
+    var bannerView = new Bokeh.Views.UserBanner({ model: this.model, collection: this.model.photos() })
     this.addSubview(".banner-view", bannerView);
   },
 

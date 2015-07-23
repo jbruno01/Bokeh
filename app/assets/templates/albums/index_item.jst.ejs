@@ -1,7 +1,11 @@
 <div class="album-tile group">
 
   <a href="#/albums/<%= album.id %>">
-    <%= album.escape("title") %>
+    <% if(album.photos().length === 0){ %>
+      <img src="/default_banner.jpg"/>
+    <% } else { %>
+      <img src="<%= album.photos().first().escape("medium_url") %>"/>
+    <% } %>
   </a>
   <button class="album-delete" data-id="<%= album.id %>">Delete</button>
 

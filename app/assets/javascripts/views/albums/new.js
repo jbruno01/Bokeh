@@ -16,7 +16,6 @@ Bokeh.Views.AddAlbumView = Backbone.CompositeView.extend({
     var attrs = $("form").serializeJSON();
     this.model.set(attrs);
     var that = this;
-    debugger
     this.model.save({}, {
       success: function () {
         that.collection.add(that.model)

@@ -13,7 +13,7 @@ Bokeh.Views.AlbumShow = Backbone.CompositeView.extend({
   },
 
   renderBanner: function () {
-    var bannerView = new Bokeh.Views.Banner({ model: this.model })
+    var bannerView = new Bokeh.Views.AlbumBanner({ model: this.model })
     this.addSubview(".banner-view", bannerView);
   },
 

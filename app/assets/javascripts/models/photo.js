@@ -9,7 +9,7 @@ Bokeh.Models.Photo = Backbone.Model.extend({
 
    user: function () {
      if(!this._user){
-       this._user = new Bokeh.Models.User( [], { comment: this })
+       this._user = new Bokeh.Models.User( [], { photo: this })
      }
 
      return this._user
@@ -49,7 +49,7 @@ Bokeh.Models.Photo = Backbone.Model.extend({
       this.comments().set(response.comments, { parse: true });
       delete response.comments;
     };
-
+    
     if(response.user){
       this.user().set(response.user, { parse: true });
       delete response.user;

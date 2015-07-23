@@ -13,11 +13,12 @@
 #
 
 class Photo < ActiveRecord::Base
+  # include PgSearch
+  # multisearchable against: :title
   validates :user_id, presence: true
 
   has_attached_file :image, default_url: "missing.png", styles: {
-                            avatar: "50x50#",
-                            thumb: "100x100#",
+                            avatar: "100x100#",
                             small: "200x200>",
                             medium: "400x400>"
                           }

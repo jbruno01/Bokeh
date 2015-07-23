@@ -16,7 +16,6 @@ Bokeh.Views.NewUserForm = Backbone.CompositeView.extend({
     event.preventDefault();
     var formData = $("#signup_form").serializeJSON();
     this.model.set(formData);
-    debugger
     this.model.save({}, {
       success: function () {
         Bokeh.currentUser.fetch()
