@@ -14,7 +14,7 @@ module Api
     end
 
     def index
-      @photos = Photo.all.slice(-2,2)
+      @photos = Photo.all.slice(-5,5)
       render :index
     end
 
