@@ -1,7 +1,7 @@
 Bokeh.Views.Search = Backbone.CompositeView.extend({
 
 	initialize: function () {
-		this.bindScroll(); // for infinite scroll
+		// this.bindScroll(); // for infinite scroll
 		this.searchResults = new Bokeh.Collections.SearchResults();
 		this.searchResults.pageNum = 1;
 		this.listenTo(this.searchResults, "sync", this.render);
@@ -10,7 +10,7 @@ Bokeh.Views.Search = Backbone.CompositeView.extend({
 	events: {
 		"change .query": "search",
 		"click .next-page": "nextPage",
-		"click .prev-page": "prevPage" // not implemented, but you can figure it out
+		"click .prev-page": "prevPage"
 	},
 
 	template: JST["site/search"],
@@ -19,6 +19,7 @@ Bokeh.Views.Search = Backbone.CompositeView.extend({
 		var content = this.template({
 			results: this.searchResults
 		});
+		console.log(this.searchResults);
 		this.$el.html(content);
 		if(Bokeh.query){
 			this.$(".query").val(Bokeh.query);
@@ -30,9 +31,7 @@ Bokeh.Views.Search = Backbone.CompositeView.extend({
 	},
 
 	search: function (event) {
-		if(event){
-			event.preventDefault();
-		}
+		event.preventDefault();
 		this.searchResults.pageNum = 1;
 		this.searchResults.query = this.$(".query").val();
 
@@ -89,21 +88,21 @@ Bokeh.Views.Search = Backbone.CompositeView.extend({
 	// `add` instead of `sync`. The callback to the `add` gets passed the
 	// model that was just added, so at that point you can instantiate a
 	// subview and append it to the list.
-	nextPageInfiniteScroll: function () {
-		if (this.requestingNextPage) return;
-
-		this.requestingNextPage = true;
-		this.searchResults.fetch({
-			remove: false,
-			data: {
-				query: this.searchResults.query,
-				page: this.searchResults.pageNum + 1
-			},
-			success: function () {
-				this.requestingNextPage = false;
-				this.searchResults.pageNum++;
-			}.bind(this)
-		});
-	}
+	// nextPageInfiniteScroll: function () {
+	// 	if (this.requestingNextPage) return;
+	//
+	// 	this.requestingNextPage = true;
+	// 	this.searchResults.fetch({
+	// 		remove: false,
+	// 		data: {
+	// 			query: this.searchResults.query,
+	// 			page: this.searchResults.pageNum + 1
+	// 		},
+	// 		success: function () {
+	// 			this.requestingNextPage = false;
+	// 			this.searchResults.pageNum++;
+	// 		}.bind(this)
+	// 	});
+	// }
 
 });

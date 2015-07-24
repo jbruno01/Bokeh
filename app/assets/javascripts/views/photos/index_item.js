@@ -13,7 +13,7 @@ Bokeh.Views.PhotoIndexItem = Backbone.CompositeView.extend({
   editPhoto: function(event) {
     event.preventDefault();
     this.editView = new Bokeh.Views.AddEditPhotoView({ model: this.model, collection: this.collection })
-    this.addSubview(".photo-tile", this.editView)
+    this.addSubview(".photo-tile-section", this.editView)
   },
 
   deletePhoto: function (event) {

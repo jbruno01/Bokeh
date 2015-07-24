@@ -1,26 +1,24 @@
-  <form>
-    <small class="close-form">X</small>
+  <form class="add-edit-photo">
+    <small id="close-form">X</small>
     <br>
     <% if(photo.isNew()){ %>
-      <label>File
         <input id="input-photo-image" type="file" name="photo[image]">
-      </label>
     <% } %>
 
-    <br>
+
     <input id="input-photo-title"
            type="text"
            name="photo[title]"
            value="<%= photo.escape("title") %>"
            placeholder="Title">
-    <br>
-      <input id="input-photo-description"
-             type="text"
-             name="photo[description]"
-             value="<%= photo.escape("description") %>"
-             placeholder="Description">
-    <br>
-    <label>Album
+
+    <input id="input-photo-description"
+           type="text"
+           name="photo[description]"
+           value="<%= photo.escape("description") %>"
+           placeholder="Description">
+
+    <label class="input-photo-album">Album
        <select id="input-photo-album" name="photo[album_id]">
          <option value=0></option>
        <% albums.each(function (album) { %>

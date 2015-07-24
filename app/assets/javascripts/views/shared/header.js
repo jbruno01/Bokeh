@@ -14,6 +14,7 @@ Bokeh.Views.Header = Backbone.CompositeView.extend({
   search: function (event) {
     event.preventDefault();
     Bokeh.query = $(".search-input").val();
+    $(".search-input").val("");
     Backbone.history.navigate("#/search", {trigger: true})
   },
 

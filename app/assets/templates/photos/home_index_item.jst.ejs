@@ -1,0 +1,18 @@
+<div class="photo-tile group">
+
+  <a class="photo-image"href="#/photos/<%= photo.id %>">
+    <img class="home-image" src="<%= photo.escape("medium_url") %>"/>
+  </a>
+
+  <section >
+    <a class="header-avatar" href="#/users/<%= photo.user_id %>">
+      <img src="<%= photo.user().attributes.avatar_url %>"/>
+    </a>
+
+    <ul class="home-index-text group">
+        <a class="user-info" href="#/users/<%= photo.user_id %>"><%= photo.user().attributes.name%></a>
+        <a href="#/photos/<%= photo.id %>"><%= photo.escape("title")%></a>
+    </ul>
+  </section>
+
+</div>

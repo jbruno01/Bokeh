@@ -42,9 +42,9 @@ Bokeh.Views.IndexPhotoView = Backbone.CompositeView.extend({
     if(this.newPhotoView){
       this.removePhotoForm();
     }
-      var newPhoto = new Bokeh.Models.Photo();
-      this.newPhotoView = new Bokeh.Views.AddEditPhotoView({ model: newPhoto, collection: this.model.photos() })
-      this.addSubview(".add-photo-form", this.newPhotoView)
+    var newPhoto = new Bokeh.Models.Photo();
+    this.newPhotoView = new Bokeh.Views.AddEditPhotoView({ model: newPhoto, collection: this.model.photos() })
+    this.addSubview(".add-photo-form", this.newPhotoView)
   },
 
   renderBanner: function () {
