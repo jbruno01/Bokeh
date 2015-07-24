@@ -2,7 +2,7 @@ Bokeh.Views.AlbumIndexItem = Backbone.CompositeView.extend({
   template: JST["albums/index_item"],
 
   initialize: function () {
-    this.listenTo(this.model, "sync", this.render)
+    this.listenTo(this.model.photos(), "sync", this.render)
   },
 
   events : {

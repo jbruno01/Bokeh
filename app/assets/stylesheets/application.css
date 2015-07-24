@@ -155,6 +155,20 @@ li:hover .user-options {
   padding: 16px 17px;
 }
 
+.nav-tools form {
+  float: left;
+  padding: 13px 0;
+}
+
+.nav-tools form:focus {
+  background: #fff;
+}
+
+
+.nav-tools input, button {
+  float: left;
+}
+
 .nav-tools .header-avatar {
   width: 30px;
   height: auto;
@@ -202,14 +216,13 @@ li:hover .user-options {
 .splash-sign-in-up {
   display: block;
   margin: auto;
-  width: 155px;
+  width: 150px;
   background: #1C9BE9;
   padding: 15px 25px;
   margin-top: 30px;
   color: #fff;
   border-radius: 3px;
   font-size: 18px;
-
 }
 
 /*Sign Up Modal*/
@@ -232,7 +245,6 @@ li:hover .user-options {
   width: 275px;
   padding: 40px;
   border: 1px solid #595959;
-  z-index: 1;
   top: 55px;
   right: -175px;
   transform: translateX(-50%);

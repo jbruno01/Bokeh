@@ -2,13 +2,18 @@ Bokeh.Views.SiteHomeView = Backbone.CompositeView.extend({
   template: JST["site/home"],
 
   initialize: function () {
-    this.listenTo(this.collection, "sync", this.render)
+    this.addPhotos()
+    this.listenTo(this.collection, "add", this.addPhotoView)
+  },
+
+  addPhotoView: function (photo) {
+    var subView = new Bokeh.Views.PhotoIndexItem({ model: photo });
+    this.addSubview(".home-photo-index", subView)
   },
 
   addPhotos: function() {
-    this.collection.forEach(function (pic) {
-      var subView = new Bokeh.Views.PhotoIndexItem({ model: pic });
-      this.addSubview(".home-photo-index", subView)
+    this.collection.forEach(function (photo) {
+      this.addPhotoView(photo)
     }.bind(this))
   },
 

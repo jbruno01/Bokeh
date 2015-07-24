@@ -26,6 +26,10 @@
 
       <% if(currentUser.isSignedIn()) { %>
         <li><a href="#">Upload</a></li>
+        <form class="search-form group">
+          <button class="search-submit" type="submit"><img src="/mag_glass.png"/></button>
+          <input class="search-input" type="text"></input>
+        </form>
         <li><a href="#/explore" id="sign-out-link">Sign Out</a></li>
         <li class="header-avatar">
           <a href="#/users/<%= currentUser.id %>">
@@ -34,6 +38,10 @@
         </li>
       <% } else { %>
         <li><a href="#session/new">Upload</a></li>
+        <form class="search-form group">
+          <button class="search-submit" type="submit"><img src="/mag_glass.png"/></button>
+          <input class="search-input" type="text"></input>
+        </form>
         <li><a href="#session/new">Sign In</a></li>
       <% } %>
     </ul>

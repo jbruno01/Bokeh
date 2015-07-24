@@ -27,7 +27,8 @@ Bokeh.Views.AddEditPhotoView = Backbone.CompositeView.extend({
   submit: function(event) {
     debugger
     event.preventDefault();
-    this.remove()
+    this.remove();
+    var title = this.$("#input-photo-title");
     var description = this.$("#input-photo-description").val();
     var album = this.$("#input-photo-album").val();
     var formData = new FormData();
@@ -35,12 +36,19 @@ Bokeh.Views.AddEditPhotoView = Backbone.CompositeView.extend({
       var file = this.$("#input-photo-image")[0].files[0];
       formData.append("photo[image]", file);
     };
+    var avatar = this.$(".avatar-checkbox").is(":checked")
+    var banner = this.$(".banner-checkbox").is(":checked")
+    var user = Bokeh.Collections.users.get(this.model.attributes.user_id).bind(this)
     var that = this;
-    if(this.$(".avatar-checkbox").is(":checked")){
-      var user = Bokeh.Collections.users.get(this.model.attributes.user_id).bind(this)
+    if(avatar){
       user.attributes.avatar_url = this.model.attributes.avatar_url;
-      user.save();
-    }
+    };
+    if(banner){
+      user.attributes.banner_url = this.model.attributes.original_url;
+    };
+    if(avatar || banner){
+      user.save()
+    };
     formData.append("photo[description]", description);
     formData.append("photo[album_id]", album);
     this.model.saveFormData(formData, {

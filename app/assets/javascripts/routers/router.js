@@ -15,7 +15,14 @@ Bokeh.Routers.Router = Backbone.Router.extend({
     "photos/:id" : "photoShow",
     "users/:id/albums" : "albumsIndex",
     "albums/:id" : "albumShow",
-    "session/new": "signIn"
+    "session/new": "signIn",
+    "search" : "search"
+  },
+
+  search: function () {
+    var searchView = new Bokeh.Views.Search();
+
+    this._swapView(searchView);
   },
 
   new: function () {
