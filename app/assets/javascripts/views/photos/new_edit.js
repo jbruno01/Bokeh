@@ -27,7 +27,7 @@ Bokeh.Views.AddEditPhotoView = Backbone.CompositeView.extend({
   submit: function(event) {
     event.preventDefault();
     this.remove();
-    var title = this.$("#input-photo-title");
+    var title = this.$("#input-photo-title").val();
     var description = this.$("#input-photo-description").val();
     var album = this.$("#input-photo-album").val();
     var formData = new FormData();

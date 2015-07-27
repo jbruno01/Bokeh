@@ -52,7 +52,7 @@ Bokeh.Views.SignIn = Backbone.CompositeView.extend({
     if(this.callback) {
       this.callback();
     } else {
-      Backbone.history.navigate("explore", { trigger: true });
+      Backbone.history.navigate("#/explore", { trigger: true });
     }
   }
 

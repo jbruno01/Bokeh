@@ -18,7 +18,7 @@
 		<article>
 			<% if (result instanceof Bokeh.Models.User) { %>
 
-				<a href="#/user/<%= result.escape("real_id") %>"><%= result.escape("name") %></a>
+				<a href="#/users/<%= result.escape("real_id") %>"><%= result.escape("name") %></a>
 
 			<% } else { %>
 

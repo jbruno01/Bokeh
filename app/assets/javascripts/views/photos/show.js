@@ -3,7 +3,7 @@ Bokeh.Views.PhotoShow = Backbone.CompositeView.extend({
 
   initialize: function () {
     this.renderNewForm();
-    this.renderDetails()
+    this.renderDetails();
     this.listenTo(this.model, "sync", this.render);
     this.listenTo(this.model, "change", this.renderDetails)
     // this.listenTo(this.model, "sync", this.addComments);
@@ -15,6 +15,7 @@ Bokeh.Views.PhotoShow = Backbone.CompositeView.extend({
   },
 
   renderDetails: function () {
+    debugger
     if(this.model.attributes.title === null){
       this.model.attributes.title = this.model.attributes.image_file_name;
     };

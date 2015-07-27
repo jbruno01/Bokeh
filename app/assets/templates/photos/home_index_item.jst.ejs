@@ -11,7 +11,13 @@
 
     <ul class="home-index-text group">
         <a class="user-info" href="#/users/<%= photo.user_id %>"><%= photo.user().attributes.name%></a>
-        <a href="#/photos/<%= photo.id %>"><%= photo.escape("title")%></a>
+        <a href="#/photos/<%= photo.id %>">
+          <% if(photo.escape("title") === "") { %>
+            Untitled
+          <% } else { %>
+            <%= photo.escape("title") %>
+          <% } %>
+        </a>
     </ul>
   </section>
 

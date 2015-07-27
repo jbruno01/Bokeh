@@ -5,7 +5,7 @@ Bokeh.Views.AlbumsIndex = Backbone.CompositeView.extend({
     this.renderBanner();
     this.addAlbums();
     this.listenTo(this.model.albums(), "add", this.addAlbumView);
-    // this.listenTo(this.model.photos(), "sync", this.addPhotos);
+    this.listenTo(this.model.albums(), "sync", this.render);
     this.listenTo(this.model.albums(), "remove", this.removeAlbumView);
   },
 
