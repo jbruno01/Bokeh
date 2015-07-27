@@ -5,10 +5,9 @@
       <img class="index-tile" src="<%= photo.escape("medium_url") %>"/>
     </a>
 
-
+    <% if(Bokeh.currentUser.id === photo.attributes.user_id) { %>
       <button class="photo-delete" data-id="<%= photo.id %>">Delete</button>
       <button class="photo-edit" data-id="<%= photo.id %>">Edit</button>
-
-
+    <% } %>
   </div>
 </div>

@@ -2,6 +2,12 @@
 
 <section class="photo-index">
   <section class="add-photo-form group">
-    <button class="new-photo">Upload Photo</button>
+    <% if(Bokeh.currentUser.id === user.id) { %>
+      <button class="new-photo">Upload Photo</button>
+    <% } %>
+  </section>
+
+  <section class="photo-index-photos">
+
   </section>
 </section>

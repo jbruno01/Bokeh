@@ -57,6 +57,7 @@ Bokeh.Models.CurrentUser = Bokeh.Models.User.extend({
       success: function(data){
         model.set(data);
         options.success && options.success();
+        Backbone.history.navigate("#/explore", {trigger: true})
       },
       error: function(){
         options.error && options.error();

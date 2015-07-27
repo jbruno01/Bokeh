@@ -2,7 +2,7 @@ Bokeh.Views.NewUserForm = Backbone.CompositeView.extend({
   template: JST ["shared/sign_up"],
 
   events: {
-    "click .splash-sign-up" : "submit",
+    "click .splash-sign-in-up" : "submit",
      "click .close-modal": "closeNewUserForm",
   },
 
@@ -14,7 +14,7 @@ Bokeh.Views.NewUserForm = Backbone.CompositeView.extend({
 
   submit: function(event){
     event.preventDefault();
-    var formData = $("#signup_form").serializeJSON();
+    var formData = $("#sign_in_up_form").serializeJSON();
     this.model.set(formData);
     this.model.save({}, {
       success: function () {
