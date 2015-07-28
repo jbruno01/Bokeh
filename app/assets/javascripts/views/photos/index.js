@@ -33,7 +33,7 @@ Bokeh.Views.IndexPhotoView = Backbone.CompositeView.extend({
   },
 
   removePhotoView: function (model) {
-    this.removeModelSubview(".photo-index", model)
+    this.removeModelSubview(".photo-index-photos", model)
   },
 
   newPhoto: function(event) {
