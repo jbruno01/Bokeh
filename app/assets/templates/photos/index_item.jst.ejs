@@ -1,13 +1,17 @@
-<div class="photo-tile group">
-  <div class="photo-tile-section">
+<div class="photo-index-tile group">
+
 
     <a href="#/photos/<%= photo.id %>">
       <img class="index-tile" src="<%= photo.escape("medium_url") %>"/>
     </a>
 
     <% if(Bokeh.currentUser.id === photo.attributes.user_id) { %>
-      <button class="photo-delete" data-id="<%= photo.id %>">Delete</button>
+      <section class="photo-hover-buttons group">
+        <button class="photo-delete" data-id="<%= photo.id %>">Delete</button>
+        <button class="photo-avatar" data-id="<%= photo.id %>">Set Avatar</button>
+        <button class="photo-banner" data-id="<%= photo.id %>">Set Banner</button>
+      </section>
       <button class="photo-edit" data-id="<%= photo.id %>">Edit</button>
     <% } %>
-  </div>
+
 </div>

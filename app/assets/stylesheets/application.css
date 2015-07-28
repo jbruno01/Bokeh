@@ -341,14 +341,14 @@ li:hover .user-options {
   background: #167cba;
 }
 
-.photo-tile {
+.photo-index-tile {
   position: relative;
   display: block;
   float: left;
   margin: 10px;
 }
 
-.photo-tile .index-tile {
+.photo-index-tile .index-tile {
   height: 200px;
   width: auto;
 }
@@ -411,32 +411,26 @@ li:hover .user-options {
   background: #167CBA;
 }
 
-.photo-tile-section:hover button {
+.photo-index-tile:hover .photo-hover-buttons {
+  float: left;
   display: block;
+  background: #1C9BE9;
+  color: #fff;
 }
 
-.photo-tile-section {
-  position: relative;
-}
-
-.photo-tile-section .photo-delete,
-.photo-tile-section .photo-edit {
-  cursor: pointer;
+.photo-hover-buttons {
   display: none;
   position: absolute;
-  padding: 5px;
-  background: transparent;
+  top: 0;
+  width: 100%;
 }
 
-.photo-delete {
-  top: 5px;
-  left: 5px
+.photo-hover-buttons button {
+  cursor: pointer;
+  padding: 5px 10px;
 }
 
-.photo-edit {
-  top: 5px;
-  right: 5px
-}
+
 
 /*Album Index Page*/
 

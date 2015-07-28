@@ -7,13 +7,36 @@ Bokeh.Views.PhotoIndexItem = Backbone.CompositeView.extend({
 
   events : {
     "click .photo-delete" : "deletePhoto",
-    "click .photo-edit" : "editPhoto"
+    // "click .photo-edit" : "editPhoto"
+    "click .photo-avatar" : "setAvatar",
+    "click .photo-banner" : "setBanner"
   },
 
-  editPhoto: function(event) {
+  // editPhoto: function(event) {
+  //   event.preventDefault();
+  //   this.editView = new Bokeh.Views.AddEditPhotoView({ model: this.model, collection: this.collection })
+  //   this.addSubview(".photo-tile-section", this.editView)
+  // },
+  setBanner: function(event) {
+    var user = Bokeh.Collections.users.get(this.model.attributes.user_id).bind(this);
     event.preventDefault();
-    this.editView = new Bokeh.Views.AddEditPhotoView({ model: this.model, collection: this.collection })
-    this.addSubview(".photo-tile-section", this.editView)
+    user.attributes.banner_url = this.model.get("original_url");
+    user.save();
+  },
+
+  setAvatar: function(event) {
+    debugger
+    event.preventDefault();
+    var user = Bokeh.Collections.users.get(this.model.attributes.user_id).bind(this);
+    user.attributes.avatar_url = this.model.get("avatar_url");
+    user.save();
+  },
+
+  removeEditView: function () {
+    if(this.editView){
+      this.removeSubview(".photo-tile-section", this.editView);
+      this.editView = null;
+    }
   },
 
   deletePhoto: function (event) {
@@ -22,6 +45,7 @@ Bokeh.Views.PhotoIndexItem = Backbone.CompositeView.extend({
   },
 
   render: function () {
+    this.removeEditView();
     var renderedContent = this.template({ photo: this.model });
     this.$el.html(renderedContent);
     return this;
