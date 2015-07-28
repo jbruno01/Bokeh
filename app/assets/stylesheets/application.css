@@ -349,7 +349,6 @@ li:hover .user-options {
 }
 
 .photo-tile .index-tile {
-  border: 1px solid orange;
   height: 200px;
   width: auto;
 }
@@ -610,7 +609,6 @@ li:hover .user-options {
   position: absolute;
   padding: 5px 10px;
   display: block;
-  background: orange;
   bottom: -25px;
   left: 200px;
   color: #fff;
