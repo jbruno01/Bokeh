@@ -15,7 +15,6 @@ Bokeh.Views.PhotoShow = Backbone.CompositeView.extend({
   },
 
   renderDetails: function () {
-    debugger
     if(this.model.attributes.title === null){
       this.model.attributes.title = this.model.attributes.image_file_name;
     };

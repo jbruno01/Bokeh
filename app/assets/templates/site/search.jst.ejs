@@ -1,30 +1,39 @@
-<h1>Search!</h1>
+<section class="search-page">
 
-<label>
-	Query
-	<input type="text" class="query">
-</label>
 
-<section class="results">
+	<h1>Search!</h1>
 
-<nav>
-	Displaying page number <%= results.pageNum %> out
-	of <%= results.total_count %> results
-	<a class="prev-page" href="javascript:void(0)">Prev</a>
-	<a class="next-page" href="javascript:void(0)">Next</a>
-</nav>
+	<label>
+		<input type="text" class="query" placeholder="People or Photos">
+	</label>
 
-	<% results.each(function (result) { %>
-		<article>
-			<% if (result instanceof Bokeh.Models.User) { %>
+	<section class="search-results group">
 
-				<a href="#/users/<%= result.escape("real_id") %>"><%= result.escape("name") %></a>
+	<nav>
+		Displaying page number <%= results.pageNum %> out
+		of <%= results.total_count %> results
+		<section class="nav-buttons group">
+			<a class="prev-page" href="javascript:void(0)">Prev</a>
+			<a class="next-page" href="javascript:void(0)">Next</a>
+		</section>
+	</nav>
 
-			<% } else { %>
 
-					<a href="#/photos/<%= result.escape("real_id") %>"><%= result.escape("title") %></a>
 
-			<% } %>
-		</article>
-	<% }) %>
+		<% results.each(function (result) { %>
+			<article class="search-tile">
+				<% if (result instanceof Bokeh.Models.User) { %>
+
+					<a class="user-pic" href="#/users/<%= result.escape("real_id") %>"><img src="<%= result.escape("avatar_url") %>"/></a>
+					User: <a class="user-name" href="#/users/<%= result.escape("real_id") %>"><%= result.escape("name") %></a>
+
+				<% } else { %>
+					<a href="#/photos/<%= result.escape("real_id") %>"><img src="<%= result.escape("small_url") %>"/></a>
+					Title: <a href="#/photos/<%= result.escape("real_id") %>"><%= result.escape("title") %></a>
+
+				<% } %>
+			</article>
+		<% }) %>
+
+	</section>
 </section>

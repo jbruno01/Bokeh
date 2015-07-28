@@ -1,11 +1,17 @@
-<h1 class="photo-user">
-  <img src="<%= photo.user().escape("avatar_url") %>"/>
-</h1>
+<img class="photo-user-pic" src="<%= photo.user().escape("avatar_url") %>"/>
 
-<h2 class="photo-title">
-  <%= photo.escape("title") %>
-</h2>
+<section class="photo-details">
 
-<p class="photo-description">
-  <%= photo.escape("description") %>
-</p>
+  <h1 class="photo-user-name">
+    <a href="#/users/<%= photo.user().id %>"><%= photo.user().escape("name") %></a>
+  </h1>
+
+  <h2 class="photo-title">
+    <%= photo.escape("title") %>
+  </h2>
+
+  <p class="photo-description">
+    <%= photo.escape("description") %>
+  </p>
+
+</section>

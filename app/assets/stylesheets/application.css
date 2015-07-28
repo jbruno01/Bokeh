@@ -211,16 +211,24 @@ li:hover .user-options {
 
 .splash-content-text h2 {
   font-size: 18px;
-  padding-top: 20px;
+  padding-bottom: 40px;
 }
 
 .splash-sign-in-up {
+
+  margin: auto;
+  background: #1C9BE9;
+  padding: 15px 60px;
+  color: #fff;
+  border-radius: 3px;
+  font-size: 18px;
+}
+
+.form-sign-in-up {
   display: block;
   margin: auto;
-  width: 150px;
   background: #1C9BE9;
-  padding: 15px 25px;
-  margin-top: 30px;
+  padding: 15px 60px;
   color: #fff;
   border-radius: 3px;
   font-size: 18px;
@@ -243,27 +251,29 @@ li:hover .user-options {
 
 .sign-in-container {
   position: fixed;
-  width: 275px;
-  padding: 40px;
+  width: 300px;
+  padding: 30px;
   border: 1px solid #595959;
-  top: 55px;
-  right: -175px;
+  z-index: 1;
+  top: 35%;
+  transform: translateY(-65%);
+  left: 50%;
   transform: translateX(-50%);
   background: #1F1F20;
 }
 
 #sign_in_up_form {
   position: relative;
-  margin: auto;
+  /*margin: auto;*/
   color: #fff;
 }
 
 #sign_in_up_form h3 {
-
+  display: block;
+  text-align: center;
 }
 
 #sign_in_up_form input {
-
   display: block;
   margin: 20px auto;
   width: 250px;
@@ -275,20 +285,22 @@ li:hover .user-options {
   margin: 10px auto;
   color: #000;
   display: block;
-  padding: 5px;
+  padding: 5px 20px;
+  text-align: center;
 }
 
 .sign-in-container a {
   display: block;
   margin: auto;
   text-align: center;
+  padding-bottom: 20px;
 }
 
 .close-modal {
   position: absolute;
   top: -45px;
   font-size: 20px;
-  right: 0px;
+  right: -25px;
   padding: 3px 5px;
 }
 
@@ -370,7 +382,7 @@ li:hover .user-options {
 
 .input-photo-album select {
   width: 100px;
-}ils
+}
 
 .add-photo-form #close-form {
   position: absolute;
@@ -405,6 +417,40 @@ li:hover .user-options {
   right: 5px
 }
 
+/*Album Index Page*/
+
+.album-tile {
+  position: relative;
+  display: block;
+  float: left;
+  margin: 10px;
+}
+.album-tile-section:hover button {
+  display: block;
+}
+
+.album-tile-section {
+  position: relative;
+}
+
+.album-tile-section .album-delete,
+.album-tile-section .album-edit {
+  cursor: pointer;
+  display: none;
+  position: absolute;
+  padding: 5px;
+  background: transparent;
+}
+
+.album-delete {
+  top: 5px;
+  left: 5px
+}
+
+.album-edit {
+  top: 5px;
+  right: 5px
+}
 /*Photo Show Page*/
 
 .image-window {
@@ -416,34 +462,59 @@ li:hover .user-options {
   margin: auto;
   max-height: 700px;
   width: auto;
-  border: 2px solid green;
 }
 
 .photo-info {
+  margin-left: 100px;
   padding: 20px;
-  width: 80%;
-  margin: auto;
+  width: 50%;
+  border-bottom: 1px solid #CFD6D9;
 }
 
-.photo-info h1 {
+.photo-info .photo-user-pic {
+  float: left;
+  width: 50px;
+  height: auto;
+}
+
+.photo-info .photo-details {
+  float: left;
+  padding-left: 20px;
+}
+
+.photo-info .photo-user-name {
   font-size: 22px;
-  padding: 10px;
+  padding-bottom: 15px;
 }
 
 .photo-info h2 {
   font-size: 18px;
-  padding: 10px;
 }
 
 .comment-index {
-  border:  2px solid red;
-  width: 80%;
-  margin: auto;
+  width: 50%;
+  margin-left: 100px;
 }
 
-.user-avatar img {
+.comment-item {
+  border-bottom: 1px solid #CFD6D9;
+  padding: 20px;
+}
+
+.comment-index .user-avatar {
+  padding-top: 30px;
+  float: left;
   width: 30px;
   height: 30px;
+}
+
+.comment-item .comment-content {
+  float: left;
+  padding-left: 15px;
+}
+
+.comment-index .comment-submit {
+  display: block;
 }
 
 
@@ -532,4 +603,58 @@ li:hover .user-options {
 .album-index img {
   float: left;
   width: 400px;
+}
+
+/*Search*/
+
+.search-page {
+  width: 900px;
+  margin: auto;
+}
+.search-page h1 {
+  padding: 20px 0;
+  display: block;
+  text-align: center;
+  font-size: 36px;
+}
+
+.search-page input {
+  font-size: 18px;
+  padding: 5px;
+  display: block;
+  margin: auto;
+  width: 300px;
+  border: 1px solid #1C9BE9;
+}
+
+.search-page nav {
+  padding: 20px;
+  text-align: center;
+  display: block;
+  margin: auto;
+}
+
+.search-page .nav-buttons {
+  display: block;
+  width: 400px;
+  margin: auto;
+}
+
+.nav-buttons .prev-page {
+  float: left;
+}
+
+.nav-buttons .next-page {
+  float: right;
+}
+
+.search-results .search-tile {
+  float: left;
+  padding: 20px;
+  text-align: center;
+}
+
+.search-results .user-pic {
+  display: block;
+  width: 200px;
 }
