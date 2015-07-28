@@ -16,14 +16,8 @@ module Api
     end
 
     def index
-      # if params.has_key?(:user_id)
-        @albums = Album.where(user_id: params[:user_id])
-        # @user = User.find_by_id(params[:user_id])
-      # else
-        # @albums = Album.all
-      # end
-
-        render :index
+      @albums = Album.where(user_id: params[:user_id])
+      render :index
     end
 
     def show
@@ -34,6 +28,12 @@ module Api
       else
         redirect_to root_url
       end
+    end
+
+    def destroy
+      @album = current_user.albums.find(params[:id])
+      @album.try(:destroy)
+      render json: {}
     end
 
 

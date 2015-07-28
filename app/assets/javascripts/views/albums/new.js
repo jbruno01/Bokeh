@@ -3,7 +3,7 @@ Bokeh.Views.AddAlbumView = Backbone.CompositeView.extend({
 
   events: {
     "click .add-album" : "submit",
-    "click .close-form" : "closeForm"
+    "click #close-form" : "closeForm"
   },
 
   closeForm: function(event) {

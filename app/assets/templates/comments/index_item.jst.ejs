@@ -1,5 +1,7 @@
 <div class="comment-item group">
-  <a href="#/users/<%= comment.escape("user_id") %>" class="user-avatar"><img src="<%= comment.user().attributes.avatar_url %>"/></a>
+  <a href="#/users/<%= comment.escape("user_id") %>" class="user-avatar">
+    <img src="<%= comment.user().attributes.avatar_url %>"/>
+  </a>
   <div class="comment-content">
     <h3><%= comment.user().attributes.name %></h3>
     <p><%= comment.escape("content") %></p>

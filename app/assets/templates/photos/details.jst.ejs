@@ -3,7 +3,7 @@
 <section class="photo-details">
 
   <h1 class="photo-user-name">
-    <a href="#/users/<%= photo.user().id %>"><%= photo.user().escape("name") %></a>
+    <a href="#/users/<%= photo.escape("user_id") %>"><%= photo.user().escape("name") %></a>
   </h1>
 
   <h2 class="photo-title">

@@ -2,7 +2,7 @@ Bokeh.Views.PhotoShow = Backbone.CompositeView.extend({
   template: JST["photos/show"],
 
   initialize: function () {
-    this.renderNewForm();
+    this.addComments();
     this.renderDetails();
     this.listenTo(this.model, "sync", this.render);
     this.listenTo(this.model, "change", this.renderDetails)
@@ -45,6 +45,10 @@ Bokeh.Views.PhotoShow = Backbone.CompositeView.extend({
     this.model.comments().forEach(function (comment) {
       this.addComment(comment);
     }.bind(this))
+    if(this.newCommentview){
+      this.removeSubview(".comment-index", this.newCommentview);
+      this.newCommentview = null;
+    }
     this.renderNewForm();
   },
 

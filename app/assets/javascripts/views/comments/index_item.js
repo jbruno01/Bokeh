@@ -22,7 +22,8 @@ Bokeh.Views.CommentIndexItem = Backbone.CompositeView.extend({
     var $textarea = $("<textarea></textarea>")
     $textarea.addClass("new-comment-area");
     $textarea.val(this.model.get("content"));
-    $textarea.attr("cols", 40)
+    $textarea.attr("cols", 40);
+    $textarea.attr("rows", 4);
     this.$(".comment-content").html($textarea);
   },
 

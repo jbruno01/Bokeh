@@ -133,7 +133,6 @@ li:hover .user-options {
 }
 
 .user-options a {
-  padding: 0;
   padding: 5px 20px;
 }
 
@@ -160,7 +159,7 @@ li:hover .user-options {
   padding: 13px 0;
 }
 
-.nav-tools input, button {
+.nav-tools input, .nav-tools button {
   float: left;
   font-size: 17px;
   background: #fff;
@@ -225,8 +224,8 @@ li:hover .user-options {
 }
 
 .form-sign-in-up {
-  display: block;
-  margin: auto;
+  /*display: block;*/
+  /*margin: auto;*/
   background: #1C9BE9;
   padding: 15px 60px;
   color: #fff;
@@ -281,12 +280,22 @@ li:hover .user-options {
   font-size: 16px;
 }
 
+#sign_in_up_form button {
+  float: none;
+  margin: auto;
+  display: block;
+}
+
 #sign_in_up_form .guest-user {
-  margin: 10px auto;
+  background: #eee;
   color: #000;
   display: block;
+  margin: 10px auto;
   padding: 5px 20px;
-  text-align: center;
+}
+
+#sign_in_up_form button:hover {
+  cursor: pointer;
 }
 
 .sign-in-container a {
@@ -316,14 +325,14 @@ li:hover .user-options {
   position: relative;
 }
 
-.add-photo-form button {
+.new-photo {
   text-align: center;
   margin: 10px;
   float: left;
   height: 200px;
   width: 175px;
   background: #1C9BE9;
-  color: #BBBBBB;
+  color: #fff;
   border: 1px solid #167cba;
 }
 
@@ -367,27 +376,40 @@ li:hover .user-options {
 }
 
 .add-edit-photo button {
+  padding: 5px 10px;
+  background: #167CBA;
   display: block;
   margin: 5px auto;
   font-size: 14px;
-  width: 60px;
-  height: 20px;
   color: #fff;
 }
 
 .input-photo-album {
   display: block;
   margin: auto;
+  padding: 10px;
 }
 
 .input-photo-album select {
   width: 100px;
 }
 
+.add-edit-photo .avatar-checkbox,
+.add-edit-photo .banner-checkbox {
+  padding-left: 5px;
+  display: inline;
+}
+
 .add-photo-form #close-form {
   position: absolute;
   right: 10px;
   top: 10px;
+  padding: 3px;
+}
+
+.add-photo-form #close-form:hover {
+  cursor: pointer;
+  background: #167CBA;
 }
 
 .photo-tile-section:hover button {
@@ -418,6 +440,25 @@ li:hover .user-options {
 }
 
 /*Album Index Page*/
+
+.album-index {
+  width: 90%;
+  margin: auto;
+}
+
+.new-album {
+  display: block;
+  background: #1C9BE9;
+  margin: 10px;
+  left: 20px;
+  padding: 10px 20px;
+  color: #fff;
+  border: 1px solid #167CBA;
+}
+
+.new-album:hover {
+  cursor: pointer;
+}
 
 .album-tile {
   position: relative;
@@ -451,6 +492,50 @@ li:hover .user-options {
   top: 5px;
   right: 5px
 }
+
+.new-album-form {
+  position: relative;
+  text-align: center;
+  font-size: 16px;
+  color: #fff;
+  float: left;
+  height: 250px;
+  width: 200px;
+  margin: 10px;
+  background: #1C9BE9;
+}
+
+.new-album-form #close-form {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  padding: 3px;
+}
+
+.new-album-form #close-form:hover {
+  cursor: pointer;
+  background: #167CBA;
+}
+
+.new-album-form h2 {
+  padding-top: 30px;
+}
+
+.new-album-form button {
+  background: #167CBA;
+  color: #fff;
+  display: block;
+  padding: 5px 10px;
+  margin: auto;
+}
+
+.new-album-form input {
+  width: 175px;
+  display: block;
+  padding: 4px;
+  margin: 10px auto;
+  font-size: 14px;
+}
 /*Photo Show Page*/
 
 .image-window {
@@ -465,7 +550,7 @@ li:hover .user-options {
 }
 
 .photo-info {
-  margin-left: 100px;
+  margin: auto;
   padding: 20px;
   width: 50%;
   border-bottom: 1px solid #CFD6D9;
@@ -492,13 +577,17 @@ li:hover .user-options {
 }
 
 .comment-index {
-  width: 50%;
-  margin-left: 100px;
+  width: 40%;
+  margin: auto;
 }
 
 .comment-item {
   border-bottom: 1px solid #CFD6D9;
-  padding: 20px;
+  padding: 10px;
+}
+
+.comment-item:hover {
+  background: #fff;
 }
 
 .comment-index .user-avatar {
@@ -513,8 +602,30 @@ li:hover .user-options {
   padding-left: 15px;
 }
 
-.comment-index .comment-submit {
+.new-comment-form {
+  position: relative;
+}
+
+.new-comment-form button {
+  position: absolute;
+  padding: 5px 10px;
   display: block;
+  background: orange;
+  bottom: -25px;
+  left: 200px;
+  color: #fff;
+  background: #1C9BE9;
+}
+
+.new-comment-form .user-avatar,
+.new-comment-form .new-comment-area {
+  float: left;
+  display: block;
+  margin: 10px
+}
+
+.new-comment-form .user-avatar {
+  padding-top: 0;
 }
 
 
@@ -535,7 +646,6 @@ li:hover .user-options {
   transform: translateY(-50%);
 }
 
-
 .banner-info {
   z-index: 1;
   position: absolute;
@@ -553,6 +663,26 @@ li:hover .user-options {
   left: 10%;*/
 }
 
+.banner-album-details {
+  display: block;
+  text-align: center;
+}
+
+.banner-album-details h2,
+.banner-album-details h3 {
+  padding: 10px;
+  font-size: 22px;
+}
+
+.banner-album-details h1 {
+  font-size: 36px;
+  padding: 10px;
+}
+
+.photo-tiles {
+  width: 80%;
+  margin: auto;
+}
 /*.banner-user-details {
   position: absolute;
   bottom: 25px;

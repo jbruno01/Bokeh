@@ -25,7 +25,7 @@
     <ul class="nav-tools group">
 
       <% if(currentUser.isSignedIn()) { %>
-        <li><a href="#">Upload</a></li>
+        <li><a href="#/users/<%= currentUser.id %>">Upload</a></li>
         <form class="search-form group">
           <button class="search-submit" type="submit"><img src="/mag_glass.png"/></button>
           <input class="search-input" type="text"></input>

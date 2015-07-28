@@ -14,17 +14,16 @@ Bokeh.Views.AlbumsIndex = Backbone.CompositeView.extend({
   },
 
   addAlbumView: function (album) {
+    this.removeAlbumForm();
     var subview = new Bokeh.Views.AlbumIndexItem({ model: album });
     this.addSubview('.album-index', subview);
   },
 
   removeAlbumForm: function () {
-    this.removeSubview(".add-album-form", this.newAlbumView);
-    var $button = $("<button></button>");
-    $button.html("Delete");
-    $button.addClass("new-album");
-
-    $(".add-album-form").append($button);
+    if(this.newAlbumView){
+      this.removeSubview(".album-index", this.newAlbumView);
+      this.newAlbumView = null;
+    }
   },
 
   addAlbums: function() {
@@ -40,10 +39,12 @@ Bokeh.Views.AlbumsIndex = Backbone.CompositeView.extend({
 
   newAlbum: function(event) {
     event.preventDefault();
-    // $(".new-album").remove();
-    var newAlbum = new Bokeh.Models.Album();
-    this.newAlbumView = new Bokeh.Views.AddAlbumView({ model: newAlbum, collection: this.model.albums() })
-    this.addSubview(".add-album-form", this.newAlbumView)
+    this.removeAlbumForm();
+    if(!this.newAlbumView){
+      var newAlbum = new Bokeh.Models.Album();
+      this.newAlbumView = new Bokeh.Views.AddAlbumView({ model: newAlbum, collection: this.model.albums() })
+      this.addSubview(".album-index", this.newAlbumView)
+    }
   },
 
   renderBanner: function () {

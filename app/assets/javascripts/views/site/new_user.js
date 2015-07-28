@@ -2,7 +2,7 @@ Bokeh.Views.NewUserForm = Backbone.CompositeView.extend({
   template: JST ["shared/sign_up"],
 
   events: {
-    "click .splash-sign-in-up" : "submit",
+    "click .form-sign-in-up" : "submit",
      "click .close-modal": "closeNewUserForm",
   },
 
