@@ -1,4 +1,6 @@
 Bokeh.Views.PhotoShow = Backbone.CompositeView.extend({
+  tagName: "div",
+  className: "master-photo-show",
   template: JST["photos/show"],
 
   initialize: function () {
