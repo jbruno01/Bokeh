@@ -578,12 +578,13 @@ li:hover .user-options {
 
 .photo-info .photo-details {
   float: left;
-  padding-left: 20px;
+  padding: 15px 20px;
 }
 
-.photo-info .photo-user-name {
+.photo-info a {
   font-size: 22px;
   padding-bottom: 15px;
+  padding-left: 18px;
 }
 
 .photo-info h2 {
