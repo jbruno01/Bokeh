@@ -571,11 +571,24 @@ li:hover .user-options {
 }
 
 .photo-info h2 {
+  font-size: 16px;
+}
+
+.edit-details {
+  padding-left: 55px;
+}
+
+.edit-details input,
+.edit-details textarea {
+  display: block;
+  width: 300px;
+  padding: 5px;
   font-size: 18px;
+  margin: 10px;
 }
 
 .comment-index {
-  width: 40%;
+  width: 500px;
   margin: auto;
 }
 
@@ -596,8 +609,22 @@ li:hover .user-options {
 }
 
 .comment-item .comment-content {
+  position: relative;
   float: left;
   padding-left: 15px;
+}
+
+.comment-content .hover-edit {
+  position: absolute;
+  display: none;
+  color: #ccc;
+  top: -5px;
+  left: 300px;
+  width: 150px;
+}
+
+.comment-item:hover .hover-edit {
+  display: block;
 }
 
 .new-comment-form {
@@ -609,7 +636,7 @@ li:hover .user-options {
   padding: 5px 10px;
   display: block;
   bottom: -25px;
-  left: 200px;
+  right: 60px;
   color: #fff;
   background: #1C9BE9;
 }
@@ -623,6 +650,10 @@ li:hover .user-options {
 
 .new-comment-form .user-avatar {
   padding-top: 0;
+}
+
+.new-comment-area {
+  font-size: 16px;
 }
 
 

@@ -12,7 +12,7 @@ Bokeh.Views.CommentIndexItem = Backbone.CompositeView.extend({
 
   submit: function(event) {
     event.preventDefault();
-    var content = $("textarea").val();
+    var content = this.$("textarea").val();
     this.model.set("content", content);
     this.model.save();
   },

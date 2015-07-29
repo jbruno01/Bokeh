@@ -13,7 +13,6 @@ Bokeh.Views.SiteHomeView = Backbone.CompositeView.extend({
 
   addPhotos: function() {
     this.collection.forEach(function (photo) {
-    debugger
       this.addPhotoView(photo)
     }.bind(this))
   },

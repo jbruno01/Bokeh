@@ -3,6 +3,9 @@
     <img src="<%= comment.user().attributes.avatar_url %>"/>
   </a>
   <div class="comment-content">
+    <% if(comment.attributes.user_id === Bokeh.currentUser.id){ %>
+      <p class="hover-edit">Double click to edit!</p>
+    <% } %>
     <h3><%= comment.user().attributes.name %></h3>
     <p><%= comment.escape("content") %></p>
   </div>

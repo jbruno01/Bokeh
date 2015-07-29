@@ -1,11 +1,11 @@
 <form class="new-comment-form group">
   <% if(Bokeh.currentUser.isSignedIn()) { %>
     <img class="user-avatar" src="<%= Bokeh.currentUser.escape("avatar_url") %>"/>
-    <textarea class="new-comment-area" name="comment[content]" rows="5" cols="40" placeholder="Add a comment"></textarea>
+    <textarea class="new-comment-area" name="comment[content]" rows="6" cols="40" placeholder="Add a comment"></textarea>
   <% } else { %>
     <textarea class="new-comment-area" rows="5" cols="40" placeholder="Sign In to comment"></textarea>
   <% } %>
-  
+
   <% if(Bokeh.currentUser.isSignedIn()) { %>
     <button class="comment-submit">Add Comment</button>
   <% } %>

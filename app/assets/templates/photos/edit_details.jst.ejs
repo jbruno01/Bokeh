@@ -1,9 +1,12 @@
+<img class="photo-user-pic" src="<%= photo.user().escape("avatar_url") %>"/>
+
+<h1 class="photo-user-name">
+  <a href="#/users/<%= photo.escape("user_id") %>"><%= photo.user().escape("name") %></a>
+</h1>
+
+
+
 <form class="edit-details">
-  <label class="photo-title">Title
-    <input type="text" name="photo[title]" value="<%= photo.escape("title") %>">
-  </label>
-<br>
-  <label class="photo-description">Description
-    <input type="text" name="photo[description]" value="<%= photo.escape("description") %>">
-  </label>
+  <input type="text" name="photo[title]" value="<%= photo.escape("title") %>" placeholder="Title">
+  <textarea name="photo[description]" value="<%= photo.escape("description") %>" rows="4" cols="30" placeholder="Description"></textarea>
 </form>

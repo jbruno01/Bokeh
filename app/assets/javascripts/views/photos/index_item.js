@@ -25,7 +25,6 @@ Bokeh.Views.PhotoIndexItem = Backbone.CompositeView.extend({
   },
 
   setAvatar: function(event) {
-    debugger
     event.preventDefault();
     var user = Bokeh.Collections.users.get(this.model.attributes.user_id).bind(this);
     user.attributes.avatar_url = this.model.get("avatar_url");

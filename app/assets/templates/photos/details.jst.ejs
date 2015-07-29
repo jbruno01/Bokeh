@@ -1,10 +1,10 @@
 <img class="photo-user-pic" src="<%= photo.user().escape("avatar_url") %>"/>
 
-<section class="photo-details">
-
   <h1 class="photo-user-name">
     <a href="#/users/<%= photo.escape("user_id") %>"><%= photo.user().escape("name") %></a>
   </h1>
+
+<section class="photo-details">
 
   <h2 class="photo-title">
     <%= photo.escape("title") %>

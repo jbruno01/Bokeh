@@ -11,7 +11,7 @@ Bokeh.Views.PhotoShow = Backbone.CompositeView.extend({
   },
 
   events: {
-      "click .photo-info" : "editDetails"
+      "click .photo-details" : "editDetails"
   },
 
   renderDetails: function () {
