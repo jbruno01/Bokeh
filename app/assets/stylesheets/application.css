@@ -12,12 +12,13 @@
  *
  *= require_tree .
  *= require_self
+ *= require justifiedGallery.min
  */
 
  /* --- RESET --- */
 
 body, nav, a, h1, h2, ul, li,
-header, section, img, button
+header, section, img, button, figcaption
   {
   margin: 0;
   padding: 0;
@@ -72,9 +73,9 @@ img {
 
  #main {
   min-width: 900px;
-  max-width: 2000px;
   margin: auto;
   height: 100%;
+  padding-top: 52px;
 }
 
 #header {
@@ -760,10 +761,15 @@ li:hover .user-options {
   border: 1px solid #ccc;
 }
 
-.photo-tile section {
-  background: #FFFFFF;
-  padding: 12px;
-  box-shadow: 1px 1px #eee;
+/*.photo-tile .photo-info {
+  width: 80%;
+  margin: auto;
+  color: #fff;
+  background: #000;
+  opacity: .7;
+  position: absolute;
+  bottom: 15px;
+  padding: 10px;*/
 }
 
 .home-index-text a {
