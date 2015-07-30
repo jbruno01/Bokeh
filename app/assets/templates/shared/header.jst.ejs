@@ -10,10 +10,7 @@
       <% if(currentUser.isSignedIn()) { %>
         <li>
           <a href="#/users/<%= currentUser.id %>">You</a>
-          <ul class="user-options">
-            <li><a href="#/users/<%= currentUser.id %>">Photos</a></li>
-            <li><a href="#/users/<%= currentUser.id %>/albums">Albums</a></li>
-          </ul>
+
         </li>
       <% } else { %>
         <li><a href="#users/new">Sign Up</a></li>

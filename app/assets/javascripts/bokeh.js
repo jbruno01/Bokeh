@@ -7,7 +7,6 @@ window.Bokeh = {
     new Bokeh.Routers.Router ({
       $rootEl: $("#main"),
       photos: Bokeh.Collections.photos,
-      albums: Bokeh.Collections.albums,
       comments: Bokeh.Collections.comments,
       users: Bokeh.Collections.users
     });

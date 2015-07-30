@@ -4,9 +4,8 @@ Rails.application.routes.draw do
 
   namespace :api, defaults: { format: :json } do
     get "/search", to: "static_pages#search"
-    resources :users, only: [:create, :show, :update] 
+    resources :users, only: [:create, :show, :update]
     resource :session, only: [:create, :destroy, :show]
-    resources :albums
     resources :photos
     resources :comments
   end

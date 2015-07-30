@@ -19,13 +19,6 @@ class User < ActiveRecord::Base
   validates :password, length: { minimum: 6, allow_nil: true }
 
   has_many(
-    :albums,
-    class_name: "Album",
-    foreign_key: :user_id,
-    primary_key: :id
-  )
-
-  has_many(
     :photos,
     class_name: "Photo",
     foreign_key: :user_id,

@@ -8,22 +8,10 @@ Bokeh.Models.User = Backbone.Model.extend({
     return this._photos;
   },
 
-  albums: function() {
-    if(!this._albums){
-      this._albums = new Bokeh.Collections.Albums([], { user: this })
-    }
-    return this._albums;
-  },
-
   parse: function(response) {
     if(response.photos){
       this.photos().set(response.photos, { parse: true });
       delete response.photos;
-    }
-
-    if(response.albums){
-      this.albums().set(response.albums, { parse: true});
-      delete response.albums;
     }
 
     return response;

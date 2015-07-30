@@ -1,21 +1,21 @@
-# Flickr-clone
+# Bokeh
 
-[Heroku link][heroku]
+[Live Demo][demo]
 
-[heroku]: http://bokeh-app.herokuapp.com
+[demo]: http://bokeh-app.xyz.com
 
 ## Minimum Viable Product
-Flickr-clone (real name coming soon) is a clone of Flickr built on Rails and Backbone. Users can:
+Bokeh is a photo sharing app inspired by Flickr built on Rails and Backbone. Users can:
 
 <!-- This is a Markdown checklist. Use it to keep track of your progress! -->
 
 - [x] Create accounts
 - [x] Create sessions (log in)
 - [x] Upload photos
-- [x] Create albums of photos
 - [x] Leave comments
-- [ ] Search for photos or other users
-- [ ] Tag photos and albums
+- [x] Search for photos or other users
+- [x] View explore page which is all photos
+
 
 ## Design Docs
 * [View Wireframes][views]
@@ -26,11 +26,10 @@ Flickr-clone (real name coming soon) is a clone of Flickr built on Rails and Bac
 
 ## Implementation Timeline
 
-### Phase 1: User Authentication, Create Albums, New Photos (~1 day)
+### Phase 1: User Authentication, New Photos (~1 day)
 I will implement user authentication in Rails based on the practices learned at
 App Academy. By the end of this phase, users will be able to Sign Up/In and land
-on a homepage. Through Rails views, they will also be able to create albums.
-Rails controllers will be in place to create new photos. I'll make
+on a homepage. Rails controllers will be in place to create new photos. I'll make
 sure pushing to Heroku works as well.
 
 [Details][phase-one]
@@ -43,9 +42,9 @@ users click an upload link in the header bar, a popup window will appear allowin
 
 [Details][phase-two]
 
-### Phase 3: Editing Photo/Album info and Leaving Comments (~1 day)
-Add functionality to edit information about photos and albums. This includes
-titles, descriptions, tags, and the moving of photos to different albums. I would like to make most of these things edit-in-place where applicable as well as have a popup window for a quicker edit of details; i.e edit in place when views a single photo fullscreen, popup window when viewing a bunch of photos in album view. Users will also be able to leave comments for every photo. Comments should include a users name as well as some content.
+### Phase 3: Editing photo info and leaving comments (~1 day)
+Add functionality to edit information about photos. This includes
+titles and descriptions. I would like to make most of these things edit-in-place where applicable as well as have a popup window initial input of details; i.e edit in place when views a single photo fullscreen, popup window when uploading photos. Users will also be able to leave comments for every photo. Comments should include a users name as well as some content.
 
 [Details][phase-three]
 
@@ -63,6 +62,7 @@ The prettify stage. Photo websites are all about presentation. The nicer the fra
 [Details][phase-five]
 
 ### Bonus Features (TBD)
+- [ ] Filmstrip when viewing photos singularly
 - [ ] "Favorite" button and counter for photos
 - [ ] "Inspiration" album for users. Photos that they've favorited
 - [ ] Pagination/infinite scroll
@@ -70,6 +70,7 @@ The prettify stage. Photo websites are all about presentation. The nicer the fra
 - [ ] Drag to position banner photos for albums and users
 - [ ] Typeahead search bar
 - [ ] Messages between users
+- [ ] Tag photos and albums
 
 [phase-one]: ./docs/phases/phase1.md
 [phase-two]: ./docs/phases/phase2.md

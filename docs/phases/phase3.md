@@ -7,7 +7,6 @@
 ### Controllers
 * Api::CommentsController(create, delete, show)
 * Api::PhotosController(update)
-* Api::AlbumsController(update)
 
 ### Views
 
@@ -15,16 +14,13 @@
 ### Models
 * Comment
 * Photo
-* Album
 
 ### Collections
 * Comments
 * Photos
-* Albums
 
 ### Views
 * PhotoShow
 * PhotoForm
-* AlbumForm
 
 ## Gems/Libraries

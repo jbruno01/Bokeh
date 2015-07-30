@@ -2,7 +2,6 @@ Bokeh.Routers.Router = Backbone.Router.extend({
   initialize: function(options){
     this.$rootEl = options.$rootEl;
     this.photos = options.photos;
-    this.albums = options.albums;
     this.comments = options.comments;
     this.users = options.users
   },
@@ -13,8 +12,6 @@ Bokeh.Routers.Router = Backbone.Router.extend({
     "users/new": "new",
     "users/:id" : "userShow",
     "photos/:id" : "photoShow",
-    "users/:id/albums" : "albumsIndex",
-    "albums/:id" : "albumShow",
     "session/new": "signIn",
     "search" : "search"
   },
@@ -57,18 +54,6 @@ Bokeh.Routers.Router = Backbone.Router.extend({
 
     var indexPhotoView = new Bokeh.Views.IndexPhotoView({ model: user });
     this._swapView(indexPhotoView);
-  },
-
-  albumsIndex: function (id) {
-    var user = this.users.getOrFetch(id)
-    var indexAlbumView = new Bokeh.Views.AlbumsIndex({ model: user })
-    this._swapView(indexAlbumView);
-  },
-
-  albumShow: function (id) {
-    var album = this.albums.getOrFetch(id);
-    var showView = new Bokeh.Views.AlbumShow({ model: album })
-    this._swapView(showView);
   },
 
   signIn: function(callback){
