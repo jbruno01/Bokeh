@@ -701,8 +701,19 @@ li:hover .user-options {
   width: 80%;
 }
 
+.banner-user-details {
+  color: #fff;
+  text-shadow: 1px 1px 3px #000;
+}
+
+.banner-user-details h1 {
+  font-size: 24px;
+  padding-bottom: 20px;
+}
+
 .avatar-image {
   float: left;
+  padding-right: 20px;
   /*position: absolute;*/
   width: 100px;
   /*height: 100px;
