@@ -19,7 +19,6 @@ class Photo < ActiveRecord::Base
 
   has_attached_file :image, default_url: "missing.png", styles: {
                             avatar: "200x200#",
-                            small: "300x300>",
                             medium: "400x400>"
                           }
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
