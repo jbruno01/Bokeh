@@ -15,7 +15,6 @@ window.Bokeh = {
     this.currentUser.fetch();
 
     this.header = new Bokeh.Views.Header({ el: "#header" });
-    this.footer = new Bokeh.Views.Footer({ el: "#footer" });
 
     Backbone.history.start();
   }

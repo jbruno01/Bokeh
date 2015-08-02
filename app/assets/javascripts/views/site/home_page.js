@@ -22,11 +22,13 @@ Bokeh.Views.SiteHomeView = Backbone.CompositeView.extend({
     var renderedContent = this.template();
     this.$el.html(renderedContent);
     this.attachSubviews();
-    // $(".photo-index").justifiedGallery({
-    //   rowHeight: 200,
-    //   margins: 3,
-    //   lastRow: "nojustify"
-    //   })
+    this.$(".photo-index").justifiedGallery({
+      rowHeight: 220,
+      maxRowHeight: "110%",
+      margins: 5,
+      captions: true,
+      border: 50
+      });
     return this;
   }
 })

@@ -14,7 +14,7 @@ module Api
     end
 
     def index
-      @photos = Photo.all
+      @photos = Photo.order(created_at: :desc)
       render :index
     end
 

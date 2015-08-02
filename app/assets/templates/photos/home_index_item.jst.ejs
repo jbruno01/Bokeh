@@ -1,18 +1,9 @@
-<div class="photo-tile">
-
-  <a class="photo-image"href="#/photos/<%= photo.id %>">
-    <img class="home-image" src="<%= photo.escape("medium_url") %>"/>
-  </a>
-
-
-  <figcaption class="photo-info group">
-    <a class="user-info" href="#/users/<%= photo.attributes.user_id %>"><%= photo.user().attributes.name %></a>
-    <a class="photo-title" href="#/photos/<%= photo.id %>">
-      <% if(photo.escape("title") === "") { %>
-        Untitled
-      <% } else { %>
-        <%= photo.escape("title") %>
-      <% } %>
+<a href="#/photos/<%= photo.id %>">
+  <img src="<%= photo.escape("medium_url") %>"/>
+  <div class="caption group">
+    <a class="user-avatar" href="#/users/<%= photo.attributes.user_id %>">
+      <img src="<%= photo.user().attributes.avatar_url %>"/>
     </a>
-  </figcaption>
-</div>
+    <div class="title"><%= photo.attributes.title %></div>
+  </div>
+</a>

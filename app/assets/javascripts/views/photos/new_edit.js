@@ -26,6 +26,8 @@ Bokeh.Views.AddEditPhotoView = Backbone.CompositeView.extend({
   submit: function(event) {
     event.preventDefault();
     this.remove();
+    $(".upload-spinner").removeClass("hidden");
+    $(".new-photo").prop("disabled", true);
     var title = this.$("#input-photo-title").val();
     var description = this.$("#input-photo-description").val();
     var formData = new FormData();
@@ -51,8 +53,9 @@ Bokeh.Views.AddEditPhotoView = Backbone.CompositeView.extend({
     formData.append("photo[title]", title);
     this.model.saveFormData(formData, {
       success: function(){
-        console.log("saved");
         that.collection.add(that.model, { merge: true })
+        $(".upload-spinner").addClass("hidden");
+        $('.new-photo').prop("disabled", false);
       }
     });
   }
