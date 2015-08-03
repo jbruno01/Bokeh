@@ -16,10 +16,10 @@ Bokeh.Views.Search = Backbone.CompositeView.extend({
 	template: JST["site/search"],
 
 	render: function () {
+		debugger
 		var content = this.template({
 			results: this.searchResults
 		});
-		console.log(this.searchResults);
 		this.$el.html(content);
 		if(Bokeh.query){
 			this.$(".query").val(Bokeh.query);

@@ -10,12 +10,20 @@
 	<section class="search-results group">
 
 	<nav>
-		Displaying page number <%= results.pageNum %> out
-		of <%= results.total_count %> results
-		<section class="nav-buttons group">
-			<a class="prev-page" href="javascript:void(0)">Prev</a>
-			<a class="next-page" href="javascript:void(0)">Next</a>
-		</section>
+		<% if(results.query && results.length === 0){ %>
+			0 Results for <%= results.query %>
+		<% } else if(results.length > 0) { %>
+			Displaying page number <%= results.pageNum %> out
+			of <%= results.total_count %> results
+			<section class="nav-buttons group">
+				<% if(results.page > 1){ %>
+					<a class="prev-page" href="javascript:void(0)">Prev</a>
+				<% } %>
+				<% if(results.page * 20 > results.total_count) { %>
+					<a class="next-page" href="javascript:void(0)">Next</a>
+				<% } %>
+			</section>
+		<% } %>
 	</nav>
 
 
