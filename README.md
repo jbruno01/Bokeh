@@ -12,15 +12,15 @@ Bokeh is a photo sharing app inspired by Flickr, built on Rails and Backbone. Us
 ##Features
 
 ###All users:
-- Sign up through Bokeh or with Google.
-- Access any photo contained on the site.
+- Sign up through Bokeh or with Google
+- Access any photo contained on the site
 - Search for users and photos by name and title, respectively
-- When viewing an individual photo, they can also see any comments left for that photo.
+- When viewing an individual photo, they can also see any comments left for that photo
 
 ###Registered-users:
 - Upload and delete photos to their account
 - Choose an avatar and banner image to personalize their user experience
-- Leave comments on photos.
+- Leave comments on photos
 - Edit photo information and any comments that they have left
 
 
