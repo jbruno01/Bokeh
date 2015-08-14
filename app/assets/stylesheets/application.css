@@ -806,14 +806,14 @@ li:hover .user-options {
   float: right;
 }
 
-.search-results .search-tile,
-.search-results .photo-pic {
+.search-results .search-tile {
   float: left;
   padding: 20px;
   text-align: center;
 }
 
-.search-results .user-pic {
+.search-results img {
   display: block;
-  width: 200px;
+  height: 200px;
+  width: auto;
 }
