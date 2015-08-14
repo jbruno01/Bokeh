@@ -806,7 +806,8 @@ li:hover .user-options {
   float: right;
 }
 
-.search-results .search-tile {
+.search-results .search-tile,
+.search-results .photo-pic {
   float: left;
   padding: 20px;
   text-align: center;

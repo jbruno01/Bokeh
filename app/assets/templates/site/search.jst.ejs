@@ -36,7 +36,7 @@
 					User: <a class="user-name" href="#/users/<%= result.escape("real_id") %>"><%= result.escape("name") %></a>
 
 				<% } else { %>
-					<a href="#/photos/<%= result.escape("real_id") %>"><img src="<%= result.escape("small_url") %>"/></a>
+					<a class="photo-pic" href="#/photos/<%= result.escape("real_id") %>"><img src="<%= result.escape("avatar_url") %>"/></a>
 					Title: <a href="#/photos/<%= result.escape("real_id") %>"><%= result.escape("title") %></a>
 
 				<% } %>
