@@ -29,7 +29,7 @@ Bokeh.Views.SignIn = Backbone.CompositeView.extend({
   guestUser: function (event) {
     event.preventDefault();
     Bokeh.currentUser.signIn({
-      email: "mark@email.com",
+      email: "jbruno01@email.com",
       password: "password"
     });
   },
