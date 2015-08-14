@@ -13,6 +13,7 @@ Bokeh.Views.PhotoIndexItem = Backbone.CompositeView.extend({
 
   setBanner: function(event) {
     event.preventDefault();
+    event.preventDefault();
     var user = Bokeh.Collections.users.get(this.model.attributes.user_id).bind(this);
     user.attributes.banner_url = this.model.get("original_url");
     user.save();
