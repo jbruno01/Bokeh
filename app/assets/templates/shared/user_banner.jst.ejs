@@ -8,11 +8,11 @@
 
     <ul class="banner-user-details">
       <li><h1><%= user.escape("name") %></h1></li>
-      <ul group>
+      <ul class="user-deets group">
         <li class="user-email"><%= user.escape("email") %></li>
         <nav class="num-photos-and-joindate">
-          <h2><%= user.photos().length %> Photos</h2>
-          <h2><%= user.escape("created_at").slice(0,4) %></h2>
+          <li><h2>Member since: <%= user.escape("created_at").slice(0,4) %></h2></li>
+          <li><h2><%= user.photos().length %> Photos</h2></li>
         </nav>
       </ul>
     </ul>
