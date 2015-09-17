@@ -18,6 +18,7 @@ gem 'aws-sdk', '~> 1.6'
 gem "omniauth-google-oauth2"
 gem "pg_search"
 gem "kaminari"
+gem "font-awesome-rails"
 
 # Use Unicorn as the app server
 # gem 'unicorn'

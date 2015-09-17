@@ -13,6 +13,7 @@
  *= require_tree .
  *= require_self
  *= require justifiedGallery.min
+ *= require font-awesome
  */
 
  /* --- RESET --- */
@@ -168,14 +169,29 @@ li:hover .user-options {
 }
 
 .nav-tools form {
+  position: relative;
   float: left;
   padding: 13px 0;
 }
 
-.nav-tools input, .nav-tools button {
+.nav-tools input {
+  position: relative;
+  text-indent: 27px;
   float: left;
-  font-size: 17px;
+  font-size: 15px;
   background: #fff;
+  padding: 3px;
+  width: 200px;
+}
+
+.search-form .fa-search {
+  background: #FFFFFF;
+  color: #000;
+  position: absolute;
+  font-size: 20px;
+  z-index: 100;
+  top: 15px;
+  left: 5px;
 }
 
 .nav-tools button {
@@ -229,11 +245,12 @@ li:hover .user-options {
 .splash-sign-in-up {
 
   margin: auto;
-  background: #1C9BE9;
+  background: #128FDC;
   padding: 15px 60px;
   color: #fff;
   border-radius: 3px;
   font-size: 18px;
+  text-shadow: none;
 }
 
 .form-sign-in-up {

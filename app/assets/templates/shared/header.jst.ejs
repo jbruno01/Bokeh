@@ -25,7 +25,7 @@
         <li><a href="#/users/<%= currentUser.id %>">Upload</a></li>
         <form class="search-form group">
           <button class="search-submit" type="submit"><img src="/mag_glass.png"/></button>
-          <input class="search-input" type="text"></input>
+          <input class="search-input" type="text" placeholder="Photos or People"></input>
         </form>
         <li><a href="#/explore" id="sign-out-link">Sign Out</a></li>
         <li class="header-avatar">
@@ -36,8 +36,8 @@
       <% } else { %>
         <li><a href="#session/new">Upload</a></li>
         <form class="search-form group">
-          <button class="search-submit" type="submit"><img src="/mag_glass.png"/></button>
-          <input class="search-input" type="text"></input>
+          <i class="fa fa-search"></i>
+          <input class="search-input" type="text" placeholder="Photos or People"></input>
         </form>
         <li><a href="#session/new">Sign In</a></li>
       <% } %>
