@@ -55,6 +55,7 @@ Bokeh.Models.CurrentUser = Bokeh.Models.User.extend({
 
   signOut: function(options){
     var model = this;
+    console.log(model);
 
     $.ajax({
       url: this.url,
