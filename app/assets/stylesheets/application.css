@@ -600,8 +600,25 @@ li:hover .user-options {
 }
 
 .photo-info .photo-details {
+  position: relative;
   float: left;
   padding: 15px 20px;
+  width: 60%;
+}
+
+.photo-info .edit {
+  display: none;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+}
+
+.photo-info .photo-details:hover {
+  background: #fff;
+}
+
+.photo-info .photo-details:hover .edit{
+  display: block;
 }
 
 .photo-info a {
@@ -705,7 +722,7 @@ li:hover .user-options {
   height: 250px;
   overflow: hidden;
   position: relative;
-
+  font-weight: 100;
 }
 
 .banner-image {

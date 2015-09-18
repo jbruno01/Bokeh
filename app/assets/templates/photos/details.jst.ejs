@@ -7,11 +7,23 @@
 <section class="photo-details">
 
   <h2 class="photo-title">
-    <%= photo.escape("title") %>
+    <% if (photo.escape("title")) { %>
+      <%= photo.escape("title") %>
+    <% } else { %>
+      No title
+    <% } %>
   </h2>
 
   <p class="photo-description">
-    <%= photo.escape("description") %>
+    <% if (photo.escape("description")) { %>
+      <%= photo.escape("title") %>
+    <% } else { %>
+      No description
+    <% } %>
   </p>
+
+  <div class="edit">
+    Click to edit!
+  </div>
 
 </section>

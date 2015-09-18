@@ -15,10 +15,13 @@ window.Bokeh = {
     this.currentUser.fetch({
       success: function(){
         Backbone.history.start();
+        this.header = new Bokeh.Views.Header({
+          el: "#header",
+          model: this.currentUser
+        });
       }.bind(this)
     });
 
-    this.header = new Bokeh.Views.Header({ el: "#header" });
 
 
   }

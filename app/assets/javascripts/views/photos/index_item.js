@@ -22,7 +22,11 @@ Bokeh.Views.PhotoIndexItem = Backbone.CompositeView.extend({
     event.preventDefault();
     var user = Bokeh.Collections.users.get(this.model.attributes.user_id).bind(this);
     user.attributes.avatar_url = this.model.get("avatar_url");
-    user.save();
+    user.save({},{
+        success: function(){
+          Bokeh.currentUser.fetch();
+        }
+    });
   },
 
   removeEditView: function () {

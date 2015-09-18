@@ -2,7 +2,7 @@ Bokeh.Views.Header = Backbone.CompositeView.extend({
   template: JST["shared/header"],
 
   initialize: function(options){
-    this.listenTo(Bokeh.currentUser, "change signIn signOut", this.render);
+    this.listenTo(this.model, "sync signIn signOut", this.render);
     this.render();
   },
 
@@ -24,9 +24,8 @@ Bokeh.Views.Header = Backbone.CompositeView.extend({
   },
 
   render: function(){
-  var renderedContent = this.template({ currentUser: Bokeh.currentUser });
+  var renderedContent = this.template({ currentUser: this.model });
   this.$el.html(renderedContent);
-
   return this;
 },
 
