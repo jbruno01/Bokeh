@@ -4,6 +4,6 @@
     <a class="user-avatar" href="#/users/<%= photo.attributes.user_id %>">
       <img src="<%= photo.user().attributes.avatar_url %>"/>
     </a>
-    <div class="title"><%= photo.attributes.title %></div>
+    <div class="title"><%= photo.attributes.title %> | <%= photo.comments().length %> <i class="fa fa-comments-o"></i></div>
   </div>
 </a>

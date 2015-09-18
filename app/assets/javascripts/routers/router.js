@@ -37,8 +37,12 @@ Bokeh.Routers.Router = Backbone.Router.extend({
   },
 
   splash: function () {
-    var homeView = new Bokeh.Views.SplashPage();
-    this._swapView(homeView);
+    if (Bokeh.currentUser.isSignedIn()){
+      Backbone.history.navigate("#/explore", { trigger: true })
+    } else {
+      var homeView = new Bokeh.Views.SplashPage();
+      this._swapView(homeView);
+    }
   },
 
   photoShow: function (id) {

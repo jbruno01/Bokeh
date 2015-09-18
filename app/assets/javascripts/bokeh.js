@@ -12,10 +12,14 @@ window.Bokeh = {
     });
 
     this.currentUser = new Bokeh.Models.CurrentUser();
-    this.currentUser.fetch();
+    this.currentUser.fetch({
+      success: function(){
+        Backbone.history.start();
+      }.bind(this)
+    });
 
     this.header = new Bokeh.Views.Header({ el: "#header" });
 
-    Backbone.history.start();
+
   }
 };

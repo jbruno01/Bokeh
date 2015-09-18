@@ -6,25 +6,21 @@
     </h1>
 
     <ul class="nav-links group">
-
       <% if(currentUser.isSignedIn()) { %>
         <li>
           <a href="#/users/<%= currentUser.id %>">You</a>
-
         </li>
       <% } else { %>
         <li><a href="#users/new">Sign Up</a></li>
       <% } %>
-
       <li><a href="#/explore" class="explore">Explore</a></li>
     </ul>
 
     <ul class="nav-tools group">
-
       <% if(currentUser.isSignedIn()) { %>
         <li><a href="#/users/<%= currentUser.id %>">Upload</a></li>
         <form class="search-form group">
-          <button class="search-submit" type="submit"><img src="/mag_glass.png"/></button>
+          <i class="fa fa-search"></i>
           <input class="search-input" type="text" placeholder="Photos or People"></input>
         </form>
         <li><a href="#/explore" id="sign-out-link">Sign Out</a></li>
