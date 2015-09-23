@@ -8,7 +8,7 @@ Bokeh.Views.Search = Backbone.CompositeView.extend({
 	},
 
 	events: {
-		"change .query": "search",
+		"change .search-input": "search",
 		"click .next-page": "nextPage",
 		"click .prev-page": "prevPage"
 	},
@@ -19,10 +19,10 @@ Bokeh.Views.Search = Backbone.CompositeView.extend({
 		var content = this.template({
 			results: this.searchResults
 		});
-		console.log(this.searchResults);
+		// console.log(this.searchResults);
 		this.$el.html(content);
 		if(Bokeh.query){
-			this.$(".query").val(Bokeh.query);
+			this.$(".search-input").val(Bokeh.query);
 			Bokeh.query = null
 			this.search(event)
 		}
@@ -31,9 +31,10 @@ Bokeh.Views.Search = Backbone.CompositeView.extend({
 	},
 
 	search: function (event) {
+		debugger
 		event.preventDefault();
 		this.searchResults.pageNum = 1;
-		this.searchResults.query = this.$(".query").val();
+		this.searchResults.query = this.$(".search-input").val();
 
 		this.searchResults.fetch({
 			data: {

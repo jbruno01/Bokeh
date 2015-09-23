@@ -858,8 +858,11 @@ li:hover .user-options {
 }
 
 .search-form .fa-search {
+  font-size: 22px;
   position: absolute;
   top: 6px;
+  left: 7px;
+  z-index: 100;
 }
 
 .search-page h1 {
