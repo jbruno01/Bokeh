@@ -2,9 +2,8 @@ Bokeh.Views.SiteHomeView = Backbone.CompositeView.extend({
   template: JST["site/home"],
 
   initialize: function () {
-    this.addPhotos()
     this.listenTo(this.collection, "sync", this.render);
-    this.listenTo(this.collection, "add", this.addPhotoView)
+    // this.listenTo(this.collection, "add", this.addPhotoView)
   },
 
   addPhotoView: function (photo) {
@@ -21,7 +20,7 @@ Bokeh.Views.SiteHomeView = Backbone.CompositeView.extend({
   render: function () {
     var renderedContent = this.template();
     this.$el.html(renderedContent);
-    this.attachSubviews();
+    this.addPhotos();
     this.$(".photo-index").justifiedGallery({
       rowHeight: 220,
       maxRowHeight: "110%",

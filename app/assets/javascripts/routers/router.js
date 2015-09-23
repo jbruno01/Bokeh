@@ -31,7 +31,7 @@ Bokeh.Routers.Router = Backbone.Router.extend({
   },
 
   siteHomePage: function () {
-    this.photos.fetch()
+    this.photos.fetch();
     var homeView = new Bokeh.Views.SiteHomeView({ collection: this.photos });
     this._swapView(homeView);
   },
@@ -89,9 +89,9 @@ Bokeh.Routers.Router = Backbone.Router.extend({
    return true;
  },
 
- _goHome: function(){
-  Backbone.history.navigate("", { trigger: true });
-},
+  _goHome: function(){
+    Backbone.history.navigate("", { trigger: true });
+  },
 
   _swapView: function(view) {
     this._currentView && this._currentView.remove();
