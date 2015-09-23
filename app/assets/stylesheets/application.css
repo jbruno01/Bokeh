@@ -83,7 +83,7 @@ img {
   background: #161617;
   position: fixed;
   color: #fff;
-  z-index: 1;
+  z-index: 1000;
   display: block;
   width: 100%;
 }
@@ -174,7 +174,7 @@ li:hover .user-options {
   padding: 13px 0;
 }
 
-.nav-tools input {
+.search-input {
   position: relative;
   text-indent: 27px;
   float: left;
@@ -184,7 +184,7 @@ li:hover .user-options {
   width: 200px;
 }
 
-.search-form .fa-search {
+#header .search-form .fa-search {
   background: #FFFFFF;
   color: #000;
   position: absolute;
@@ -604,10 +604,12 @@ li:hover .user-options {
   float: left;
   padding: 15px 20px;
   width: 60%;
+  border-radius: 2px;
 }
 
 .photo-info .edit {
   display: none;
+  color: #CDCCCC;
   position: absolute;
   top: 15px;
   right: 15px;
@@ -837,20 +839,34 @@ li:hover .user-options {
   width: 900px;
   margin: auto;
 }
+
+.search-page .container {
+  margin: auto;
+  position: relative;
+}
+
+.search-page .search-form {
+  position: relative;
+  margin: auto;
+  width: 400px;
+}
+
+.search-page .search-input {
+  font-size: 18px;
+  padding: 5px;
+  width: 100%;
+}
+
+.search-form .fa-search {
+  position: absolute;
+  top: 6px;
+}
+
 .search-page h1 {
   padding: 20px 0;
   display: block;
   text-align: center;
   font-size: 36px;
-}
-
-.search-page input {
-  font-size: 18px;
-  padding: 5px;
-  display: block;
-  margin: auto;
-  width: 300px;
-  border: 1px solid #1C9BE9;
 }
 
 .search-page nav {

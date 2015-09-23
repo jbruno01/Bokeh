@@ -51,10 +51,44 @@ Bokeh.Views.IndexPhotoView = Backbone.CompositeView.extend({
     this.addSubview(".banner-view", bannerView);
   },
 
+  fileUpload: function (files) {
+    var that = this;
+    files.forEach(function(file){
+      var newPhoto = new Bokeh.Models.Photo();
+      var formData = new FormData();
+      formData.append("photo[image]", file);
+      newPhoto.saveFormData(formData, {
+        success: function(){
+          that.collection.add(newPhoto, { merge: true })
+        }
+      })
+    })
+
+  },
+
+  setDrop: function() {
+    var that = this;
+    // if(Bokeh.currentUser.id && this.model.id === Bokeh.currentUser.id.toString()){
+      debugger
+      $(".droppable").bind('fileuploadsubmit', function (e, data) {
+        return false;
+      });
+
+      $(".droppable").fileupload({
+        drop: function (e, data) {
+          that.fileUpload(data.files);
+        },
+        url: "api/photos",
+        type: "json"
+      })
+    // }
+  },
+
   render: function () {
     var renderedContent = this.template({ user: this.model });
     this.$el.html(renderedContent);
     this.attachSubviews();
+    this.setDrop();
     return this;
   }
 })

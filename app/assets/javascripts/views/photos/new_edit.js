@@ -37,25 +37,25 @@ Bokeh.Views.AddEditPhotoView = Backbone.CompositeView.extend({
     } else {
       var user = Bokeh.Collections.users.get(this.model.attributes.user_id).bind(this)
     };
-    var avatar = this.$(".avatar-checkbox").is(":checked")
-    var banner = this.$(".banner-checkbox").is(":checked")
+    // var avatar = this.$(".avatar-checkbox").is(":checked")
+    // var banner = this.$(".banner-checkbox").is(":checked")
     var that = this;
-    if(avatar){
-      user.attributes.avatar_url = this.model.attributes.avatar_url;
-    };
-    if(banner){
-      user.attributes.banner_url = this.model.attributes.original_url;
-    };
-    if(avatar || banner){
-      user.save()
-    };
-    formData.append("photo[description]", description);
-    formData.append("photo[title]", title);
+    // if(avatar){
+    //   user.attributes.avatar_url = this.model.attributes.avatar_url;
+    // };
+    // if(banner){
+    //   user.attributes.banner_url = this.model.attributes.original_url;
+    // };
+    // if(avatar || banner){
+    //   user.save()
+    // };
+    // formData.append("photo[description]", description);
+    // formData.append("photo[title]", title);
     this.model.saveFormData(formData, {
       success: function(){
         that.collection.add(that.model, { merge: true })
-        $(".upload-spinner").addClass("hidden");
-        $('.new-photo').prop("disabled", false);
+        // $(".upload-spinner").addClass("hidden");
+        // $('.new-photo').prop("disabled", false);
       }
     });
   }

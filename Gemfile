@@ -19,6 +19,7 @@ gem "omniauth-google-oauth2"
 gem "pg_search"
 gem "kaminari"
 gem "font-awesome-rails"
+gem 'jquery-ui-rails'
 
 # Use Unicorn as the app server
 # gem 'unicorn'

@@ -1,14 +1,18 @@
-<section class="banner-view"></section>
+<div class="droppable group">
 
-<section class="photo-index">
-  <section class="add-photo-form group">
-    <% if(Bokeh.currentUser.id === user.id) { %>
-      <button class="new-photo">Upload Photo</button>
-      <img src="/715.gif" class="upload-spinner hidden"/>
-    <% } %>
-  </section>
+  <section class="banner-view"></section>
 
-  <section class="photo-index-photos">
+    <section class="photo-index">
+      <section class="add-photo-form group">
+        <% if(Bokeh.currentUser.id === user.id) { %>
+          <button class="new-photo">Upload Photo</button>
+          <img src="/715.gif" class="upload-spinner hidden"/>
+        <% } %>
+      </section>
 
-  </section>
-</section>
+      <section class="photo-index-photos">
+
+      </section>
+    </section>
+
+</div>

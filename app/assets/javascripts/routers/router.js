@@ -56,7 +56,7 @@ Bokeh.Routers.Router = Backbone.Router.extend({
     var callback = this.userShow.bind(this);
       // if (!this._requireSignedIn(callback)) { return; }
 
-    var indexPhotoView = new Bokeh.Views.IndexPhotoView({ model: user });
+    var indexPhotoView = new Bokeh.Views.IndexPhotoView({ model: user, collection: user.photos() });
     this._swapView(indexPhotoView);
   },
 

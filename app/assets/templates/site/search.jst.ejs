@@ -1,22 +1,24 @@
 <section class="search-page">
 
 
-	<h1>Search!</h1>
-
-	<label>
-		<input type="text" class="query" placeholder="People or Photos">
-	</label>
+	<h1>Search</h1>
+	<div class="container">
+		<form class="search-form group">
+			<i class="fa fa-search"></i>
+			<input class="search-input" type="text" placeholder="Photos or People"></input>
+		</form>
+	</div>
 
 	<section class="search-results group">
 
-	<nav>
-		Displaying page number <%= results.pageNum %> out
-		of <%= results.total_count %> results
-		<section class="nav-buttons group">
-			<a class="prev-page" href="javascript:void(0)">Prev</a>
-			<a class="next-page" href="javascript:void(0)">Next</a>
-		</section>
-	</nav>
+		<nav>
+			Displaying page number <%= results.pageNum %> out
+			of <%= results.total_count %> results
+			<section class="nav-buttons group">
+				<a class="prev-page" href="javascript:void(0)">Prev</a>
+				<a class="next-page" href="javascript:void(0)">Next</a>
+			</section>
+		</nav>
 
 
 
