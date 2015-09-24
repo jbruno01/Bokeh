@@ -1,18 +1,17 @@
-<div class="droppable group">
+<div class="index-container">
+  <% if(Bokeh.currentUser.id === user.id) { %>
+    <div class="upload-prompt">
+      <small id="close_form" class="close-modal">X</small>
+      <h1>Drop photos anywhere to upload.</h1>
+    </div>
+  <% } %>
+  <div class="droppable group">
+    <h1 class="dragover-popup">Drop it! We'll take it from here!</h1>
+    <section class="banner-view"></section>
 
-  <section class="banner-view"></section>
-
-    <section class="photo-index">
-      <section class="add-photo-form group">
-        <% if(Bokeh.currentUser.id === user.id) { %>
-          <button class="new-photo">Upload Photo</button>
-          <img src="/715.gif" class="upload-spinner hidden"/>
-        <% } %>
+      <section class="photo-index">
+        <section class="photo-index-photos">
+        </section>
       </section>
-
-      <section class="photo-index-photos">
-
-      </section>
-    </section>
-
+  </div>
 </div>

@@ -13,6 +13,12 @@ Bokeh.Views.IndexPhotoView = Backbone.CompositeView.extend({
 
   events: {
     "click .new-photo" : "newPhoto",
+    "click .close-modal" : "closeOverlay"
+  },
+
+  closeOverlay: function(event) {
+    event.preventDefault();
+    $(".upload-prompt").addClass("hidden");
   },
 
   addPhotoView: function (photo) {
@@ -68,19 +74,37 @@ Bokeh.Views.IndexPhotoView = Backbone.CompositeView.extend({
 
   setDrop: function() {
     var that = this;
-    $(".droppable").bind('fileuploadsubmit', function (e, data) {
+    var $dz = $(".droppable");
+    var $popup = $(".dragover-popup");
+    $dz.bind('fileuploadsubmit', function (e, data) {
+      e.preventDefault();
+      e.stopPropagation();
       return false;
     });
+    $dz.on("dragenter", function(e){
+      e.preventDefault();
+      e.stopPropagation();
+      $popup.toggleClass("active");
+    })
+
+    $dz.on("dragleave", function(e){
+      e.preventDefault();
+      e.stopPropagation();
+      $popup.toggleClass("active");
+    })
 
     $(".droppable").fileupload({
       drop: function (e, data) {
+        e.stopPropagation();
+        e.preventDefault();
         that.fileUpload(data.files);
+        $popup.toggleClass("active");
       },
       url: "api/photos",
       type: "json"
-    })
+    });
 
-    if (Bokeh.currentUser.cid || (this.model.id.toString() !== Bokeh.currentUser.id.toString())) {
+    if (!Bokeh.currentUser.id || (this.model.id.toString() !== Bokeh.currentUser.id.toString())) {
       $(".droppable").fileupload('disable');
     }
   },
