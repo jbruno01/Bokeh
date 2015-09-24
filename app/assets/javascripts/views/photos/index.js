@@ -70,7 +70,7 @@ Bokeh.Views.IndexPhotoView = Backbone.CompositeView.extend({
           that.collection.add(newPhoto, { merge: true })
         },
         error: function(resp){
-          $(".errors").empty();
+          $(".errors").addClass("active");
           $p = $('<p></p>')
           $p.append(
             "One of your files was invalid. Only jpeg or png files less than 5MB."
@@ -84,6 +84,7 @@ Bokeh.Views.IndexPhotoView = Backbone.CompositeView.extend({
 
   clearErrors: function() {
     $(".errors").empty();
+    $(".errors").removeClass("active");
   },
 
   setDrop: function() {

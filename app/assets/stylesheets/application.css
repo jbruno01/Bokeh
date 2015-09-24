@@ -528,6 +528,7 @@ li:hover .user-options {
 }
 
 .errors {
+  display: none;
   border: 1px solid #000;
   opacity: .9;
   color: #fff;
@@ -537,6 +538,10 @@ li:hover .user-options {
   top: 70px;
   left: 50%;
   transform: translateX(-50%);
+}
+
+.errors.active {
+  display: block;
 }
 
 .errors p {
