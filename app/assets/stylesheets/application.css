@@ -527,6 +527,24 @@ li:hover .user-options {
   z-index: 100000;
 }
 
+.errors {
+  border: 1px solid #000;
+  opacity: .9;
+  color: #fff;
+  background: #128FDC;
+  position: fixed;
+  z-index: 10000;
+  top: 70px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.errors p {
+  display: block;
+  font-size: 16px;
+  padding: 0 5px;
+}
+
 /*Album Index Page*/
 
 .album-index {

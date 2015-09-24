@@ -23,7 +23,7 @@ module Api
       if @photo.save
         render :show
       else
-        render json: @photo.errors.full_messages, status: :unprocessable_entity
+        render json: @photo.errors.full_messages, status: 401
       end
     end
 

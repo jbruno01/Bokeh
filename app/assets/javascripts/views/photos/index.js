@@ -68,10 +68,22 @@ Bokeh.Views.IndexPhotoView = Backbone.CompositeView.extend({
       newPhoto.saveFormData(formData, {
         success: function(){
           that.collection.add(newPhoto, { merge: true })
-        }
-      })
-    })
+        },
+        error: function(resp){
+          $(".errors").empty();
+          $p = $('<p></p>')
+          $p.append(
+            "One of your files was invalid. Only jpeg or png files less than 5MB."
+          );
+          $(".errors").append($p);
+            window.setTimeout(that.clearErrors, 5000);
+          }
+     });
+   })
+  },
 
+  clearErrors: function() {
+    $(".errors").empty();
   },
 
   setDrop: function() {

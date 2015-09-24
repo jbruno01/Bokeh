@@ -38,7 +38,7 @@ Bokeh.Models.Photo = Backbone.Model.extend({
         options.success && options.success(model, resp, options);
       },
       error: function(resp){
-        options.error && options.error(model, resp, options);
+        options.error && options.error(resp, model, options);
       }
     });
   },
