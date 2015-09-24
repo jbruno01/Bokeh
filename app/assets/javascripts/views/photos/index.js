@@ -1,5 +1,7 @@
 Bokeh.Views.IndexPhotoView = Backbone.CompositeView.extend({
   template: JST["photos/index"],
+  tagName: "section",
+  className: "droppable",
 
   initialize: function(){
     this.renderBanner({ model: this.model });
@@ -75,12 +77,14 @@ Bokeh.Views.IndexPhotoView = Backbone.CompositeView.extend({
   setDrop: function() {
     var that = this;
     var $dz = $(".droppable");
+
     var $popup = $(".dragover-popup");
     $dz.bind('fileuploadsubmit', function (e, data) {
       e.preventDefault();
       e.stopPropagation();
       return false;
     });
+
     $dz.on("dragenter", function(e){
       e.preventDefault();
       e.stopPropagation();

@@ -21,7 +21,10 @@ class Photo < ActiveRecord::Base
                             avatar: "200x200#",
                             medium: "400x400>"
                           }
-  validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
+
+  validates_attachment :image,
+          content_type: {content_type: ["image/jpeg", "image/png"]},
+          size: { in: 0..5000.kilobytes }
 
   belongs_to :user
   belongs_to :album
