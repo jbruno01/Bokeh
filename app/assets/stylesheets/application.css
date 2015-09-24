@@ -833,10 +833,22 @@ li:hover .user-options {
   float: left;
   /*position: absolute;*/
   width: 100px;
+  padding-right: 10px;
   /*height: 100px;
   bottom: 25px;
   left: 10%;*/
 }
+
+.banner-user-details li {
+  padding: 3px 5px;
+  text-shadow: 1px 1px 2px #fff;
+}
+
+/*.num-photos-and-joindate li {
+  padding: 0 10px;
+  float: right;
+  display: block;
+}*/
 
 /*.banner-album-details {
   display: block;
@@ -975,7 +987,8 @@ li:hover .user-options {
   text-align: center;
 }
 
-.search-results .user-pic {
+.search-results img {
   display: block;
-  width: 200px;
+  height: 200px;
+  width: auto;
 }

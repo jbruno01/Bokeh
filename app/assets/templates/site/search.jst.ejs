@@ -11,14 +11,22 @@
 
 	<section class="search-results group">
 
-		<nav>
+	<nav>
+		<% if(results.query && results.length === 0){ %>
+			0 Results for <%= results.query %>
+		<% } else if(results.length > 0) { %>
 			Displaying page number <%= results.pageNum %> out
 			of <%= results.total_count %> results
 			<section class="nav-buttons group">
-				<a class="prev-page" href="javascript:void(0)">Prev</a>
-				<a class="next-page" href="javascript:void(0)">Next</a>
+				<% if(results.page > 1){ %>
+					<a class="prev-page" href="javascript:void(0)">Prev</a>
+				<% } %>
+				<% if(results.page * 20 > results.total_count) { %>
+					<a class="next-page" href="javascript:void(0)">Next</a>
+				<% } %>
 			</section>
-		</nav>
+		<% } %>
+	</nav>
 
 
 
@@ -30,7 +38,7 @@
 					User: <a class="user-name" href="#/users/<%= result.escape("real_id") %>"><%= result.escape("name") %></a>
 
 				<% } else { %>
-					<a href="#/photos/<%= result.escape("real_id") %>"><img src="<%= result.escape("small_url") %>"/></a>
+					<a class="photo-pic" href="#/photos/<%= result.escape("real_id") %>"><img src="<%= result.escape("small_url") %>"/></a>
 					Title: <a href="#/photos/<%= result.escape("real_id") %>"><%= result.escape("title") %></a>
 
 				<% } %>

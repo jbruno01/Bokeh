@@ -24,10 +24,10 @@ Bokeh.Views.Header = Backbone.CompositeView.extend({
   },
 
   render: function(){
-  var renderedContent = this.template({ currentUser: this.model });
-  this.$el.html(renderedContent);
-  return this;
-},
+    var renderedContent = this.template({ currentUser: this.model });
+    this.$el.html(renderedContent);
+    return this;
+  },
 
   signOut: function(event){
     event.preventDefault();
