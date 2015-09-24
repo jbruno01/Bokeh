@@ -22,8 +22,10 @@
     <% } %>
   </p>
 
-  <div class="edit">
-    Click to edit!
-  </div>
+  <% if(photo.escape("user_id") === Bokeh.currentUser.id){ %>  
+    <div class="edit">
+      Click to edit!
+    </div>
+  <% } %>
 
 </section>
