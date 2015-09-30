@@ -1,17 +1,25 @@
 <div class="index-container">
   <section class="errors">
   </section>
-  <% if(Bokeh.currentUser.id === user.id) { %>
-    <div class="upload-prompt">
-      <small id="close_form" class="close-modal">X</small>
-      <h1>Drop photos anywhere to upload.</h1>
+  
+  <div id="progress" class="group">
+      <h2>Progress</h2>
+    <div class="bar">
     </div>
-    <h1 class="dragover-popup">Drop it! We'll take it from here!</h1>
-  <% } %>
-    <section class="banner-view"></section>
+  </div>
+
+    <% if(Bokeh.currentUser.id === user.id) { %>
+      <div class="upload-prompt">
+        <small id="close_form" class="close-modal">X</small>
+        <h1>Drop photos anywhere to upload.</h1>
+      </div>
+      <h1 class="dragover-popup">Drop it! We'll take it from here!</h1>
+    <% } %>
+
+    <section class="banner-view">
+    </section>
 
       <section class="photo-index group">
-        <section class="photo-index-photos">
-        </section>
+
       </section>
   </div>

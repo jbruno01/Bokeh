@@ -1,5 +1,6 @@
 Bokeh.Views.UserBanner = Backbone.CompositeView.extend({
   template: JST["shared/user_banner"],
+  className: "banner-container",
 
   initialize: function () {
     this.listenTo(this.model, "sync", this.render),

@@ -1,5 +1,6 @@
 Bokeh.Views.PhotoIndexItem = Backbone.CompositeView.extend({
   template: JST["photos/index_item"],
+  className: "photo-index-tile group",
 
   initialize: function () {
     this.listenTo(this.model, "sync", this.render);
@@ -30,12 +31,12 @@ Bokeh.Views.PhotoIndexItem = Backbone.CompositeView.extend({
     });
   },
 
-  removeEditView: function () {
-    if(this.editView){
-      this.removeSubview(".photo-tile-section", this.editView);
-      this.editView = null;
-    }
-  },
+  // removeEditView: function () {
+  //   if(this.editView){
+  //     this.removeSubview(".photo-tile-section", this.editView);
+  //     this.editView = null;
+  //   }
+  // },
 
   deletePhoto: function (event) {
     event.preventDefault();
@@ -43,7 +44,6 @@ Bokeh.Views.PhotoIndexItem = Backbone.CompositeView.extend({
   },
 
   render: function () {
-    this.removeEditView();
     var renderedContent = this.template({ photo: this.model });
     this.$el.html(renderedContent);
     return this;
