@@ -12,6 +12,8 @@ Bokeh.Views.IndexPhotoView = Backbone.CompositeView.extend({
     this.addPhotos();
     this.listenTo(this.model.photos(), "add", this.addPhotoView);
     this.listenTo(this.model.photos(), "remove", this.removePhotoView);
+    this.listenTo(this.model.avatar_url, "change", this.renderBanner);
+    this.listenTo(this.model.banner_url, "change", this.renderBanner);
   },
 
   addPhotoView: function (photo) {
