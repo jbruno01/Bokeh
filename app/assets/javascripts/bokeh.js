@@ -21,8 +21,5 @@ window.Bokeh = {
         });
       }.bind(this)
     });
-
-
-
   }
 };

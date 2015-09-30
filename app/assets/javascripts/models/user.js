@@ -4,7 +4,7 @@ Bokeh.Models.User = Backbone.Model.extend({
   photos: function() {
     if(!this._photos){
       this._photos = new Bokeh.Collections.Photos([], { user: this })
-      this.photos().comparator = "id";
+      this.photos().comparator = "created_at";
     }
     return this._photos;
   },
@@ -14,7 +14,6 @@ Bokeh.Models.User = Backbone.Model.extend({
       this.photos().set(response.photos, { parse: true });
       delete response.photos;
     }
-
     return response;
   }
 })

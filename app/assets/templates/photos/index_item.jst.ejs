@@ -1,12 +1,11 @@
+<a href="#/photos/<%= photo.id %>">
+  <img class="index-tile" src="<%= photo.escape("medium_url") %>"/>
+</a>
 
-    <a href="#/photos/<%= photo.id %>">
-      <img class="index-tile" src="<%= photo.escape("medium_url") %>"/>
-    </a>
-
-    <% if(Bokeh.currentUser.id === photo.attributes.user_id) { %>
-      <section class="photo-hover-buttons group">
-        <button class="photo-delete" data-id="<%= photo.id %>">Delete</button>
-        <button class="photo-avatar" data-id="<%= photo.id %>">Avatar</button>
-        <button class="photo-banner" data-id="<%= photo.id %>">Banner</button>
-      </section>
-    <% } %>
+<% if(Bokeh.currentUser.id === photo.attributes.user_id) { %>
+  <section class="photo-hover-buttons group">
+    <button class="photo-delete" data-id="<%= photo.id %>"><i class="fa fa-trash-o"></i></button>
+    <button class="photo-banner" data-id="<%= photo.id %>"><i class="fa fa-picture-o"></i></button>
+    <button class="photo-avatar" data-id="<%= photo.id %>"><i class="fa fa-user"></i></button>
+  </section>
+<% } %>

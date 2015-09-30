@@ -347,27 +347,7 @@ li:hover .user-options {
 }
 
 /*photo index page*/
-/*
-.add-photo-form {
-  float: left;
-  position: relative;
-}*/
 
-/*.new-photo {
-  text-align: center;
-  margin: 10px;
-  float: left;
-  height: 200px;
-  width: 175px;
-  background: #1C9BE9;
-  color: #fff;
-  border: 1px solid #167cba;
-}*/
-
-/*.add-photo-form button:hover {
-  cursor: pointer;
-  background: #167cba;
-}*/
 
 .photo-index {
   text-align: center;
@@ -384,71 +364,9 @@ li:hover .user-options {
   width: auto;
 }
 
-
-.add-edit-photo {
-  position: absolute;
-  font-size: 14px;
-  float: left;
-  height: 200px;
-  width: 175px;
-  margin: 10px;
-  background: #1C9BE9;
-}
-
-.add-edit-photo #input-photo-image {
-  width: 150px;
-}
-
 .hidden {
   display: none;
 }
-
-/*.upload-spinner {
-  position: absolute;
-  top: 50%;
-  left: 30%;
-  transform: translateX(-65%);
-  transform: translateY(-50%);
-  width: 70px;
-  height: 70px;
-}*/
-
-/*.add-edit-photo input {
-  padding: 4px;
-  display: block;
-  margin: 5px auto;
-}*/
-
-/*.add-edit-photo button {
-  padding: 5px 10px;
-  background: #167CBA;
-  display: block;
-  margin: 5px auto;
-  font-size: 14px;
-  color: #fff;
-}*/
-
-/*.input-photo-album {
-  display: block;
-  margin: auto;
-  padding: 10px;
-}*/
-
-/*.input-photo-album select {
-  width: 100px;
-}*/
-
-/*.add-photo-form #close-form {
-  position: absolute;
-  right: 10px;
-  top: 10px;
-  padding: 3px;
-}*/
-
-/*.add-photo-form #close-form:hover {
-  cursor: pointer;
-  background: #167CBA;
-}*/
 
 .photo-index-tile:hover .photo-hover-buttons {
   display: block;
@@ -458,17 +376,17 @@ li:hover .user-options {
 }
 
 .photo-hover-buttons {
+  width: 85px;
   display: none;
   position: absolute;
-  width: 148px;
   top: 0;
   left: 50%;
   transform: translateX(-50%);
 }
 
 .photo-hover-buttons button {
-  padding: 2px;
-  font-size: 14px;
+  padding: 2px 5px;
+  font-size: 18px;
 }
 
 .photo-hover-buttons button:hover {
@@ -499,10 +417,6 @@ li:hover .user-options {
   top: 5px;
   right: 5px;
   z-index: 1001;
-}
-
-.upload-prompt .hidden {
-  display: none;
 }
 
 .dragover-popup {

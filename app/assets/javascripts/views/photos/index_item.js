@@ -18,6 +18,7 @@ Bokeh.Views.PhotoIndexItem = Backbone.CompositeView.extend({
     var user = Bokeh.Collections.users.get(this.model.attributes.user_id).bind(this);
     user.attributes.banner_url = this.model.get("original_url");
     user.save();
+    Bokeh.Views.IndexPhotoView.renderBanner();
   },
 
   setAvatar: function(event) {
@@ -29,14 +30,8 @@ Bokeh.Views.PhotoIndexItem = Backbone.CompositeView.extend({
           Bokeh.currentUser.fetch();
         }
     });
+    Bokeh.Views.IndexPhotoView.renderBanner();
   },
-
-  // removeEditView: function () {
-  //   if(this.editView){
-  //     this.removeSubview(".photo-tile-section", this.editView);
-  //     this.editView = null;
-  //   }
-  // },
 
   deletePhoto: function (event) {
     event.preventDefault();
