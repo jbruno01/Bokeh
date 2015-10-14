@@ -7,6 +7,18 @@ Bokeh.Views.SplashPage = Backbone.CompositeView.extend({
     this.listenTo(Bokeh.currentUser, "signIn signOut", this.render);
   },
 
+  events: {
+    "click .guest-user" : "guestUser"
+  },
+
+  guestUser: function(){
+    event.preventDefault();
+    Bokeh.currentUser.signIn({
+      email: "jbruno01@gmail.com",
+      password: "password"
+    });
+  },
+
   render: function () {
     var renderedContent = this.template( {currentUser: Bokeh.currentUser});
     this.$el.html(renderedContent);

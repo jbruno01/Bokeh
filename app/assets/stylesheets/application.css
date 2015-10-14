@@ -89,6 +89,10 @@ img {
   width: 100%;
 }
 
+button:hover {
+ cursor: pointer;
+}
+
 /*Header Start*/
 
 .header-nav {
@@ -309,17 +313,17 @@ li:hover .user-options {
 }
 
 #sign_in_up_form button {
-  float: none;
-  margin: auto;
+  margin: 20px auto;
   display: block;
 }
 
-#sign_in_up_form .guest-user {
+.guest-user {
   background: #eee;
   color: #000;
   display: block;
-  margin: 10px auto;
+  margin: 20px auto;
   padding: 5px 20px;
+  border-radius: 5px;
 }
 
 #sign_in_up_form button:hover {
