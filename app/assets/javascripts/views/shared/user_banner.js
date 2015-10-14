@@ -8,7 +8,6 @@ Bokeh.Views.UserBanner = Backbone.CompositeView.extend({
   },
 
   render: function () {
-    debugger
     var renderedContent = this.template({ user: this.model });
     this.$el.html(renderedContent);
     return this;

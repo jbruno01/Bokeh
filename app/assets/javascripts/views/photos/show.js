@@ -4,6 +4,7 @@ Bokeh.Views.PhotoShow = Backbone.CompositeView.extend({
   template: JST["photos/show"],
 
   initialize: function () {
+
     this.addComments();
     this.renderDetails();
     this.listenTo(this.model, "sync", this.render);
@@ -13,7 +14,15 @@ Bokeh.Views.PhotoShow = Backbone.CompositeView.extend({
   },
 
   events: {
-      "click .photo-details" : "editDetails"
+      "click .photo-details" : "editDetails",
+  },
+
+  loadingGifInit: function () {
+    $(".main-photo").toggleClass("hidden");
+    $(".main-photo").load(function() {
+      $(".loader-gif").hide();
+      $(".main-photo").toggleClass("hidden")
+    });
   },
 
   renderDetails: function () {
@@ -83,6 +92,7 @@ Bokeh.Views.PhotoShow = Backbone.CompositeView.extend({
     var renderedContent = this.template({ photo: this.model });
     this.$el.html(renderedContent);
     this.attachSubviews()
+    this.loadingGifInit();
     return this;
   }
 })

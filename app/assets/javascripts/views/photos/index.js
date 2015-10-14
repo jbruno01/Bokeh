@@ -104,7 +104,6 @@ Bokeh.Views.IndexPhotoView = Backbone.CompositeView.extend({
   },
 
   setFileUpload: function() {
-    debugger
     var that = this;
     var $dz = $(".droppable");
     var $popup = $(".dragover-popup");
