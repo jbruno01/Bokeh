@@ -17,7 +17,11 @@ Bokeh.Views.PhotoIndexItem = Backbone.CompositeView.extend({
     event.preventDefault();
     var user = Bokeh.Collections.users.get(this.model.attributes.user_id).bind(this);
     user.attributes.banner_url = this.model.get("original_url");
-    user.save();
+    user.save({},{
+        success: function(){
+          user.trigger("banner");
+        }
+    });
   },
 
   setAvatar: function(event) {

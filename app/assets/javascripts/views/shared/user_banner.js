@@ -6,6 +6,7 @@ Bokeh.Views.UserBanner = Backbone.CompositeView.extend({
     this.listenToOnce(this.model, "sync", this.render),
     this.listenTo(this.model.photos(), "remove", this.render)
     this.listenTo(this.model, "avatar", this.renderAvatar)
+    this.listenTo(this.model, "banner", this.render)
   },
 
   renderAvatar: function () {
