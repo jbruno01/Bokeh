@@ -773,7 +773,14 @@ li:hover .user-options {
   font-weight: 100;
 }
 
+.banner-image.hidden {
+  display: block;
+  opacity: 0;
+}
+
 .banner-image {
+  opacity: 1;
+  transition: opacity .5s ease-in;
   z-index: 1;
   position: absolute;
   display: block;

@@ -27,6 +27,7 @@ Bokeh.Views.PhotoIndexItem = Backbone.CompositeView.extend({
     user.save({},{
         success: function(){
           Bokeh.currentUser.fetch();
+          user.trigger("avatar")
         }
     });
   },
