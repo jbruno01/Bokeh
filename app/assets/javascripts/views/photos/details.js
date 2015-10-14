@@ -6,7 +6,6 @@ Bokeh.Views.PhotoDetails = Backbone.CompositeView.extend({
   },
 
   render: function () {
-    debugger
     var renderedContent = this.template({ photo: this.model });
     this.$el.html(renderedContent);
     return this;

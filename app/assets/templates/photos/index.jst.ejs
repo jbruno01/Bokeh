@@ -1,14 +1,14 @@
 <div class="index-container">
   <section class="errors">
   </section>
-  
+
   <div id="progress" class="group">
       <h2>Progress</h2>
     <div class="bar">
     </div>
   </div>
 
-    <% if(Bokeh.currentUser.id === user.id) { %>
+    <% if(Bokeh.currentUser.id.toString() === user.id.toString()) { %>
       <div class="upload-prompt">
         <small id="close_form" class="close-modal">X</small>
         <h1>Drop photos anywhere to upload.</h1>

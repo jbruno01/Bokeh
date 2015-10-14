@@ -12,7 +12,7 @@
           <% if( user.photos().length === 1) { %>
             <h2><%= user.photos().length %> Photo</h2>
           <% } else { %>
-            <h2><%= user.photos().length %> Photos</h2>
+            <h2 class="num-photos"><%= user.photos().length %> Photos</h2>
           <% } %>
           <h2>Joined <%= user.escape("created_at").slice(0,4) %></h2>
         </nav>

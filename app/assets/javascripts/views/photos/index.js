@@ -66,7 +66,8 @@ Bokeh.Views.IndexPhotoView = Backbone.CompositeView.extend({
       var size = file.size
       newPhoto.saveFormData(formData, {
         success: function(){
-          that.collection.add(newPhoto, { merge: true })
+          that.collection.add(newPhoto, { merge: true });
+          $(".num-photos").html(that.collection.length + " Photos");
           that.dataUploaded = that.dataUploaded + size;
           that.renderProgress();
         },
@@ -103,6 +104,7 @@ Bokeh.Views.IndexPhotoView = Backbone.CompositeView.extend({
   },
 
   setFileUpload: function() {
+    debugger
     var that = this;
     var $dz = $(".droppable");
     var $popup = $(".dragover-popup");
