@@ -34,6 +34,18 @@ group :development do
   gem 'pry-rails'
 end
 
+group :test, :development do
+  gem 'spring'
+  gem 'spring-commands-rspec'
+  gem 'guard-rspec'
+  gem 'factory_girl_rails'
+  gem 'rspec-rails'
+end
+
 group :production do
   gem 'rails_12factor'
+end
+
+group :test do
+  gem 'shoulda-matchers', require: false
 end

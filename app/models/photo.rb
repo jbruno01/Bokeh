@@ -24,8 +24,9 @@ class Photo < ActiveRecord::Base
                           }
 
   validates_attachment :image,
+          presence: true,
           content_type: {content_type: ["image/jpeg", "image/png"]},
-          size: { in: 0..5000.kilobytes }
+          size: { in: 0..5.megabytes }
 
   belongs_to :user
   belongs_to :album
