@@ -38,8 +38,10 @@ group :test, :development do
   gem 'spring'
   gem 'spring-commands-rspec'
   gem 'guard-rspec'
+  gem 'guard-jasmine'
   gem 'factory_girl_rails'
   gem 'rspec-rails'
+  gem 'terminal-notifier-guard', '~> 1.6.1'
 end
 
 group :production do
