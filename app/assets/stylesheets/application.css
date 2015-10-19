@@ -725,8 +725,12 @@ li:hover .user-options {
   display: none;
   color: #ccc;
   top: -5px;
-  left: 300px;
+  left: 290px;
   width: 150px;
+  border: 1px solid #eee;
+  text-align: center;
+  padding: 2px;
+  cursor: pointer;
 }
 
 .comment-item:hover .hover-edit {
@@ -758,7 +762,7 @@ li:hover .user-options {
   padding-top: 0;
 }
 
-.new-comment-area {
+.new-comment-area, .edit-comment-area {
   font-size: 16px;
 }
 

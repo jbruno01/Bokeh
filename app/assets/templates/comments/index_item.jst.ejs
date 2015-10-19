@@ -4,9 +4,9 @@
   </a>
   <div class="comment-content">
     <% if(comment.attributes.user_id === Bokeh.currentUser.id){ %>
-      <p class="hover-edit">Double click to edit!</p>
+      <p class="hover-edit">Click here to edit!</p>
     <% } %>
     <h3><%= comment.user().attributes.name %></h3>
-    <p><%= comment.escape("content") %></p>
+    <p class="content"><%= comment.escape("content") %></p>
   </div>
 </div>
