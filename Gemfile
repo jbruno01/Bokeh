@@ -38,6 +38,7 @@ group :test, :development do
   gem 'spring'
   gem 'spring-commands-rspec'
   gem 'guard-rspec'
+  gem 'jasmine-rails'
   gem 'guard-jasmine'
   gem 'factory_girl_rails'
   gem 'rspec-rails'

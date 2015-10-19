@@ -1,7 +1,7 @@
-guard :rspec, cmd: 'spring rspec' do
-  watch(%r{^app/}) { "spec" }
-  watch(%r{^spec/}) { "spec" }
-end
+# guard :rspec, cmd: 'spring rspec' do
+#   watch(%r{^app/}) { "spec" }
+#   watch(%r{^spec/}) { "spec" }
+# end
 
 guard :jasmine do
   watch(%r{spec/javascripts/spec\.(js\.coffee|js|coffee)$}) { 'spec/javascripts' }
