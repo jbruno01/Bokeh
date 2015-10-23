@@ -32,6 +32,7 @@ Bokeh is a photo sharing app inspired by Flickr, built on Rails and Backbone. Us
 - Multisearch with PgSearch
 - Photo storage with AWS S3 and the Paperclip gem
 - Nested composite views to reduce re-rendering of content
+- Drag and Drop multifile uploads
 
 ##Languages
 - Ruby
@@ -52,8 +53,6 @@ Bokeh is a photo sharing app inspired by Flickr, built on Rails and Backbone. Us
 - OmniAuth Google OAuth2
 
 ##Future Todos
-- Uploading of multiple photos at once
-- Drag and Drop functionality for upload
 - Photo tags
 - "Favorite" a photo
 - Dynamic resizing of avatar and banner images
