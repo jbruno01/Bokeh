@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 
-
 gem 'rails', '4.2.1'
 gem 'pg'
 gem 'sass-rails', '~> 5.0'
@@ -51,4 +50,5 @@ end
 
 group :test do
   gem 'shoulda-matchers', require: false
+  gem 'jasmine-jquery-rails'
 end

@@ -17,7 +17,7 @@ css_dir: "app/assets/stylesheets"
 # list of file expressions to include as source files
 # relative path from src_dir
 src_files:
-  - "application.{js.coffee,js,coffee}"
+  - "application.js"
 
 # list of file expressions to include as css files
 # relative path from css_dir
@@ -32,7 +32,7 @@ css_files:
 #   - ../engine/spec/javascripts
 #
 # defaults to spec/javascripts
-spec_dir: spec/javascripts
+spec_dir: spec/javascripts/specs
 
 # list of file expressions to include as helpers into spec runner
 # relative path from spec_dir
