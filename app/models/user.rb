@@ -9,6 +9,10 @@
 #  session_token   :string           not null
 #  created_at      :datetime
 #  updated_at      :datetime
+#  provider        :string
+#  uid             :string
+#  banner_url      :string           default("/default_banner.jpg")
+#  avatar_url      :string           default("/default_avatar.jpg")
 #
 
 class User < ActiveRecord::Base
