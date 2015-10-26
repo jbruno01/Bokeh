@@ -32,7 +32,6 @@ header, section, img, button, figcaption
   text-align: inherit;
   text-decoration: inherit;
   vertical-align: inherit;
-
 }
 
 ul {
@@ -49,10 +48,12 @@ body {
   position: relative;
   min-width: 1075px;
   height: 100%;
+  overflow: auto;
 }
 
 html {
   height: 100%;
+  overflow-y: hidden;
 }
 
 .master-photo-show {
@@ -75,8 +76,8 @@ img {
  #main {
   min-width: 900px;
   margin: auto;
-  height: 95%;
-  padding-top: 52px;
+  height: 100%;
+  padding: 52px 0;
   position: relative;
 }
 
@@ -87,6 +88,7 @@ img {
   z-index: 1000;
   display: block;
   width: 100%;
+  height: 52px;
 }
 
 button:hover {
@@ -443,9 +445,10 @@ li:hover .user-options {
 
 .droppable {
   position: fixed;
-  height: 100%;
+  height: 99%;
   width: 100%;
   z-index: 100000;
+  overflow: auto;
 }
 
 #progress {
@@ -771,7 +774,7 @@ li:hover .user-options {
 /*Banners*/
 
 .banner-container {
-  height: 250px;
+  height: 300px;
   overflow: hidden;
   position: relative;
   font-weight: 100;
@@ -797,7 +800,7 @@ li:hover .user-options {
   z-index: 2;
   position: absolute;
   width: 100%;
-  height: 250px;
+  height: 300px;
   display: block;
   background: linear-gradient(to bottom, transparent, transparent 40%, rgba(0, 0, 0, 0.7));
 }
