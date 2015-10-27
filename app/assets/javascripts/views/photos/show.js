@@ -14,7 +14,8 @@ Bokeh.Views.PhotoShow = Backbone.CompositeView.extend({
   },
 
   events: {
-      "click .photo-details" : "editDetails"
+      "click .photo-details" : "editDetails",
+      "click .add-tag" : "createTagging"
   },
 
   loadingGifInit: function () {
@@ -64,8 +65,7 @@ Bokeh.Views.PhotoShow = Backbone.CompositeView.extend({
   },
 
   addTaggings: function() {
-    this.model.taggings
-    ().forEach(function (tag){
+    this.model.taggings().forEach(function (tag){
       this.addTagging(tag);
     });
   },
@@ -73,6 +73,21 @@ Bokeh.Views.PhotoShow = Backbone.CompositeView.extend({
   addTagging: function (tag){
     var subview = new Bokeh.Views.TagsIndexItem({ model: tag });
     this.addSubview('.tag-index', subview);
+  },
+
+  createTagging: function (tagging) {
+    event.preventDefault();
+    var newTagging = new Bokeh.Models.Tagging();
+    var content = $(".new-tag").serializeJSON();
+    content.tagging.photo_id = this.model.id;
+    newTagging.set(content)
+    var that = this;
+    newTagging.save({},{
+      success: function (response) {
+        // that.model.taggings().add(newTagging)
+        console.log(response);
+      }
+    });
   },
 
   renderNewForm: function () {

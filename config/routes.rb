@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     resource :session, only: [:create, :destroy, :show]
     resources :photos
     resources :comments
+    resources :taggings, only: [:create, :destroy]
   end
 
   get "/auth/:provider/callback", to: "api/sessions#omniauth"

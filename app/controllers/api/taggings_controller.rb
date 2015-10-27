@@ -1,11 +1,12 @@
 class Api::TaggingsController < ApplicationController
 
   def create
-    @tagging = Tagging.new(tagging_params)
-    @tag = find_or_create_tag(:name)
+    @tagging = Tagging.new
+    @tag = find_or_create_tag(tagging_params[:name])
     @tagging.tag_id = @tag.id
+    @tagging.photo_id = tagging_params[:photo_id]
     if @tagging.save
-      render json: @tagging
+      render :show
     else
       render json: @tagging.errors.full_messages
     end
@@ -17,9 +18,9 @@ class Api::TaggingsController < ApplicationController
       render {}
     end
   end
- 
+
   private
     def tagging_params
-      params.require(:tagging).permit(:photo_id, :tag_name)
+      params.require(:tagging).permit(:photo_id, :name)
     end
 end
