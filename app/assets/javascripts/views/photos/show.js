@@ -66,13 +66,13 @@ Bokeh.Views.PhotoShow = Backbone.CompositeView.extend({
   addTaggings: function() {
     this.model.taggings
     ().forEach(function (tag){
-      this.addTag(tag);
+      this.addTagging(tag);
     });
   },
 
   addTagging: function (tag){
-    // var subview = new Bokeh.Views.TagsIndexItem({ model: tag });
-    // this.addSubview('.tag-index', subview);
+    var subview = new Bokeh.Views.TagsIndexItem({ model: tag });
+    this.addSubview('.tag-index', subview);
   },
 
   renderNewForm: function () {
