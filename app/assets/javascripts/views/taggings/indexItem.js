@@ -1,7 +1,7 @@
 Bokeh.Views.TagsIndexItem = Backbone.CompositeView.extend({
-  template: JST["tags/indexItem"],
-  className: "tag-items",
-  tagName: "div",
+  template: JST["taggings/indexItem"],
+  className: "tag-item group",
+  tagName: "section",
 
   initialize: function() {
     this.listenTo(this.model, "sync", this.render)
