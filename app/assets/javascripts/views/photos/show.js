@@ -6,13 +6,15 @@ Bokeh.Views.PhotoShow = Backbone.CompositeView.extend({
   initialize: function () {
     this.addComments();
     this.renderDetails();
+    this.addTaggings();
     this.listenTo(this.model, "sync", this.render);
     this.listenTo(this.model, "change", this.renderDetails)
     this.listenTo(this.model.comments(), "add", this.addComment)
+    this.listenTo(this.model.taggings(), "add", this.addTagging)
   },
 
   events: {
-      "click .photo-details" : "editDetails",
+      "click .photo-details" : "editDetails"
   },
 
   loadingGifInit: function () {
@@ -59,6 +61,18 @@ Bokeh.Views.PhotoShow = Backbone.CompositeView.extend({
       this.newCommentview = null;
     }
     this.renderNewForm();
+  },
+
+  addTaggings: function() {
+    this.model.taggings
+    ().forEach(function (tag){
+      this.addTag(tag);
+    });
+  },
+
+  addTagging: function (tag){
+    // var subview = new Bokeh.Views.TagsIndexItem({ model: tag });
+    // this.addSubview('.tag-index', subview);
   },
 
   renderNewForm: function () {

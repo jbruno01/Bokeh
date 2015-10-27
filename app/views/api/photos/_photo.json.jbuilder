@@ -10,6 +10,6 @@ json.comments photo.comments do |comment|
   json.user comment.user, :name, :avatar_url
 end
 
-json.tags photo.tags do |tag|
+json.photo_tags photo.tags do |tag|
   json.extract! tag, :id, :name
 end
