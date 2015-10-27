@@ -9,7 +9,3 @@ json.comments photo.comments do |comment|
   json.extract! comment, :id, :user_id, :content, :updated_at, :created_at, :photo_id
   json.user comment.user, :name, :avatar_url
 end
-
-json.photo_tags photo.tags do |tag|
-  json.extract! tag, :id, :name
-end

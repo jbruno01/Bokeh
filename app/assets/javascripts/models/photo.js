@@ -74,11 +74,11 @@ Bokeh.Models.Photo = Backbone.Model.extend({
       delete response.user;
     };
 
-    if (response.photo_tags) {
-      this.taggings().set(response.photo_tags, {
+    if (response.taggings) {
+      this.taggings().set(response.taggings, {
         parse: true
       });
-      delete response.photo_tags;
+      delete response.taggings;
     };
 
     return response;

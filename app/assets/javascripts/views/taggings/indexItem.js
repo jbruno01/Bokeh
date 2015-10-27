@@ -8,8 +8,7 @@ Bokeh.Views.TagsIndexItem = Backbone.CompositeView.extend({
   },
 
   render: function () {
-    debugger
-    var renderedContent = this.template({ tag: this.model});
+    var renderedContent = this.template({ tagging: this.model});
     this.$el.html(renderedContent);
     return this;
   }
