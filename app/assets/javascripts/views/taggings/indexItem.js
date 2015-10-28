@@ -8,12 +8,20 @@ Bokeh.Views.TagsIndexItem = Backbone.CompositeView.extend({
   },
 
   events: {
-    "click #delete-tagging" : "removeTag"
+    "click #delete-tagging" : "removeTag",
+    "click .tag" : "searchTag"
   },
 
   removeTag: function(event) {
     event.preventDefault();
     this.model.destroy();
+  },
+
+  searchTag: function(event) {
+    event.preventDefault();
+    Bokeh.query = this.model.attributes.tag_name;
+    debugger
+    Backbone.history.navigate("#/search", {trigger: true})
   },
 
   render: function () {
