@@ -14,9 +14,8 @@ class Api::TaggingsController < ApplicationController
 
   def destroy
     @tagging = Tagging.find(params[:id])
-    if @tagging.destroy
-      render {}
-    end
+    @tagging.try(:destroy)
+    render json: {}
   end
 
   private

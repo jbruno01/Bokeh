@@ -8,9 +8,10 @@ Bokeh.Views.PhotoShow = Backbone.CompositeView.extend({
     this.renderDetails();
     this.addTaggings();
     this.listenTo(this.model, "sync", this.render);
-    this.listenTo(this.model, "change", this.renderDetails)
-    this.listenTo(this.model.comments(), "add", this.addComment)
-    this.listenTo(this.model.taggings(), "add", this.addTagging)
+    this.listenTo(this.model, "change", this.renderDetails);
+    this.listenTo(this.model.comments(), "add", this.addComment);
+    this.listenTo(this.model.taggings(), "add", this.addTagging);
+    this.listenTo(this.model.taggings(), "remove", this.removeTagging)
   },
 
   events: {
@@ -88,6 +89,10 @@ Bokeh.Views.PhotoShow = Backbone.CompositeView.extend({
         console.log(response);
       }
     });
+  },
+
+  removeTagging: function (tagging) {
+    this.removeModelSubview(".tag-index", tagging)
   },
 
   renderNewForm: function () {
