@@ -9,7 +9,9 @@
 #
 
 class Tag < ActiveRecord::Base
+  include PgSearch
   validates :name, presence: true, uniqueness: true
+  multisearchable against: :name
 
   has_many :taggings, dependent: :destroy
   has_many :photos, through: :taggings

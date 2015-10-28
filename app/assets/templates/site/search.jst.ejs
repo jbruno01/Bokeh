@@ -31,18 +31,24 @@
 
 
 		<% results.each(function (result) { %>
-			<article class="search-tile">
 				<% if (result instanceof Bokeh.Models.User) { %>
-
+				<article class="search-tile">
 					<a class="user-pic" href="#/users/<%= result.escape("real_id") %>"><img src="<%= result.escape("avatar_url") %>"/></a>
 					User: <a class="user-name" href="#/users/<%= result.escape("real_id") %>"><%= result.escape("name") %></a>
-
-				<% } else { %>
+				</article>
+				<% } else if(result instanceof Bokeh.Models.Photo) { %>
+					<article class="search-tile">
 					<a class="photo-pic" href="#/photos/<%= result.escape("real_id") %>"><img src="<%= result.escape("small_url") %>"/></a>
 					Title: <a href="#/photos/<%= result.escape("real_id") %>"><%= result.escape("title") %></a>
-
+					</article>
+				<% } else { %>
+					<% result.attributes.photos.forEach(function(photo) { %>
+						<article class="search-tile">
+						<a class="photo-pic" href="#/photos/<%= photo.id %>"><img src="<%= photo.small_url %>"/></a>
+						#<%= result.escape("name") %>
+						</article>
+					<% }) %>
 				<% } %>
-			</article>
 		<% }) %>
 
 	</section>
