@@ -782,24 +782,34 @@ li:hover .user-options {
 
 .tag-item {
   float: left;
+  position: relative;
   display: block;
   border: 2px solid #868D91;
   border-radius: 5px;
-  padding: 5px 10px;
+  padding: 5px 12px;
   margin: 5px;
 }
 
 .tag-item .tag, .tag-item h3 {
   float: left;
+  cursor: pointer;
 }
 
 .tag-item h3 {
+  position: absolute;
   display: none;
-  padding-left: 5px;
+  padding: 2px;
+  font-size: 12px;
+  top: -2px;
+  right: 0px;
 }
 
 .tag-item:hover h3 {
   display: block;
+}
+
+.tag:hover {
+  text-decoration: underline;
 }
 
 /*Banners*/
