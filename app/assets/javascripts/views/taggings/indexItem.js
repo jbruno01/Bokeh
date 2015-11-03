@@ -20,7 +20,6 @@ Bokeh.Views.TagsIndexItem = Backbone.CompositeView.extend({
   searchTag: function(event) {
     event.preventDefault();
     Bokeh.query = this.model.attributes.tag_name;
-    debugger
     Backbone.history.navigate("#/search", {trigger: true})
   },
 

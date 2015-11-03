@@ -6,7 +6,7 @@ Bokeh.Views.EditPhotoDetails = Backbone.CompositeView.extend({
   },
 
   events: {
-    "blur .edit-details" : "submit"
+    "click .edit-submit" : "submit"
   },
 
   submit: function(event) {
@@ -14,6 +14,7 @@ Bokeh.Views.EditPhotoDetails = Backbone.CompositeView.extend({
     var attrs = $(".edit-details").serializeJSON().photo;
     this.model.set(attrs);
     this.model.save();
+    this.model.trigger("change");
   },
 
   render: function () {
