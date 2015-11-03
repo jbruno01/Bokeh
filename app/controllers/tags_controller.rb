@@ -6,6 +6,7 @@ class TagsController < ApplicationController
       render json: @tag
     else
       render json: @tag.errors.full_messages, status: :unprocessable_entity
+    end
   end
 
   private
