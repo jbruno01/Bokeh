@@ -1,0 +1,236 @@
+// Photo Show Page
+
+.master-photo-show {
+ height: 100%;
+}
+
+.image-window {
+  position: relative;
+  display: block;
+  background: #212124;
+  height: 85%;
+}
+
+.loader-gif {
+  width: 100px;
+  height: auto;
+  position: absolute;
+  margin: auto;
+  right: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.main-photo.hidden {
+  display: block;
+  opacity: 0;
+}
+
+.main-photo {
+  opacity: 1;
+  transition: opacity .5s ease-in;
+  height: 100%;
+  margin: auto;
+  width: auto;
+}
+
+.photo-info {
+  margin: auto;
+  padding: 20px;
+  width: 60%;
+  border-bottom: 1px solid #CFD6D9;
+}
+
+.photo-info .photo-user-pic {
+  float: left;
+  width: 50px;
+  height: auto;
+}
+
+.photo-info .photo-details {
+  position: relative;
+  float: left;
+  padding: 15px 20px;
+  width: 60%;
+  border-radius: 2px;
+}
+
+.photo-info .edit {
+  display: none;
+  color: #CDCCCC;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+}
+
+.photo-info .photo-details:hover {
+  background: #fff;
+}
+
+.photo-info .photo-details:hover .edit{
+  display: block;
+}
+
+.photo-info a {
+  font-size: 22px;
+  padding-bottom: 15px;
+  padding-left: 18px;
+}
+
+.photo-info h2 {
+  font-size: 16px;
+}
+
+.edit-details {
+  padding-left: 18px;
+  width: 314px;
+  float: left;
+}
+
+.edit-details input,
+.edit-details textarea {
+  display: block;
+  width: 300px;
+  padding: 5px;
+  font-size: 18px;
+  margin: 10px;
+}
+
+.edit-submit {
+  float: right;
+
+}
+
+.comment-tag-container {
+  width: 60%;
+  margin: auto;
+}
+
+.comment-index {
+  width: 50%;
+  float: left;
+  margin: auto;
+  padding-bottom: 80px;
+}
+
+.comment-item {
+  border-bottom: 1px solid #CFD6D9;
+  padding: 10px;
+}
+
+.comment-item:hover {
+  background: #fff;
+}
+
+.comment-index .user-avatar {
+  padding-top: 30px;
+  float: left;
+  width: 30px;
+  height: 30px;
+}
+
+.comment-item .comment-content {
+  position: relative;
+  float: left;
+  padding-left: 15px;
+}
+
+.comment-content .hover-edit {
+  position: absolute;
+  display: none;
+  color: #ccc;
+  top: -10px;
+  left: 200px;
+  width: 150px;
+  border: 1px solid #eee;
+  text-align: center;
+  padding: 2px;
+  cursor: pointer;
+}
+
+.comment-item:hover .hover-edit {
+  display: block;
+}
+
+.new-comment-form {
+  position: relative;
+}
+
+.new-comment-form button {
+  position: absolute;
+  padding: 5px 10px;
+  display: block;
+  bottom: -25px;
+  right: 100px;
+  color: #fff;
+  background: #1C9BE9;
+}
+
+.new-comment-form .user-avatar,
+.new-comment-form .new-comment-area {
+  float: left;
+  display: block;
+  margin: 10px
+}
+
+.new-comment-form .user-avatar {
+  padding-top: 0;
+}
+
+.new-comment-area, .edit-comment-area {
+  font-size: 16px;
+}
+
+.tag-container {
+  float: right;
+  width: 40%;
+}
+
+.tag-title {
+  padding: 10px 0;
+}
+
+.tag-name {
+  font-size: 15px;
+  padding: 3px;
+  width: 200px;
+}
+
+.add-tag {
+  margin-left: 5px;
+  background: #1C9BE9;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.tag-item {
+  float: left;
+  position: relative;
+  display: block;
+  border: 2px solid #868D91;
+  border-radius: 5px;
+  padding: 5px 12px;
+  margin: 5px;
+}
+
+.tag-item .tag, .tag-item h3 {
+  float: left;
+  cursor: pointer;
+}
+
+.tag-item h3 {
+  position: absolute;
+  display: none;
+  padding: 2px;
+  font-size: 12px;
+  top: -2px;
+  right: 0px;
+}
+
+.tag-item:hover h3 {
+  display: block;
+}
+
+.tag:hover {
+  text-decoration: underline;
+}

@@ -2,14 +2,17 @@
 #
 # Table name: photos
 #
-#  id          :integer          not null, primary key
-#  album_id    :integer
-#  user_id     :integer          not null
-#  title       :text
-#  description :text
-#  created_at  :datetime
-#  updated_at  :datetime
-#  image_url   :string           not null
+#  id                 :integer          not null, primary key
+#  album_id           :integer
+#  user_id            :integer          not null
+#  title              :text
+#  description        :text
+#  created_at         :datetime
+#  updated_at         :datetime
+#  image_file_name    :string
+#  image_content_type :string
+#  image_file_size    :integer
+#  image_updated_at   :datetime
 #
 
 class Photo < ActiveRecord::Base
@@ -31,5 +34,7 @@ class Photo < ActiveRecord::Base
   belongs_to :user
   belongs_to :album
   has_many :comments
+  has_many :taggings, dependent: :destroy
+  has_many :tags, through: :taggings
 
 end

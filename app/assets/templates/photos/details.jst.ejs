@@ -22,7 +22,8 @@
     <% } %>
   </p>
 
-  <% if(Bokeh.currentUser.isSignedIn() && photo.escape("user_id").toString() === Bokeh.currentUser.id.toString()){ %>  
+  <% if( Bokeh.currentUser.id && photo.escape("user_id").toString() === Bokeh.currentUser.id.toString()){ %>
+
     <div class="edit">
       Click to edit!
     </div>

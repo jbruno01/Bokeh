@@ -6,13 +6,18 @@ Bokeh.Views.PhotoShow = Backbone.CompositeView.extend({
   initialize: function () {
     this.addComments();
     this.renderDetails();
-    this.listenTo(this.model, "sync", this.render);
-    this.listenTo(this.model, "change", this.renderDetails)
-    this.listenTo(this.model.comments(), "add", this.addComment)
+    this.addTaggings();
+    this.listenToOnce(this.model, "sync", this.render);
+    this.listenTo(this.model, "change", this.renderDetails);
+    this.listenTo(this.model.comments(), "add", this.addComment);
+    this.listenTo(this.model.taggings(), "add", this.addTagging);
+    this.listenTo(this.model.taggings(), "remove", this.removeTagging)
   },
 
   events: {
       "click .photo-details" : "editDetails",
+      "click .add-tag" : "createTagging",
+      "submit .new-tag" : "createTagging"
   },
 
   loadingGifInit: function () {
@@ -59,6 +64,36 @@ Bokeh.Views.PhotoShow = Backbone.CompositeView.extend({
       this.newCommentview = null;
     }
     this.renderNewForm();
+  },
+
+  addTaggings: function() {
+    this.model.taggings().forEach(function (tag){
+      this.addTagging(tag);
+    }.bind(this))
+  },
+
+  addTagging: function (tag){
+    var subview = new Bokeh.Views.TagsIndexItem({ model: tag });
+    this.addSubview('.tag-index', subview);
+  },
+
+  createTagging: function (tagging) {
+    event.preventDefault();
+    var newTagging = new Bokeh.Models.Tagging();
+    var content = $(".new-tag").serializeJSON();
+    content.tagging.photo_id = this.model.id;
+    newTagging.set(content)
+    var that = this;
+    newTagging.save({},{
+      success: function (response) {
+        that.model.taggings().add(newTagging);
+        that.$(".tag-name").val("")
+      }
+    });
+  },
+
+  removeTagging: function (tagging) {
+    this.removeModelSubview(".tag-index", tagging)
   },
 
   renderNewForm: function () {

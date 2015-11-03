@@ -21,25 +21,26 @@ Bokeh.Views.Search = Backbone.CompositeView.extend({
 		});
 		this.$el.html(content);
 		if(Bokeh.query){
-			this.$(".search-input").val(Bokeh.query);
-			Bokeh.query = null
 			this.search(event)
 		}
-
 		return this;
 	},
 
 	search: function (event) {
 		event.preventDefault();
 		this.searchResults.pageNum = 1;
-		this.searchResults.query = this.$(".search-input").val();
-
+		if(!Bokeh.query){
+			this.searchResults.query = this.$(".search-input").val();
+		} else {
+			this.searchResults.query = Bokeh.query;
+		}
 		this.searchResults.fetch({
 			data: {
 				query: this.searchResults.query,
 				page: 1
 			}
 		});
+		Bokeh.query = null;
 	},
 
 	bindScroll: function () {

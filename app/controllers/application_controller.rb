@@ -8,8 +8,6 @@ class ApplicationController < ActionController::Base
     @current_user ||= User.find_by_session_token(session[:session_token])
   end
 
-
-
   def sign_in(user)
     @current_user = user
     session[:session_token] = user.reset_token!
@@ -18,6 +16,14 @@ class ApplicationController < ActionController::Base
   def sign_out!
     current_user.try(:reset_token!)
     session[:token] = nil
+  end
+
+  def find_or_create_tag(string)
+    @tag = Tag.find_by name: string
+    unless @tag
+      @tag = Tag.create({name: string})
+    end
+    return @tag
   end
 
 end
