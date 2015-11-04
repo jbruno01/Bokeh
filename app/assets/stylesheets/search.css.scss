@@ -1,0 +1,73 @@
+/*Search*/
+
+@import "globals";
+
+.search-page {
+  width: 900px;
+  margin: auto;
+}
+
+.search-page .container {
+  margin: auto;
+  position: relative;
+}
+
+.search-page .search-form {
+  position: relative;
+  margin: auto;
+  width: 400px;
+}
+
+.search-page .search-input {
+  font-size: 18px;
+  padding: 5px;
+  width: 100%;
+}
+
+.search-form .fa-search {
+  font-size: 22px;
+  position: absolute;
+  top: 6px;
+  left: 7px;
+  z-index: 100;
+}
+
+.search-page h1 {
+  padding: 20px 0;
+  display: block;
+  text-align: center;
+  font-size: 36px;
+}
+
+.search-page nav {
+  padding: 20px;
+  text-align: center;
+  display: block;
+  margin: auto;
+}
+
+.search-page .nav-buttons {
+  display: block;
+  width: 400px;
+  margin: auto;
+}
+
+.nav-buttons .prev-page {
+  float: left;
+}
+
+.nav-buttons .next-page {
+  float: right;
+}
+
+.search-results .search-tile {
+  float: left;
+  padding: 20px;
+  text-align: center;
+}
+
+.search-results img {
+  display: block;
+  height: 200px;
+  width: auto;
+}

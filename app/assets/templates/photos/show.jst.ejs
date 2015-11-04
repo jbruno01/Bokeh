@@ -12,11 +12,14 @@
     </section>
 
     <section class="tag-container">
-      <h2 class="tag-title">Tags</h2>
+      <div class="title-and-errors group">
+        <h2 class="tag-title">Tags</h2>
+        <h2 class="tag-error red-error"></h2>
+      </div>
       <% if(photo.user().id === Bokeh.currentUser.id) { %>
         <form class="new-tag">
           <input class="tag-name" name="tagging[name]"type="text" placeholder="Add a tag">
-          <button type="button" class="add-tag">Add</button>
+          <button class="add-tag blue-button">Add</button>
         </form>
       <% } %>
       <div class="tag-index group">

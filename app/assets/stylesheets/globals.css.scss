@@ -1,0 +1,39 @@
+// Variables
+
+// Colors
+$bokeh-blue: #128FDC;
+$bokeh-darker-blue: #167cba;
+$bokeh-gray: #BBBBBB;
+$bokeh-dark-gray: #161617;
+$bokeh-base: #F3F5F6;
+$bokeh-red: #96031A;
+
+
+// Sizes
+$border-radius: 5px;
+
+
+// Site Wide Elements
+
+.active {
+  display: block;
+}
+
+.hidden {
+  display: none;
+}
+
+.blue-button {
+  background: $bokeh-blue;
+  border-radius: $border-radius;
+  color: #fff;
+  padding: 5px 10px;
+}
+
+.red-error {
+  padding: 5px 10px;
+  color: $bokeh-dark-gray;
+  border-radius: $border-radius;
+  background: $bokeh-red;
+  opacity: .6;
+}

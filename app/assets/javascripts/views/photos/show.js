@@ -16,8 +16,8 @@ Bokeh.Views.PhotoShow = Backbone.CompositeView.extend({
 
   events: {
       "click .photo-details" : "editDetails",
-      "click .add-tag" : "createTagging",
-      "submit .new-tag" : "createTagging"
+      "click .add-tag" : "checkThanAdd",
+      "submit .new-tag" : "checkThanAdd"
   },
 
   loadingGifInit: function () {
@@ -77,23 +77,41 @@ Bokeh.Views.PhotoShow = Backbone.CompositeView.extend({
     this.addSubview('.tag-index', subview);
   },
 
-  createTagging: function (tagging) {
+  checkThanAdd: function (event) {
     event.preventDefault();
-    var newTagging = new Bokeh.Models.Tagging();
+    var name = $(".tag-name").val();
+    if(name === ""){
+      $(".tag-error").addClass("active");
+      $(".tag-error").html("Tag can't be blank")
+      return
+    } else if (this.model.tagNames().indexOf(name) !== -1) {
+      $(".tag-error").addClass("active");
+      $(".tag-error").html("No duplicate tags")
+      return
+    }
+    this.createTagging();
+  },
+
+  createTagging: function () {
     var content = $(".new-tag").serializeJSON();
+    var newTagging = new Bokeh.Models.Tagging();
     content.tagging.photo_id = this.model.id;
     newTagging.set(content)
     var that = this;
     newTagging.save({},{
       success: function (response) {
         that.model.taggings().add(newTagging);
+        that.model.tagNames().push(content.tagging.name)
         that.$(".tag-name").val("")
+        that.$(".tag-error").removeClass("active")
       }
     });
   },
 
   removeTagging: function (tagging) {
     this.removeModelSubview(".tag-index", tagging)
+    var temp = this.model.tagNames().indexOf(tagging.attributes.tag_name);
+    this.model.tagNames().splice(temp,1);
   },
 
   renderNewForm: function () {

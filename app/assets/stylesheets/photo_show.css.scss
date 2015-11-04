@@ -1,4 +1,5 @@
 // Photo Show Page
+@import "globals";
 
 .master-photo-show {
  height: 100%;
@@ -52,7 +53,7 @@
   float: left;
   padding: 15px 20px;
   width: 60%;
-  border-radius: 2px;
+  border-radius: $border-radius;
 }
 
 .photo-info .edit {
@@ -188,19 +189,24 @@
 
 .tag-title {
   padding: 10px 0;
+  float: left;
+}
+
+.tag-error {
+  display: none;
+  float: right;
 }
 
 .tag-name {
   font-size: 15px;
   padding: 3px;
-  width: 200px;
+  width: 190px;
+  float: left;
 }
 
 .add-tag {
   margin-left: 5px;
-  background: #1C9BE9;
-  padding: 5px 10px;
-  border-radius: 5px;
+  float: right;
 }
 
 .tag-item {
@@ -208,7 +214,7 @@
   position: relative;
   display: block;
   border: 2px solid #868D91;
-  border-radius: 5px;
+  border-radius: $border-radius;
   padding: 5px 12px;
   margin: 5px;
 }

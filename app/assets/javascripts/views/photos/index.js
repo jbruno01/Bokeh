@@ -8,7 +8,7 @@ Bokeh.Views.IndexPhotoView = Backbone.CompositeView.extend({
   },
 
   initialize: function(){
-    this.renderBanner({ model: this.model });
+    this.renderBanner();
     this.addPhotos();
     this.listenTo(this.model.photos(), "add", this.addPhotoView);
     this.listenTo(this.model.photos(), "remove", this.removePhotoView);
@@ -34,6 +34,7 @@ Bokeh.Views.IndexPhotoView = Backbone.CompositeView.extend({
 
   removePhotoView: function (model) {
     this.removeModelSubview(".photo-index", model)
+    $(".num-photos").html(this.collection.length + " Photos");
   },
 
   renderBanner: function () {

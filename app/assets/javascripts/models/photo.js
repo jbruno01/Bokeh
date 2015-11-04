@@ -37,6 +37,13 @@ Bokeh.Models.Photo = Backbone.Model.extend({
     return this._taggings;
   },
 
+  tagNames: function(){
+    if (!this._tagNames) {
+      this._tagNames = []
+    }
+    return this._tagNames;
+  },
+
   saveFormData: function(formData, options) {
     var method = this.isNew() ? "POST" : "PUT";
     var model = this;
@@ -79,6 +86,11 @@ Bokeh.Models.Photo = Backbone.Model.extend({
         parse: true
       });
       delete response.taggings;
+    };
+
+    if (response.tag_names) {
+      this._tagNames = response.tag_names;
+      delete response.tag_names;
     };
 
     return response;

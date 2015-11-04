@@ -1,0 +1,80 @@
+/*Banners*/
+@import "globals";
+
+.banner-container {
+  height: 300px;
+  overflow: hidden;
+  position: relative;
+  font-weight: 100;
+}
+
+.banner-image.hidden {
+  display: block;
+  opacity: 0;
+}
+
+.banner-image {
+  opacity: 1;
+  transition: opacity .5s ease-in;
+  z-index: 1;
+  position: absolute;
+  display: block;
+  width: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.opacity-gradient {
+  z-index: 2;
+  position: absolute;
+  width: 100%;
+  height: 300px;
+  display: block;
+  background: linear-gradient(to bottom, transparent, transparent 40%, rgba(0, 0, 0, 0.7));
+}
+
+.banner-info {
+  z-index: 100;
+  position: absolute;
+  bottom: 25px;
+  left: 10%;
+  width: 80%;
+}
+
+.avatar-image {
+  float: left;
+  width: 100px;
+  border-radius: $border-radius;
+}
+
+.banner-user-details li {
+  padding: 3px 5px;
+}
+
+.banner-user-details {
+  text-shadow: 1px 1px 1px #000;
+  color: #fff;
+  position: absolute;
+  top: 30%;
+  left: 120px;
+  width: 85%;
+  font-size: 18px;
+}
+
+.banner-user-details .user-name {
+  font-size: 28px;
+  padding-bottom: 10px;
+}
+
+.banner-user-details .user-info .user-email{
+  float: left;
+}
+
+.num-photos-and-joindate {
+  float: right;
+}
+
+.num-photos-and-joindate h2 {
+  float: left;
+  padding-left: 20px;
+}
