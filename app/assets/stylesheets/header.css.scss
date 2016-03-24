@@ -1,0 +1,117 @@
+// Header
+
+.header-nav {
+  min-width: 700px;
+  width: 85%;
+  margin: auto;
+}
+
+.header-nav a:hover {
+  color: #BBBBBB;
+}
+
+.header-logo {
+  float: left;
+  font-size: 25px;
+  font-weight: bold;
+  padding: 10px 15px;
+}
+
+.nav-links {
+  float: left;
+}
+
+#header a {
+  display: block;
+}
+
+.nav-links a {
+  padding: 16px 17px;
+}
+
+.nav-links li {
+  display: block;
+  float: left;
+}
+
+.nav-links > li {
+  position: relative;
+}
+
+.user-options {
+  display: none;
+  position: absolute;
+  left: 15px;
+  top: 45px;
+  font-size: 14px;
+  border: 1px solid #A2A2A2;
+  border-radius: 2px;
+  white-space: nowrap;
+  background: #fff;
+  color: #000;
+  overflow: hidden;
+}
+
+li:hover .user-options {
+  display: block;
+}
+
+.user-options a {
+  padding: 5px 20px;
+}
+
+.user-options > li:hover {
+  background: #E6EAEC;
+}
+
+.user-options a:hover {
+  color: #000;
+}
+
+.nav-tools {
+  float: right;
+}
+
+.nav-tools li {
+  display: block;
+  float: left;
+  padding: 16px 17px;
+}
+
+.nav-tools form {
+  position: relative;
+  float: left;
+  padding: 13px 0;
+}
+
+.search-input {
+  position: relative;
+  text-indent: 27px;
+  float: left;
+  font-size: 15px;
+  background: #fff;
+  padding: 3px;
+  width: 200px;
+}
+
+#header .search-form .fa-search {
+  background: #FFFFFF;
+  color: #000;
+  position: absolute;
+  font-size: 20px;
+  z-index: 100;
+  top: 15px;
+  left: 5px;
+}
+
+.nav-tools button {
+  padding: 3px;
+}
+
+.nav-tools .header-avatar {
+  width: 30px;
+  height: auto;
+  padding: 0;
+  margin: 9px 0;
+
+}
